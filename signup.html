@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign up — DUNATHON</title>
+<meta name="description" content="Create your DUNATHON account and claim your place in the network.">
+<link rel="stylesheet" href="assets/colors_and_type.css">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand-lockup" href="index.html"><img class="brand-logo" src="assets/dunathon-logo.svg" alt="DUNATHON"></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <nav class="nav-links">
+      <a class="navlink" href="tech.html">The Tech</a>
+      <a class="navlink" href="law.html">The Law</a>
+      <a class="navlink" href="economics.html">Economics</a>
+      <a class="navlink" href="culture.html">Culture</a>
+      <a class="navlink" href="events.html">Events</a>
+      <a class="navlink" href="showcase.html">Showcase</a>
+      <span class="nav-sep"></span>
+      <a class="nav-login" href="app.html?skiplogin=1">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section" style="min-height:60vh;display:flex;align-items:center">
+  <div class="wrap" style="position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+    <div class="reveal">
+      <div class="eyebrow">Build Something that Matters</div>
+      <h1 class="display" style="font-size:clamp(2rem,4vw,3rem)">Claim Your <em class="wv-emph">Place</em></h1>
+      <p class="lede">Join a trusted network of members, founders, builders, sponsors, and intelligent agents. Create your identity, connect with communities that share your purpose, and help shape the future of human and agentic collaboration.</p>
+      <p class="muted">Already have an account? <a href="app.html?skiplogin=1">Sign in</a>.</p>
+    </div>
+    <div class="reveal">
+      <!-- STEP 1: name + email -->
+      <form class="form-card signup-step" id="su-step1">
+        <p class="form-step"><b>Step 1 of 6</b> · Enter your name and email address. We'll send a 6-digit code to verify your email address.</p>
+        <div class="field">
+          <label for="su-name">First name or alias <span class="req">*</span></label>
+          <input id="su-name" type="text" placeholder="what you want to be called" required>
+        </div>
+        <div class="field">
+          <label for="su-email">Email address <span class="req">*</span></label>
+          <input id="su-email" type="email" placeholder="name@example.com" required>
+        </div>
+        <label class="consent"><input type="checkbox" checked> <span>By continuing, I agree to receive various communications from DUNATHON with the understanding that I can unsubscribe anytime. I have reviewed the <a href="#">Privacy Policy</a> and accept the <a href="#">Terms of Service</a>.</span></label>
+        <button class="btn btn-gold btn-lg" type="submit" style="width:100%;margin-top:1.1rem">Send me the 6-digit code</button>
+      </form>
+
+      <!-- STEP 2: verify code -->
+      <form class="form-card signup-step" id="su-step2" hidden>
+        <button type="button" class="step-back" id="su-back">← Back</button>
+        <p class="form-step"><b>Step 2 of 6</b> · We sent a security code to <b id="su-email-echo" style="color:var(--fg)">your email</b>. Please follow the steps below.</p>
+        <ol class="step-list">
+          <li>Open your email</li>
+          <li>Look for a message from <b>security@kinship.systems</b></li>
+          <li>Enter the code below to confirm it's you</li>
+        </ol>
+        <div class="field">
+          <label for="su-code-0">Enter your 6-digit code</label>
+          <div class="code-inputs" id="su-code">
+            <input type="text" inputmode="numeric" maxlength="1" id="su-code-0" aria-label="Digit 1">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+          </div>
+        </div>
+        <p class="faint" style="font-size:0.8rem;margin:0.2rem 0 1rem">The code expires in 15 minutes. Didn't get it? Check your spam folder or request a new code.</p>
+        <button class="btn btn-gold btn-lg" type="submit" style="width:100%">Verify &amp; continue</button>
+        <p class="su-msg muted" id="su-resend-msg" hidden style="margin-top:0.8rem;text-align:center">A new code is on its way.</p>
+        <p class="form-note" style="margin-top:1rem;text-align:center">Didn't get it? <a href="#" id="su-resend">Resend code</a><br>Or <a href="#" id="su-different">try a different email address</a></p>
+      </form>
+
+      <!-- STEP 3: set password -->
+      <form class="form-card signup-step" id="su-step3" hidden>
+        <button type="button" class="step-back" id="su-back-3">← Back</button>
+        <p class="form-step"><b>Step 3 of 6</b> · Set your password. Use at least 12 characters. Longer is stronger. You can use letters, numbers, symbols, or a passphrase.</p>
+        <div class="field">
+          <label for="su-pass">Set Password <span class="req">*</span></label>
+          <div class="pw-wrap">
+            <input id="su-pass" type="password" placeholder="At least 12 characters" autocomplete="new-password" required>
+            <button type="button" class="pw-toggle" data-target="su-pass" aria-label="Show password" aria-pressed="false"></button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="su-pass2">Confirm Password <span class="req">*</span></label>
+          <div class="pw-wrap">
+            <input id="su-pass2" type="password" placeholder="Re-enter your password" autocomplete="new-password" required>
+            <button type="button" class="pw-toggle" data-target="su-pass2" aria-label="Show password" aria-pressed="false"></button>
+          </div>
+        </div>
+        <button class="btn btn-gold btn-lg" type="submit" style="width:100%;margin-top:0.4rem">Set Your Password and Continue</button>
+      </form>
+
+      <!-- STEP 4: mobile number -->
+      <form class="form-card signup-step" id="su-step4" hidden>
+        <button type="button" class="step-back" id="su-back-4">← Back</button>
+        <p class="form-step"><b>Step 4 of 6</b> · Enter your mobile number. We'll send a 6-digit code by text to verify and continue.</p>
+        <div class="field">
+          <label for="su-phone">Mobile number <span class="req">*</span></label>
+          <input id="su-phone" type="tel" inputmode="tel" placeholder="(555) 555-5555" autocomplete="tel" required>
+        </div>
+        <button class="btn btn-gold btn-lg" type="submit" style="width:100%;margin-top:0.4rem">Send code</button>
+      </form>
+
+      <!-- STEP 5: verify mobile -->
+      <form class="form-card signup-step" id="su-step5" hidden>
+        <button type="button" class="step-back" id="su-back-5">← Back</button>
+        <p class="form-step"><b>Step 5 of 6</b> · Verify your mobile number. We sent a six-digit code to <b id="su-phone-echo" style="color:var(--fg)">your phone</b>.</p>
+        <div class="field">
+          <label for="su-scode-0">Enter your 6-digit code</label>
+          <div class="code-inputs" id="su-scode">
+            <input type="text" inputmode="numeric" maxlength="1" id="su-scode-0" aria-label="Digit 1">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 2">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 3">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 4">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 5">
+            <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 6">
+          </div>
+        </div>
+        <button class="btn btn-gold btn-lg" type="submit" style="width:100%">Verify and Continue</button>
+        <p class="su-msg muted" id="su-sresend-msg" hidden style="margin-top:0.8rem;text-align:center">A new code is on its way.</p>
+        <p class="form-note" style="margin-top:1rem;text-align:center">Didn't get a code? <a href="#" id="su-sresend">Resend</a></p>
+      </form>
+
+      <!-- STEP 6: make a connection (Kinship Code) -->
+      <form class="form-card signup-step" id="su-step6" hidden>
+        <button type="button" class="step-back" id="su-back-6">← Back</button>
+        <p class="form-step"><b>Step 6 of 6</b> · Make a Connection</p>
+        <p class="muted" style="margin:0 0 1rem">Relationships are at the heart of the DUNAVERSE. Enter a Kinship Code to establish trust, attribution, and shared rewards with your Host far into the future. By entering a Code now, both you and your Host will receive bonus DUNATHON Coins today. If you don't have a Code, DUNATHON itself will be set as your host.</p>
+        <div class="field">
+          <label for="su-kin">Enter a Kinship Code</label>
+          <input id="su-kin" type="text" placeholder="XXX—XXX—XXX" autocomplete="off">
+        </div>
+        <button class="btn btn-gold btn-lg" type="submit" style="width:100%;margin-top:0.4rem">Enter the DUNAVERSE!</button>
+      </form>
+
+      <!-- DONE (prototype) -->
+      <div class="form-card signup-step" id="su-done" hidden>
+        <p class="form-step"><b>Welcome to the DUNAVERSE ✦</b></p>
+        <h3 style="font-family:var(--font-display);font-weight:400;font-size:1.6rem;margin:0.2rem 0 0.6rem">You're in.</h3>
+        <p class="muted">Your account is set up and your connection is made. Your Host's Ally is waiting to greet you.</p>
+        <a class="btn btn-gold btn-lg" href="app.html?skiplogin=1&onboarded=1" style="width:100%;margin-top:1rem">Enter the DUNAVERSE →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand-lockup"><img class="brand-logo footer-logo" src="assets/dunathon-logo.svg" alt="DUNATHON"></a>
+        <p class="faint" style="margin-top:0.6rem;max-width:42ch">A global on-ramp to agentic commerce, run through your very own member-governed organization registered in the state of West Virginia, with legal standing all around the world.</p>
+        <p class="faint" style="font-size:0.8rem;white-space:nowrap">Powered by <a href="https://kiduna.club" target="_blank" rel="noopener">Kiduna Club</a>, Human Agency for the Intelligence Age.</p>
+        <a href="https://kiduna.club" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.4rem;font-size:0.85rem;font-weight:700">Learn more ↗</a>
+      </div>
+      <div><h4>Explore</h4><a href="tech.html">The Tech</a><a href="law.html">The Law</a><a href="economics.html">Economics</a><a href="culture.html">Culture</a><a href="events.html">Events</a><a href="showcase.html">Showcase</a></div>
+      <div><h4>Get started</h4><a href="register.html">Register</a><a href="app.html?skiplogin=1">Sign in</a><a href="events.html#duna-day">DUNA Day</a><a href="law.html#registered-agent">The Registered Agent</a></div>
+      <div><h4>About the Institute</h4><p class="faint" style="margin:0 0 0.7rem;font-size:0.85rem;max-width:34ch"><a class="kin-link" href="http://kinship.institute" target="_blank" rel="noopener">Kinship Intelligence Institute</a> is an independent 501(c)(3) ensuring the agentic AI era serves the wellbeing, autonomy, and prosperity of people and communities the market would otherwise pass over.</p><a href="https://kinship.institute" target="_blank" rel="noopener">Learn more ↗</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Kinship Intelligence Institute, a 501(c)(3) public charity.</span><span class="draft-flag">Draft preview</span></div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  var s1 = document.getElementById("su-step1");
+  var s2 = document.getElementById("su-step2");
+  var s3 = document.getElementById("su-step3");
+  var s4 = document.getElementById("su-step4");
+  var s5 = document.getElementById("su-step5");
+  var s6 = document.getElementById("su-step6");
+  var sDone = document.getElementById("su-done");
+  if (!s1 || !s2 || !s3 || !s4 || !s5 || !s6 || !sDone) return;
+  var steps = [s1, s2, s3, s4, s5, s6, sDone];
+  function show(el) { steps.forEach(function (x) { x.hidden = (x !== el); }); window.scrollTo({ top: 0, behavior: "smooth" }); }
+
+  // Step 1 -> Step 2
+  s1.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var em = (document.getElementById("su-email").value || "").trim();
+    document.getElementById("su-email-echo").textContent = em || "your email";
+    show(s2);
+    var first = document.getElementById("su-code-0");
+    if (first) first.focus();
+  });
+
+  // Back arrow -> Step 1
+  document.getElementById("su-back").addEventListener("click", function () { show(s1); });
+
+  // 6-digit code: auto-advance + backspace
+  var inputs = Array.prototype.slice.call(document.querySelectorAll("#su-code input"));
+  inputs.forEach(function (inp, i) {
+    inp.addEventListener("input", function () {
+      inp.value = inp.value.replace(/[^0-9]/g, "").slice(0, 1);
+      if (inp.value && inputs[i + 1]) inputs[i + 1].focus();
+    });
+    inp.addEventListener("keydown", function (e) {
+      if (e.key === "Backspace" && !inp.value && inputs[i - 1]) inputs[i - 1].focus();
+    });
+  });
+
+  // Step 2 -> Step 3 (prototype: advances regardless of what's entered)
+  s2.addEventListener("submit", function (e) { e.preventDefault(); show(s3); var p = document.getElementById("su-pass"); if (p) p.focus(); });
+
+  // Step 3 (password) back -> Step 2, and submit -> Step 4 (prototype: advances regardless)
+  document.getElementById("su-back-3").addEventListener("click", function () { show(s2); });
+  s3.addEventListener("submit", function (e) { e.preventDefault(); show(s4); var p = document.getElementById("su-phone"); if (p) p.focus(); });
+
+  // Step 4 (mobile) back -> Step 3, and submit -> Step 5 (prototype: advances regardless)
+  document.getElementById("su-back-4").addEventListener("click", function () { show(s3); });
+  s4.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var ph = (document.getElementById("su-phone").value || "").trim();
+    document.getElementById("su-phone-echo").textContent = ph || "your phone";
+    show(s5);
+    var first = document.getElementById("su-scode-0"); if (first) first.focus();
+  });
+
+  // Step 5 SMS code: auto-advance + backspace
+  var scode = Array.prototype.slice.call(document.querySelectorAll("#su-scode input"));
+  scode.forEach(function (inp, i) {
+    inp.addEventListener("input", function () {
+      inp.value = inp.value.replace(/[^0-9]/g, "").slice(0, 1);
+      if (inp.value && scode[i + 1]) scode[i + 1].focus();
+    });
+    inp.addEventListener("keydown", function (e) {
+      if (e.key === "Backspace" && !inp.value && scode[i - 1]) scode[i - 1].focus();
+    });
+  });
+
+  // Step 5 (verify mobile) back -> Step 4, submit -> Step 6 (prototype: advances regardless)
+  document.getElementById("su-back-5").addEventListener("click", function () { show(s4); });
+  s5.addEventListener("submit", function (e) { e.preventDefault(); show(s6); });
+
+  // Step 6 (Kinship Code) back -> Step 5, submit -> done (prototype: optional code)
+  document.getElementById("su-back-6").addEventListener("click", function () { show(s5); });
+  s6.addEventListener("submit", function (e) { e.preventDefault(); show(sDone); });
+  var sresend = document.getElementById("su-sresend");
+  var srmsg = document.getElementById("su-sresend-msg");
+  if (sresend) sresend.addEventListener("click", function (e) { e.preventDefault(); if (srmsg) srmsg.hidden = false; });
+
+  // Password show/hide toggles
+  var EYE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>';
+  var EYE_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M10.6 10.6a3 3 0 0 0 4.2 4.2"/><path d="M9.4 5.2A9.8 9.8 0 0 1 12 5c6.5 0 10 7 10 7a16.6 16.6 0 0 1-3.6 4.3"/><path d="M6.1 6.1A16.4 16.4 0 0 0 2 12s3.5 7 10 7a9.8 9.8 0 0 0 3.3-.56"/></svg>';
+  Array.prototype.slice.call(document.querySelectorAll(".pw-toggle")).forEach(function (btn) {
+    btn.innerHTML = EYE;
+    btn.addEventListener("click", function () {
+      var inp = document.getElementById(btn.getAttribute("data-target"));
+      if (!inp) return;
+      var show = inp.type === "password";
+      inp.type = show ? "text" : "password";
+      btn.innerHTML = show ? EYE_OFF : EYE;
+      btn.setAttribute("aria-pressed", show ? "true" : "false");
+      btn.setAttribute("aria-label", show ? "Hide password" : "Show password");
+    });
+  });
+
+  // Resend (prototype)
+  var resend = document.getElementById("su-resend");
+  var rmsg = document.getElementById("su-resend-msg");
+  if (resend) resend.addEventListener("click", function (e) { e.preventDefault(); if (rmsg) rmsg.hidden = false; });
+
+  // Different email -> back to Step 1, focus email
+  var diff = document.getElementById("su-different");
+  if (diff) diff.addEventListener("click", function (e) {
+    e.preventDefault(); show(s1);
+    var em = document.getElementById("su-email"); if (em) em.focus();
+  });
+})();
+</script>
+</body>
+</html>
