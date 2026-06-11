@@ -270,10 +270,10 @@
   .prose p em, .prose .gold { color: var(--accent); font-style: normal; }
   .lede { font-size: clamp(17px,1.5vw,20px); color: var(--fg); line-height: 1.6; max-width: 60ch; }
 
-  /* left-rule callout */
-  .callout { border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  /* left-rule callout — set in IBM Plex Sans */
+  .callout { font-family: var(--font-plex); border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 var(--radius-md) var(--radius-md) 0;
     padding: 20px 24px; margin: 28px 0; }
-  .callout p { margin: 0; font-size: 16px; color: var(--fg-muted); line-height: 1.6; }
+  .callout p { margin: 0; font-family: var(--font-plex); font-size: 16px; color: var(--fg-muted); line-height: 1.6; }
   .callout p b { color: var(--fg); }
   .callout.sky { border-left-color: var(--kin-skyblue); }
 
@@ -338,6 +338,9 @@
 
   /* ---------- membership tiers (economics) ---------- */
   .tiers { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-top: 48px; }
+  .tiers.six { grid-template-columns: repeat(3,1fr); }
+  @media (max-width: 880px) { .tiers.six { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px) { .tiers.six { grid-template-columns: 1fr; } }
   .tier { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px 22px; }
   .tier.featured { border-color: rgba(234,170,0,0.45); box-shadow: var(--shadow-glow-accent); }
   .tier .t-name { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kin-skyblue); }
