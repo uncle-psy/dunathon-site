@@ -397,9 +397,9 @@ section { position: relative; }
 .search-band .site-search { margin-top: 0; max-width: 680px; }
 
 /* Full WV DUNA logo (replaces the star mark + wordmark lockup) */
-.brand-logo { height: 30px; width: auto; display: block; }
-.footer-logo { height: 34px; margin-bottom: 6px; }
-@media (max-width: 480px) { .brand-logo { height: 26px; } }
+.brand-logo { height: 36px; width: auto; display: block; }
+.footer-logo { height: 42px; margin-bottom: 6px; }
+@media (max-width: 480px) { .brand-logo { height: 30px; } }
 
 /* =========================================================================
    Founder profile cards (founders.html) + Agent/ally cards (allies.html)
