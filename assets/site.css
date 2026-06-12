@@ -78,6 +78,7 @@
   .sec-title { font-family: var(--font-display); font-size: clamp(34px, 4.6vw, 56px); line-height: 1; margin: 0 0 20px; max-width: 20ch; }
   .sec-lead { font-size: clamp(17px, 1.4vw, 20px); color: var(--fg-muted); max-width: 56ch; line-height: 1.6; margin: 0; }
   .sec-lead b { color: var(--fg); font-weight: 700; }
+  .sec-lead + .sec-lead { margin-top: 0.9em; }
 
   /* definition cards */
   .def-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 52px; }
@@ -147,6 +148,7 @@
   .tl-item.sky .tl-date { color: var(--kin-skyblue); }
   .tl-title { font-family: var(--font-display); font-size: 30px; margin: 8px 0 12px; line-height: 1.05; }
   .tl-desc { font-size: 15.5px; color: var(--fg-muted); line-height: 1.6; max-width: 64ch; margin: 0; }
+  .tl-desc + .tl-desc { margin-top: 0.9em; }
   .tl-desc b { color: var(--fg); font-weight: 700; }
   .tl-meta { font-size: 13.5px; color: var(--fg-soft); margin: 12px 0 0; }
   .tl-meta a { color: var(--kin-skyblue); }
