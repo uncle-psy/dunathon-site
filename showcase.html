@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Showcase — Kiduna Club</title>
-  <meta name="description" content="The DUNAs forming during the Dunathon, organized by category — and the decision markets that pick the winners. Every tool, template, and agent here is available to any new or competing DUNA.">
+  <meta name="description" content="A living laboratory of new organizations, communities, ventures, and causes. Follow founders turning ideas into institutions through transparent decision markets. Everything learned is shared.">
   <link rel="icon" href="assets/wv-cosmic-mark.svg">
   <link rel="stylesheet" href="assets/colors_and_type.css">
   <link rel="stylesheet" href="assets/site.css">
@@ -24,7 +24,7 @@
           <a href="events.html">Events</a>
           <a href="showcase.html">Showcase</a>
         </div>
-        <a href="register.html" class="nav-cta">Register →</a>
+        <a href="https://luma.com/dunathon" target="_blank" rel="noopener" class="nav-cta">Register →</a>
         <button class="nav-burger" aria-label="Menu">☰</button>
       </nav>
       <div class="nav-mobile">
@@ -35,7 +35,7 @@
         <a href="culture.html">Culture</a>
         <a href="events.html">Events</a>
         <a href="showcase.html">Showcase</a>
-        <a href="register.html">Register →</a>
+        <a href="https://luma.com/dunathon" target="_blank" rel="noopener">Register →</a>
       </div>
     </div>
   </div>
@@ -45,355 +45,647 @@
     <img class="ridge" src="assets/ridge-motif.svg" alt="">
     <div class="wrap">
       <div class="eyebrow"><span class="dot"></span>Showcase · You Go First</div>
-      <h1>The movements taking <em class="wv-emph">shape.</em></h1>
-      <p class="lead">The DUNAs forming during the Dunathon, organized by category — and the decision markets that pick the winners. Every tool, template, and agent here is available to any new or competing DUNA.</p>
+      <h1>Explore the movements taking <em class="wv-emph">shape.</em></h1>
+      <p class="lead">The Dunathon is a living laboratory of new organizations, communities, ventures, and causes. Watch founders transform ideas into institutions, follow their progress through transparent decision markets, and discover the tools, agents, templates, and governance models they are creating along the way. Everything learned is shared. Nothing is ever wasted.</p>
     </div>
   </header>
 
-  <!-- ===== SUBNAV ===== -->
-  <div class="subnav"><div class="wrap"><span class="sn-label">On this page</span>
-    <a href="#categories">Categories</a>
-    <a href="#featured">Featured</a>
-    <a href="#dunas">The DUNAs</a>
-    <a href="#markets">How winners are chosen</a>
-    <a href="#build">Bring your own</a>
-  </div></div>
-
-  <!-- ===== 01 · CATEGORIES ===== -->
-  <section class="section" id="categories">
+  <!-- ===== COUNTDOWN ===== -->
+  <section class="lp-cd-shell">
     <div class="wrap">
-      <div class="sec-kicker">01 · Categories</div>
-      <h2 class="sec-title">Every movement finds its <em class="wv-emph">home.</em></h2>
-      <p class="sec-lead">A DUNA can belong to more than one category. These tags help you find what's close to you — and connect with organizers already working the same ground.</p>
-      <div class="cat-bar">
-        <div class="cat">Veterans <span class="ct">1</span></div>
-        <div class="cat">Community <span class="ct">4</span></div>
-        <div class="cat">Health <span class="ct">1</span></div>
-        <div class="cat">Creativity <span class="ct">4</span></div>
-        <div class="cat">Family <span class="ct">1</span></div>
-        <div class="cat">Real Estate &amp; Finance <span class="ct">1</span></div>
-        <div class="cat">Recovery <span class="ct">1</span></div>
-        <div class="cat">Culture &amp; Identity <span class="ct">2</span></div>
-        <div class="cat">Activism <span class="ct">1</span></div>
-        <div class="cat">Org Development <span class="ct">1</span></div>
-        <div class="cat">Entrepreneurship <span class="ct">1</span></div>
+      <div class="lp-countdown">
+        <div class="lp-cd-label"><span class="dot"></span>DUNAs go live <b>July 1, 2026 · 9:00 AM Eastern</b></div>
+        <div class="lp-cd-timer" id="lp-timer" role="timer" aria-label="Countdown to DUNA launch">
+          <div class="cell"><span class="n" id="cd-d">–</span><span class="u">days</span></div>
+          <div class="cell"><span class="n" id="cd-h">–</span><span class="u">hrs</span></div>
+          <div class="cell"><span class="n" id="cd-m">–</span><span class="u">min</span></div>
+          <div class="cell"><span class="n" id="cd-s">–</span><span class="u">sec</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 02 · FEATURED ===== -->
-  <section class="section" id="featured">
-    <div class="wrap">
-      <div class="sec-kicker">02 · Featured DUNA</div>
-      <h2 class="sec-title">The one that <em class="wv-emph">started it all.</em></h2>
-      <p class="sec-lead">One DUNA predates the Dunathon. It's the proof of concept — and the reason the event exists.</p>
-      <div class="feature-duna">
-        <div class="badge">Statewide</div>
-        <h3>WV DUNA</h3>
-        <p>The statewide movement for organizing and commerce — <b>West Virginians teaming together</b> to pool reach, capital, and clients on equal footing with the world. Every county, every community, one shared treasury and one shared voice. The proof that a whole state can act as one DUNA.</p>
+  <!-- ===== LAUNCHPAD ===== -->
+  <section class="section" id="dunas"><div class="wrap">
+    <div class="lp-toolbar">
+      <input id="lp-search" type="search" placeholder="Search DUNAs — name, mission, category, sponsor…" aria-label="Search DUNAs">
+      <div class="lp-sort">
+        <label for="lp-sort-sel">Sort by</label>
+        <select id="lp-sort-sel">
+          <option value="members" selected>Members</option>
+          <option value="fdv">FDV</option>
+          <option value="filed">Filing date</option>
+          <option value="change">Token price %</option>
+        </select>
+        <button id="lp-dir" type="button" title="Toggle sort direction" aria-label="Toggle sort direction">↓</button>
       </div>
     </div>
-  </section>
+    <div class="lp-note">Preview data — markets open and buttons go live when the first DUNAs file on July 1.</div>
+    <div class="lp-cats-bar" id="lp-catbar" role="group" aria-label="Filter by category"><button class="lp-fchip active" data-cat="">All</button><button class="lp-fchip" data-cat="regional">Regional</button><button class="lp-fchip" data-cat="community">Community</button><button class="lp-fchip" data-cat="service">Service</button><button class="lp-fchip" data-cat="creativity">Creativity</button><button class="lp-fchip" data-cat="health">Health</button><button class="lp-fchip" data-cat="real estate &amp; finance">Real Estate &amp; Finance</button><button class="lp-fchip" data-cat="culture &amp; identity">Culture &amp; Identity</button><button class="lp-fchip" data-cat="activism">Activism</button><button class="lp-fchip" data-cat="org development">Org Development</button><button class="lp-fchip" data-cat="family">Family</button><button class="lp-fchip" data-cat="recovery">Recovery</button><button class="lp-fchip" data-cat="entrepreneurship">Entrepreneurship</button><button class="lp-fchip" data-cat="energy">Energy</button><button class="lp-fchip" data-cat="consciousness">Consciousness</button><button class="lp-fchip" data-cat="relationships">Relationships</button><button class="lp-fchip" data-cat="gaming">Gaming</button><button class="lp-fchip" data-cat="civic">Civic</button><button class="lp-fchip" data-cat="investors">Investors</button><button class="lp-fchip" data-cat="small business">Small Business</button><button class="lp-fchip" data-cat="coaching">Coaching</button></div>
 
-  <!-- ===== 03 · THE DUNAS ===== -->
-  <section class="section" id="dunas">
-    <div class="wrap">
-      <div class="sec-kicker">03 · The DUNAs</div>
-      <h2 class="sec-title">Twelve movements, <em class="wv-emph">building now.</em></h2>
-      <p class="sec-lead">Each one is a real organization in formation — with a mission, a steward, and a live decision market you can vote on today.</p>
-
-      <div class="duna-grid">
-
-        <!-- Service Alliance -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">SA</div></div>
-          <div class="body">
-            <h3>Service Alliance</h3>
-            <div class="cats">
-              <span class="cc">Veterans</span>
+    <div class="lp-grid" id="lp-grid">
+        <div class="lp-card" data-name="wv duna" data-cats="regional|community" data-text="the statewide movement for organizing and commerce — west virginians teaming together to pool reach, capital, and clients on equal footing with the world." data-members="412" data-fdv="1240000" data-change="12.4" data-filed="2026-07-01">
+          <div class="lp-banner"><span class="mk">WV</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>WV DUNA</h3><span class="lp-delta up">+12.4%</span></div>
+            <div class="lp-cats"><span class="cc">Regional</span><span class="cc">Community</span></div>
+            <p class="lp-mission">The statewide movement for organizing and commerce — West Virginians teaming together to pool reach, capital, and clients on equal footing with the world.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">412</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$1.24M</span></div>
+              <div class="st"><span class="k">$WV</span><span class="v">$0.0310</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 1</span></div>
             </div>
-            <p class="mission">Verified infrastructure helping veterans navigate benefits, health, and the move to civilian work.</p>
-            <div class="by">Stewarded by 2nd Cavalry Association</div>
-            <div class="market">
-              <p class="mq">Should Service Alliance launch a benefits-navigation agent for veterans this Dunathon?</p>
-              <div class="vote-bar"><div class="for" style="width:81%"></div></div>
-              <div class="vote-legend"><span class="vf">81% For</span><span class="va">19% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- Fanduna -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">FD</div></div>
-          <div class="body">
-            <h3>Fanduna</h3>
-            <div class="cats">
-              <span class="cc">Creativity</span>
-              <span class="cc">Community</span>
+        <div class="lp-card" data-name="service alliance" data-cats="service" data-text="durable systems of identity, recognition, and mutual support for veterans, first responders, and the communities they serve." data-members="188" data-fdv="410000" data-change="8.2" data-filed="2026-07-01">
+          <div class="lp-banner"><span class="mk">SA</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Service Alliance</h3><span class="lp-delta up">+8.2%</span></div>
+            <div class="lp-cats"><span class="cc">Service</span></div>
+            <p class="lp-mission">Durable systems of identity, recognition, and mutual support for veterans, first responders, and the communities they serve.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">188</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$410K</span></div>
+              <div class="st"><span class="k">$SVC</span><span class="v">$0.0205</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 1</span></div>
             </div>
-            <p class="mission">Fan-owned collectives that back the artists and teams they love.</p>
-            <div class="by">Stewarded by the founding fan community</div>
-            <div class="market">
-              <p class="mq">Should Fanduna open its first artist treasury before the end of July?</p>
-              <div class="vote-bar"><div class="for" style="width:67%"></div></div>
-              <div class="vote-legend"><span class="vf">67% For</span><span class="va">33% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- Inner Clinic -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">IC</div></div>
-          <div class="body">
-            <h3>Inner Clinic</h3>
-            <div class="cats">
-              <span class="cc">Health</span>
+        <div class="lp-card" data-name="fanduna" data-cats="creativity|community" data-text="fan-owned collectives that back the artists and teams they love. sponsored by twenty-five eight studios" data-members="256" data-fdv="620000" data-change="21.7" data-filed="2026-07-01">
+          <div class="lp-banner"><span class="mk">FD</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Fanduna</h3><span class="lp-delta up">+21.7%</span></div>
+            <div class="lp-cats"><span class="cc">Creativity</span><span class="cc">Community</span></div>
+            <p class="lp-mission">Fan-owned collectives that back the artists and teams they love.</p>
+            <div class="lp-by">Sponsored by Twenty-Five Eight Studios</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">256</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$620K</span></div>
+              <div class="st"><span class="k">$FAN</span><span class="v">$0.0155</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 1</span></div>
             </div>
-            <p class="mission">Member-run access to care and health literacy, with agents that translate benefits and book appointments.</p>
-            <div class="by">Stewarded by community health organizers</div>
-            <div class="market">
-              <p class="mq">Should Inner Clinic deploy its first appointment-booking agent by August 1?</p>
-              <div class="vote-bar"><div class="for" style="width:74%"></div></div>
-              <div class="vote-legend"><span class="vf">74% For</span><span class="va">26% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vibe Coast -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">VC</div></div>
-          <div class="body">
-            <h3>Vibe Coast</h3>
-            <div class="cats">
-              <span class="cc">Creativity</span>
-              <span class="cc">Community</span>
-            </div>
-            <p class="mission">A coastal creative scene pooling reach and revenue for independent makers.</p>
-            <div class="by">Stewarded by the Vibe Coast collective</div>
-            <div class="market">
-              <p class="mq">Should Vibe Coast run a shared revenue pool for its first ten member-makers?</p>
-              <div class="vote-bar"><div class="for" style="width:58%"></div></div>
-              <div class="vote-legend"><span class="vf">58% For</span><span class="va">42% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- Mythic Endeavors -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">ME</div></div>
-          <div class="body">
-            <h3>Mythic Endeavors</h3>
-            <div class="cats">
-              <span class="cc">Creativity</span>
+        <div class="lp-card" data-name="mythic endeavors" data-cats="creativity" data-text="collaborative world-building and story ip owned by the people who make it. sponsored by creative procrastinations and whimsical necessities" data-members="87" data-fdv="150000" data-change="15.3" data-filed="2026-07-01">
+          <div class="lp-banner"><span class="mk">ME</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Mythic Endeavors</h3><span class="lp-delta up">+15.3%</span></div>
+            <div class="lp-cats"><span class="cc">Creativity</span></div>
+            <p class="lp-mission">Collaborative world-building and story IP owned by the people who make it.</p>
+            <div class="lp-by">Sponsored by Creative Procrastinations and Whimsical Necessities</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">87</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$150K</span></div>
+              <div class="st"><span class="k">$MYTH</span><span class="v">$0.0075</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 1</span></div>
             </div>
-            <p class="mission">Collaborative world-building and story IP owned by the people who make it.</p>
-            <div class="by">Stewarded by Mythic Endeavors founders</div>
-            <div class="market">
-              <p class="mq">Should Mythic Endeavors register its first shared IP agreement on-chain this summer?</p>
-              <div class="vote-bar"><div class="for" style="width:71%"></div></div>
-              <div class="vote-legend"><span class="vf">71% For</span><span class="va">29% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Indigenous Revival -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">IR</div></div>
-          <div class="body">
-            <h3>Indigenous Revival</h3>
-            <div class="cats">
-              <span class="cc">Culture &amp; Identity</span>
-              <span class="cc">Activism</span>
-            </div>
-            <p class="mission">Language, land, and tradition revitalization, including organized advocacy.</p>
-            <div class="by">Stewarded by Indigenous Revival organizers</div>
-            <div class="market">
-              <p class="mq">Should Indigenous Revival fund a language-preservation archive through the Dunathon treasury?</p>
-              <div class="vote-bar"><div class="for" style="width:88%"></div></div>
-              <div class="vote-legend"><span class="vf">88% For</span><span class="va">12% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- The Nature of Work -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">NW</div></div>
-          <div class="body">
-            <h3>The Nature of Work</h3>
-            <div class="cats">
-              <span class="cc">Org Development</span>
+        <div class="lp-card" data-name="inner clinic" data-cats="health" data-text="member-run access to care and health literacy, with agents that translate benefits and book appointments. sponsored by the inflammatory breast cancer — international consortium" data-members="94" data-fdv="180000" data-change="-3.1" data-filed="2026-07-08">
+          <div class="lp-banner"><span class="mk">IC</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Inner Clinic</h3><span class="lp-delta down">−3.1%</span></div>
+            <div class="lp-cats"><span class="cc">Health</span></div>
+            <p class="lp-mission">Member-run access to care and health literacy, with agents that translate benefits and book appointments.</p>
+            <div class="lp-by">Sponsored by the Inflammatory Breast Cancer — International Consortium</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">94</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$180K</span></div>
+              <div class="st"><span class="k">$CARE</span><span class="v">$0.0090</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 8</span></div>
             </div>
-            <p class="mission">Rebuilding how teams form, decide, and share what they make.</p>
-            <div class="by">Stewarded by workplace organizers</div>
-            <div class="market">
-              <p class="mq">Should The Nature of Work publish a shared decision-making framework for DUNA teams?</p>
-              <div class="vote-bar"><div class="for" style="width:63%"></div></div>
-              <div class="vote-legend"><span class="vf">63% For</span><span class="va">37% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Feathered Nest -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">FN</div></div>
-          <div class="body">
-            <h3>Feathered Nest</h3>
-            <div class="cats">
-              <span class="cc">Family</span>
-            </div>
-            <p class="mission">Pooled resources for families: childcare, eldercare, and the household commons.</p>
-            <div class="by">Stewarded by Feathered Nest families</div>
-            <div class="market">
-              <p class="mq">Should Feathered Nest launch a shared childcare fund as its first treasury action?</p>
-              <div class="vote-bar"><div class="for" style="width:77%"></div></div>
-              <div class="vote-legend"><span class="vf">77% For</span><span class="va">23% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- Freehold Alliance -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">FA</div></div>
-          <div class="body">
-            <h3>Freehold Alliance</h3>
-            <div class="cats">
-              <span class="cc">Real Estate &amp; Finance</span>
+        <div class="lp-card" data-name="vibe coast" data-cats="creativity|community" data-text="a coastal creative scene pooling reach and revenue for independent makers." data-members="121" data-fdv="240000" data-change="4.6" data-filed="2026-07-08">
+          <div class="lp-banner"><span class="mk">VC</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Vibe Coast</h3><span class="lp-delta up">+4.6%</span></div>
+            <div class="lp-cats"><span class="cc">Creativity</span><span class="cc">Community</span></div>
+            <p class="lp-mission">A coastal creative scene pooling reach and revenue for independent makers.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">121</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$240K</span></div>
+              <div class="st"><span class="k">$VIBE</span><span class="v">$0.0120</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 8</span></div>
             </div>
-            <p class="mission">Member-owned mortgage finance and shared-equity homeownership.</p>
-            <div class="by">Stewarded by Freehold Alliance members</div>
-            <div class="market">
-              <p class="mq">Should Freehold Alliance pilot a shared-equity homeownership model in one WV county this year?</p>
-              <div class="vote-bar"><div class="for" style="width:69%"></div></div>
-              <div class="vote-legend"><span class="vf">69% For</span><span class="va">31% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Soulsteading -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">SS</div></div>
-          <div class="body">
-            <h3>Soulsteading</h3>
-            <div class="cats">
-              <span class="cc">Recovery</span>
-            </div>
-            <p class="mission">Peer-led recovery, governed by the people in it — a community built on shared experience and mutual support.</p>
-            <div class="by">Stewarded by Soulsteading members</div>
-            <div class="market">
-              <p class="mq">Should Soulsteading establish a member-governed peer support fund this Dunathon?</p>
-              <div class="vote-bar"><div class="for" style="width:84%"></div></div>
-              <div class="vote-legend"><span class="vf">84% For</span><span class="va">16% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- Black Love -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">BL</div></div>
-          <div class="body">
-            <h3>Black Love</h3>
-            <div class="cats">
-              <span class="cc">Culture &amp; Identity</span>
-              <span class="cc">Community</span>
+        <div class="lp-card" data-name="freehold alliance" data-cats="real estate & finance" data-text="member-owned mortgage finance and home equity — pooling capital to invest in homes and share the upside." data-members="167" data-fdv="520000" data-change="9.8" data-filed="2026-07-08">
+          <div class="lp-banner"><span class="mk">FA</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Freehold Alliance</h3><span class="lp-delta up">+9.8%</span></div>
+            <div class="lp-cats"><span class="cc">Real Estate &amp; Finance</span></div>
+            <p class="lp-mission">Member-owned mortgage finance and home equity — pooling capital to invest in homes and share the upside.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">167</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$520K</span></div>
+              <div class="st"><span class="k">$HOLD</span><span class="v">$0.0260</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 8</span></div>
             </div>
-            <p class="mission">A movement centering Black families, business, and joy.</p>
-            <div class="by">Stewarded by Black Love organizers</div>
-            <div class="market">
-              <p class="mq">Should Black Love launch a member-owned commerce network for Black-owned businesses?</p>
-              <div class="vote-bar"><div class="for" style="width:79%"></div></div>
-              <div class="vote-legend"><span class="vf">79% For</span><span class="va">21% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-        <!-- Mapshifting -->
-        <div class="duna-card">
-          <div class="cover"><div class="mk">MS</div></div>
-          <div class="body">
-            <h3>Mapshifting</h3>
-            <div class="cats">
-              <span class="cc">Entrepreneurship</span>
-              <span class="cc">Creativity</span>
+        <div class="lp-card" data-name="black love" data-cats="culture & identity|community" data-text="a movement centering black families, business, and joy. sponsored by the african american holiday association" data-members="201" data-fdv="480000" data-change="18.5" data-filed="2026-07-08">
+          <div class="lp-banner"><span class="mk">BL</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Black Love</h3><span class="lp-delta up">+18.5%</span></div>
+            <div class="lp-cats"><span class="cc">Culture &amp; Identity</span><span class="cc">Community</span></div>
+            <p class="lp-mission">A movement centering Black families, business, and joy.</p>
+            <div class="lp-by">Sponsored by the African American Holiday Association</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">201</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$480K</span></div>
+              <div class="st"><span class="k">$BLV</span><span class="v">$0.0240</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 8</span></div>
             </div>
-            <p class="mission">A launchpad for founders mapping new paths and backing each other.</p>
-            <div class="by">Stewarded by Mapshifting founders</div>
-            <div class="market">
-              <p class="mq">Should Mapshifting run a peer-funded cohort for five early-stage founders this summer?</p>
-              <div class="vote-bar"><div class="for" style="width:61%"></div></div>
-              <div class="vote-legend"><span class="vf">61% For</span><span class="va">39% Against</span></div>
-              <div class="vote-btns"><button class="yes">Vote For</button><button class="no">Against</button></div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
             </div>
           </div>
         </div>
-
-      </div>
+        <div class="lp-card" data-name="indigenous revival" data-cats="culture & identity|activism" data-text="language, land, and tradition revitalization, including organized advocacy. based on the work of four arrows (don trent jacobs, phd, edd)" data-members="142" data-fdv="260000" data-change="2.9" data-filed="2026-07-15">
+          <div class="lp-banner"><span class="mk">IR</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Indigenous Revival</h3><span class="lp-delta up">+2.9%</span></div>
+            <div class="lp-cats"><span class="cc">Culture &amp; Identity</span><span class="cc">Activism</span></div>
+            <p class="lp-mission">Language, land, and tradition revitalization, including organized advocacy.</p>
+            <div class="lp-based">Based on the work of Four Arrows (Don Trent Jacobs, PhD, EdD)</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">142</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$260K</span></div>
+              <div class="st"><span class="k">$RVIV</span><span class="v">$0.0130</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 15</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="the nature of work" data-cats="org development" data-text="rebuilding how teams form, decide, and share what they make. sponsored by center for a loving workplace and the good work collective based on the work of reneé smith" data-members="76" data-fdv="130000" data-change="-1.8" data-filed="2026-07-15">
+          <div class="lp-banner"><span class="mk">NW</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>The Nature of Work</h3><span class="lp-delta down">−1.8%</span></div>
+            <div class="lp-cats"><span class="cc">Org Development</span></div>
+            <p class="lp-mission">Rebuilding how teams form, decide, and share what they make.</p>
+            <div class="lp-by">Sponsored by Center for a Loving Workplace and The Good Work Collective</div>
+            <div class="lp-based">Based on the work of Reneé Smith</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">76</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$130K</span></div>
+              <div class="st"><span class="k">$WORK</span><span class="v">$0.0065</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 15</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="feathered nest" data-cats="family" data-text="pooled resources for families: childcare, eldercare, and the household commons. based on the work of darcia narvaez, phd and robin wall kimmerer" data-members="103" data-fdv="190000" data-change="6.4" data-filed="2026-07-22">
+          <div class="lp-banner"><span class="mk">FN</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Feathered Nest</h3><span class="lp-delta up">+6.4%</span></div>
+            <div class="lp-cats"><span class="cc">Family</span></div>
+            <p class="lp-mission">Pooled resources for families: childcare, eldercare, and the household commons.</p>
+            <div class="lp-based">Based on the work of Darcia Narvaez, PhD and Robin Wall Kimmerer</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">103</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$190K</span></div>
+              <div class="st"><span class="k">$NEST</span><span class="v">$0.0095</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 22</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="soulsteading" data-cats="recovery" data-text="peer-led recovery, governed by the people in it — a community built on shared experience and mutual support. based on the work of bill thatcher and m. scott peck, md" data-members="88" data-fdv="140000" data-change="1.2" data-filed="2026-07-22">
+          <div class="lp-banner"><span class="mk">SS</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Soulsteading</h3><span class="lp-delta up">+1.2%</span></div>
+            <div class="lp-cats"><span class="cc">Recovery</span></div>
+            <p class="lp-mission">Peer-led recovery, governed by the people in it — a community built on shared experience and mutual support.</p>
+            <div class="lp-based">Based on the work of Bill Thatcher and M. Scott Peck, MD</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">88</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$140K</span></div>
+              <div class="st"><span class="k">$SOUL</span><span class="v">$0.0070</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 22</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="mapshifting" data-cats="entrepreneurship|creativity" data-text="a launchpad for founders mapping new paths and backing each other. sponsored by kiduna club" data-members="99" data-fdv="170000" data-change="-2.4" data-filed="2026-07-29">
+          <div class="lp-banner"><span class="mk">MS</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Mapshifting</h3><span class="lp-delta down">−2.4%</span></div>
+            <div class="lp-cats"><span class="cc">Entrepreneurship</span><span class="cc">Creativity</span></div>
+            <p class="lp-mission">A launchpad for founders mapping new paths and backing each other.</p>
+            <div class="lp-by">Sponsored by Kiduna Club</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">99</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$170K</span></div>
+              <div class="st"><span class="k">$MAP</span><span class="v">$0.0085</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 29</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="celebrity solar" data-cats="energy|community" data-text="financing solar energy — installations, shared ownership, and clean power whose returns stay with the community." data-members="134" data-fdv="350000" data-change="7.1" data-filed="2026-07-15">
+          <div class="lp-banner"><span class="mk">CS</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Celebrity Solar</h3><span class="lp-delta up">+7.1%</span></div>
+            <div class="lp-cats"><span class="cc">Energy</span><span class="cc">Community</span></div>
+            <p class="lp-mission">Financing solar energy — installations, shared ownership, and clean power whose returns stay with the community.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">134</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$350K</span></div>
+              <div class="st"><span class="k">$SUN</span><span class="v">$0.0175</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 15</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="cosmicon" data-cats="consciousness|creativity" data-text="exploring archetypal depth psychology, complementarity, and quantum consciousness — together, in the open. sponsored by cosmic humanity based on the work of howard teich, phd" data-members="81" data-fdv="120000" data-change="3.8" data-filed="2026-07-22">
+          <div class="lp-banner"><span class="mk">CO</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Cosmicon</h3><span class="lp-delta up">+3.8%</span></div>
+            <div class="lp-cats"><span class="cc">Consciousness</span><span class="cc">Creativity</span></div>
+            <p class="lp-mission">Exploring archetypal depth psychology, complementarity, and quantum consciousness — together, in the open.</p>
+            <div class="lp-by">Sponsored by Cosmic Humanity</div>
+            <div class="lp-based">Based on the work of Howard Teich, PhD</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">81</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$120K</span></div>
+              <div class="st"><span class="k">$COSM</span><span class="v">$0.0060</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 22</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="disclosure codes" data-cats="consciousness|community" data-text="a home for ascension, starseeds, and disclosure — a community making sense of what is emerging. sponsored by akashik academy based on the work of brad olsen" data-members="117" data-fdv="160000" data-change="26.2" data-filed="2026-07-29">
+          <div class="lp-banner"><span class="mk">DC</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Disclosure Codes</h3><span class="lp-delta up">+26.2%</span></div>
+            <div class="lp-cats"><span class="cc">Consciousness</span><span class="cc">Community</span></div>
+            <p class="lp-mission">A home for ascension, starseeds, and disclosure — a community making sense of what is emerging.</p>
+            <div class="lp-by">Sponsored by Akashik Academy</div>
+            <div class="lp-based">Based on the work of Brad Olsen</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">117</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$160K</span></div>
+              <div class="st"><span class="k">$CODE</span><span class="v">$0.0080</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 29</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="dunathon" data-cats="community|org development" data-text="the summerlong dunathon, itself a duna — built, guided, and governed by the members who join it. sponsored by university of charleston downtown innovation hub, wv blockchain foundation, and kinship intelligence institute" data-members="1024" data-fdv="2400000" data-change="14.2" data-filed="2026-07-01">
+          <div class="lp-banner"><span class="mk">DN</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Dunathon</h3><span class="lp-delta up">+14.2%</span></div>
+            <div class="lp-cats"><span class="cc">Community</span><span class="cc">Org Development</span></div>
+            <p class="lp-mission">The Summerlong Dunathon, itself a DUNA — built, guided, and governed by the members who join it.</p>
+            <div class="lp-by">Sponsored by University of Charleston Downtown Innovation Hub, WV Blockchain Foundation, and Kinship Intelligence Institute</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">1024</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$2.40M</span></div>
+              <div class="st"><span class="k">$DUNA</span><span class="v">$0.0480</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 1</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="safeword" data-cats="relationships|community" data-text="a dating duna — safe for all types of connections and explorations." data-members="226" data-fdv="300000" data-change="11.9" data-filed="2026-07-15">
+          <div class="lp-banner"><span class="mk">SW</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Safeword</h3><span class="lp-delta up">+11.9%</span></div>
+            <div class="lp-cats"><span class="cc">Relationships</span><span class="cc">Community</span></div>
+            <p class="lp-mission">A dating DUNA — safe for all types of connections and explorations.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">226</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$300K</span></div>
+              <div class="st"><span class="k">$SAFE</span><span class="v">$0.0150</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 15</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="gamer gates" data-cats="gaming|community" data-text="a casual game duna — card games, board games, and rpgs, as well as online games. sponsored by changing vegas and cryptovs" data-members="158" data-fdv="220000" data-change="5.7" data-filed="2026-07-22">
+          <div class="lp-banner"><span class="mk">GG</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Gamer Gates</h3><span class="lp-delta up">+5.7%</span></div>
+            <div class="lp-cats"><span class="cc">Gaming</span><span class="cc">Community</span></div>
+            <p class="lp-mission">A casual game DUNA — card games, board games, and RPGs, as well as online games.</p>
+            <div class="lp-by">Sponsored by Changing Vegas and CryptoVS</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">158</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$220K</span></div>
+              <div class="st"><span class="k">$GG</span><span class="v">$0.0110</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 22</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="kiduna live!" data-cats="community|creativity" data-text="part summit, part learning lab, part showcase, and part reunion — september 17–19 in shepherdstown, wv and live online. founders, builders, creators, researchers, and allies share breakthroughs across governance, economics, culture, and technology, forge new alliances, and close with the kiduna awards. sponsored by kiduna club and kinship intelligence institute" data-members="312" data-fdv="560000" data-change="9.4" data-filed="2026-07-01">
+          <div class="lp-banner"><span class="mk">KL</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Kiduna Live!</h3><span class="lp-delta up">+9.4%</span></div>
+            <div class="lp-cats"><span class="cc">Community</span><span class="cc">Creativity</span></div>
+            <p class="lp-mission">Part summit, part learning lab, part showcase, and part reunion — September 17–19 in Shepherdstown, WV and live online. Founders, builders, creators, researchers, and allies share breakthroughs across governance, economics, culture, and technology, forge new alliances, and close with the Kiduna Awards.</p>
+            <div class="lp-by">Sponsored by Kiduna Club and Kinship Intelligence Institute</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">312</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$560K</span></div>
+              <div class="st"><span class="k">$LIVE</span><span class="v">$0.0280</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 1</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="ansanm ayiti" data-cats="community|civic" data-text="food and learning for haiti — distributing non-perishables like rice, beans, pasta, oil, and canned fish; sending children to schools in their own communities; and reading and writing programs for parents. sponsored by joseph duvert" data-members="173" data-fdv="210000" data-change="6.8" data-filed="2026-07-15">
+          <div class="lp-banner"><span class="mk">AA</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Ansanm Ayiti</h3><span class="lp-delta up">+6.8%</span></div>
+            <div class="lp-cats"><span class="cc">Community</span><span class="cc">Civic</span></div>
+            <p class="lp-mission">Food and learning for Haiti — distributing non-perishables like rice, beans, pasta, oil, and canned fish; sending children to schools in their own communities; and reading and writing programs for parents.</p>
+            <div class="lp-by">Sponsored by Joseph Duvert</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">173</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$210K</span></div>
+              <div class="st"><span class="k">$AYITI</span><span class="v">$0.0105</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 15</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="nigerian entrepreneur's club" data-cats="entrepreneurship|community" data-text="support for entrepreneurs in nigeria — technical help, guidance, financing, training, and ai tools for building ventures that last." data-members="244" data-fdv="330000" data-change="13.6" data-filed="2026-07-15">
+          <div class="lp-banner"><span class="mk">NE</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Nigerian Entrepreneur's Club</h3><span class="lp-delta up">+13.6%</span></div>
+            <div class="lp-cats"><span class="cc">Entrepreneurship</span><span class="cc">Community</span></div>
+            <p class="lp-mission">Support for entrepreneurs in Nigeria — technical help, guidance, financing, training, and AI tools for building ventures that last.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">244</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$330K</span></div>
+              <div class="st"><span class="k">$NEC</span><span class="v">$0.0165</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 15</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="fedready" data-cats="small business|entrepreneurship" data-text="guidance and support for winning federal contracts — registrations, certifications, proposals, and the playbook for small businesses entering the federal market. sponsored by acmewerx" data-members="129" data-fdv="290000" data-change="4.1" data-filed="2026-07-22">
+          <div class="lp-banner"><span class="mk">FR</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>FedReady</h3><span class="lp-delta up">+4.1%</span></div>
+            <div class="lp-cats"><span class="cc">Small Business</span><span class="cc">Entrepreneurship</span></div>
+            <p class="lp-mission">Guidance and support for winning federal contracts — registrations, certifications, proposals, and the playbook for small businesses entering the federal market.</p>
+            <div class="lp-by">Sponsored by AcmeWerx</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">129</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$290K</span></div>
+              <div class="st"><span class="k">$FED</span><span class="v">$0.0145</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 22</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="non-toxic masculinity" data-cats="consciousness|community" data-text="reclaiming a grounded, generative masculinity — circles, mentorship, and inner work for men becoming whole. based on the work of robert bly, bill plotkin, phd, sophie strand, howard teich, phd, and the mankind project" data-members="142" data-fdv="180000" data-change="7.7" data-filed="2026-07-22">
+          <div class="lp-banner"><span class="mk">NM</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Non-Toxic Masculinity</h3><span class="lp-delta up">+7.7%</span></div>
+            <div class="lp-cats"><span class="cc">Consciousness</span><span class="cc">Community</span></div>
+            <p class="lp-mission">Reclaiming a grounded, generative masculinity — circles, mentorship, and inner work for men becoming whole.</p>
+            <div class="lp-based">Based on the work of Robert Bly, Bill Plotkin, PhD, Sophie Strand, Howard Teich, PhD, and the ManKind Project</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">142</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$180K</span></div>
+              <div class="st"><span class="k">$MASC</span><span class="v">$0.0090</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 22</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="let life lead" data-cats="coaching|consciousness" data-text="life coaching with a mission to create a truly inheritable world — awakening people to the interconnectedness of all things, so individuals, communities, and humanity can live and thrive with more clarity, more connection, and more freedom. based on the work of k. bradford brown, sophie sabbage, and warren kahn" data-members="165" data-fdv="230000" data-change="10.3" data-filed="2026-07-29">
+          <div class="lp-banner"><span class="mk">LL</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Let Life Lead</h3><span class="lp-delta up">+10.3%</span></div>
+            <div class="lp-cats"><span class="cc">Coaching</span><span class="cc">Consciousness</span></div>
+            <p class="lp-mission">Life coaching with a mission to create a truly inheritable world — awakening people to the interconnectedness of all things, so individuals, communities, and humanity can live and thrive with more clarity, more connection, and more freedom.</p>
+            <div class="lp-based">Based on the work of K. Bradford Brown, Sophie Sabbage, and Warren Kahn</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">165</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$230K</span></div>
+              <div class="st"><span class="k">$LEAD</span><span class="v">$0.0115</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 29</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="african leadership in agriculture" data-cats="civic|community" data-text="strengthening agricultural universities and tvet institutions to skill young people, support entrepreneurship, improve extension capacity, and drive climate-resilient transformation — adding the missing layer of leadership capacity and human-centered practices that scale across institutions and into community networks. sponsored by mpatapo" data-members="287" data-fdv="390000" data-change="16.9" data-filed="2026-08-05">
+          <div class="lp-banner"><span class="mk">AG</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>African Leadership in Agriculture</h3><span class="lp-delta up">+16.9%</span></div>
+            <div class="lp-cats"><span class="cc">Civic</span><span class="cc">Community</span></div>
+            <p class="lp-mission">Strengthening agricultural universities and TVET institutions to skill young people, support entrepreneurship, improve extension capacity, and drive climate-resilient transformation — adding the missing layer of leadership capacity and human-centered practices that scale across institutions and into community networks.</p>
+            <div class="lp-by">Sponsored by Mpatapo</div>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">287</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$390K</span></div>
+              <div class="st"><span class="k">$ALA</span><span class="v">$0.0195</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Aug 5</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="healthy soil, healthy people" data-cats="health|activism" data-text="reducing human exposure to glyphosate and promoting healthier alternatives in agriculture, landscaping, and land management — through collaborative research, public education, policy advocacy, regenerative farming, and consumer awareness, in support of transparent, evidence-based decisions that protect health while keeping food systems productive." data-members="198" data-fdv="250000" data-change="8.9" data-filed="2026-08-05">
+          <div class="lp-banner"><span class="mk">HS</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>Healthy Soil, Healthy People</h3><span class="lp-delta up">+8.9%</span></div>
+            <div class="lp-cats"><span class="cc">Health</span><span class="cc">Activism</span></div>
+            <p class="lp-mission">Reducing human exposure to glyphosate and promoting healthier alternatives in agriculture, landscaping, and land management — through collaborative research, public education, policy advocacy, regenerative farming, and consumer awareness, in support of transparent, evidence-based decisions that protect health while keeping food systems productive.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">198</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$250K</span></div>
+              <div class="st"><span class="k">$SOIL</span><span class="v">$0.0125</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Aug 5</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
+        <div class="lp-card" data-name="epic" data-cats="regional|civic|community" data-text="the eastern panhandle interdependence collective — a community-powered duna strengthening the resilience, sustainability, and democratic vitality of west virginia's eastern panhandle through advocacy, education, mutual aid, and collective action. together, we protect what matters, prepare for what comes next, and build the future we want to inhabit. epic neighbors educators farmers organizers civil liberties voting rights regenerative agriculture food security watershed emergency preparedness renewable energy" data-members="231" data-fdv="280000" data-change="9.1" data-filed="2026-07-08">
+          <div class="lp-banner"><span class="mk">EP</span><span class="hint">Banner image · 800×200</span></div>
+          <div class="lp-body">
+            <div class="lp-head"><h3>EPIC</h3><span class="lp-delta up">+9.1%</span></div>
+            <div class="lp-cats"><span class="cc">Regional</span><span class="cc">Civic</span><span class="cc">Community</span></div>
+            <p class="lp-mission">The Eastern Panhandle Interdependence Collective — a community-powered DUNA strengthening the resilience, sustainability, and democratic vitality of West Virginia's Eastern Panhandle through advocacy, education, mutual aid, and collective action. Together, we protect what matters, prepare for what comes next, and build the future we want to inhabit.</p>
+            <div class="lp-stats">
+              <div class="st"><span class="k">Members</span><span class="v">231</span></div>
+              <div class="st"><span class="k">FDV</span><span class="v">$280K</span></div>
+              <div class="st"><span class="k">$EPIC</span><span class="v">$0.0140</span></div>
+              <div class="st"><span class="k">Files</span><span class="v">Jul 8</span></div>
+            </div>
+            <div class="lp-btns">
+              <button class="btn btn-primary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Join</button>
+              <button class="btn btn-secondary" disabled aria-disabled="true" title="Available when DUNAs go live July 1">Explore</button>
+            </div>
+          </div>
+        </div>
     </div>
-  </section>
+    <p class="lp-empty" id="lp-empty" hidden>No DUNAs match that search.</p>
 
-  <!-- ===== 04 · HOW WINNERS ARE CHOSEN ===== -->
-  <section class="section" id="markets">
-    <div class="wrap">
-      <div class="sec-kicker">04 · How winners are chosen</div>
-      <h2 class="sec-title">No judges. Just <em class="wv-emph">members.</em></h2>
-      <p class="sec-lead">Winners aren't selected by a panel. They're selected by <b>decision markets</b> — a voting mechanism where you put real support behind what you want to see succeed.</p>
-
-      <div class="flow">
-        <div class="flow-step">
-          <div class="fs-n">01</div>
-          <h4>A proposal goes live</h4>
-          <p>Each DUNA posts a specific question — a goal it wants to pursue or a commitment it wants to make.</p>
-        </div>
-        <div class="flow-step">
-          <div class="fs-n">02</div>
-          <h4>Members vote</h4>
-          <p>You cast votes for or against. Votes are backed by tokens — the mechanism explained on <a href="economics.html">the economics page</a>.</p>
-        </div>
-        <div class="flow-step">
-          <div class="fs-n">03</div>
-          <h4>Support compounds</h4>
-          <p>The more members who join and vote, the more the signal strengthens. It rewards both the mission and the belief that it can be done.</p>
-        </div>
-        <div class="flow-step">
-          <div class="fs-n">04</div>
-          <h4>The treasury follows</h4>
-          <p>What members approve, the treasury funds. No override, no back-channel deal — the record is open on-chain.</p>
-        </div>
-      </div>
-
-      <div class="callout">
-        <p><b>Why this works —</b> a decision market doesn't just measure who likes an idea. It measures who believes it will actually happen. That extra step filters for real commitment, not just applause. Read how the governance system works on <a href="law.html">the law page</a> and how the economics back it up on <a href="economics.html">the economics page</a>.</p>
-      </div>
+    <div class="inline-cta">
+      <a href="https://luma.com/dunathon" target="_blank" rel="noopener" class="btn btn-primary">Register your DUNA →</a>
+      <a href="events.html" class="btn btn-secondary">See what's happening this summer</a>
     </div>
-  </section>
+  </div></section>
 
-  <!-- ===== 05 · BRING YOUR OWN ===== -->
-  <section class="section" id="build">
-    <div class="wrap">
-      <div class="sec-kicker">05 · Bring your own</div>
-      <h2 class="sec-title">Start your own — any time before <em class="wv-emph">September 9.</em></h2>
-      <p class="sec-lead">Every tool, agent, and template shown here is available to any new or competing DUNA. You don't have to build from scratch — you start from what's already working.</p>
+  <script>
+  (function () {
+    // Countdown to July 1, 2026, 9:00 AM Eastern (EDT, UTC-4)
+    var target = new Date("2026-07-01T09:00:00-04:00").getTime();
+    var d = document.getElementById("cd-d"), h = document.getElementById("cd-h"),
+        m = document.getElementById("cd-m"), s = document.getElementById("cd-s");
+    function tick() {
+      var diff = Math.max(0, target - Date.now());
+      var dd = Math.floor(diff / 86400000);
+      var hh = Math.floor(diff % 86400000 / 3600000);
+      var mm = Math.floor(diff % 3600000 / 60000);
+      var ss = Math.floor(diff % 60000 / 1000);
+      d.textContent = dd; h.textContent = String(hh).padStart(2, "0");
+      m.textContent = String(mm).padStart(2, "0"); s.textContent = String(ss).padStart(2, "0");
+      if (diff === 0) {
+        document.querySelector(".lp-cd-label").innerHTML = '<span class="dot"></span><b>DUNAs are live.</b>';
+      }
+    }
+    tick(); setInterval(tick, 1000);
 
-      <div class="callout sky">
-        <p>You can spin up a DUNA any time up to <b>September 9, 2026</b> — the last day of the Dunathon. That means a full summer to find your members, define your mission, and use the same platform these twelve are building on. The starter kit includes governance templates, a treasury shell, sample agents, and a ready-made decision market.</p>
-      </div>
-
-      <div class="inline-cta">
-        <a href="register.html" class="btn btn-primary">Register your DUNA →</a>
-        <a href="events.html" class="btn btn-secondary">See what's happening this summer</a>
-      </div>
-    </div>
-  </section>
+    // Search + filter + sort
+    var grid = document.getElementById("lp-grid");
+    var cards = Array.prototype.slice.call(grid.querySelectorAll(".lp-card"));
+    var search = document.getElementById("lp-search");
+    var sortSel = document.getElementById("lp-sort-sel");
+    var dirBtn = document.getElementById("lp-dir");
+    var catbar = document.getElementById("lp-catbar");
+    var empty = document.getElementById("lp-empty");
+    var state = { q: "", cat: "", desc: true };
+    function apply() {
+      var shown = 0;
+      cards.forEach(function (c) {
+        var hay = c.dataset.name + " " + c.dataset.cats + " " + c.dataset.text;
+        var hitQ = !state.q || hay.indexOf(state.q) !== -1;
+        var hitC = !state.cat || c.dataset.cats.split("|").indexOf(state.cat) !== -1;
+        c.hidden = !(hitQ && hitC); if (hitQ && hitC) shown++;
+      });
+      empty.hidden = shown !== 0;
+      var key = sortSel.value;
+      var dir = state.desc ? 1 : -1;
+      var sorted = cards.slice().sort(function (a, b) {
+        if (key === "filed") return (a.dataset.filed < b.dataset.filed ? 1 : -1) * dir;
+        return (parseFloat(b.dataset[key]) - parseFloat(a.dataset[key])) * dir;
+      });
+      sorted.forEach(function (c) { grid.appendChild(c); });
+      dirBtn.textContent = state.desc ? "\u2193" : "\u2191";
+    }
+    function setCat(cat) {
+      state.cat = cat;
+      Array.prototype.forEach.call(catbar.querySelectorAll(".lp-fchip"), function (b) {
+        b.classList.toggle("active", b.dataset.cat === cat);
+      });
+      apply();
+    }
+    search.addEventListener("input", function () { state.q = (search.value || "").trim().toLowerCase(); apply(); });
+    sortSel.addEventListener("change", apply);
+    dirBtn.addEventListener("click", function () { state.desc = !state.desc; apply(); });
+    catbar.addEventListener("click", function (e) {
+      var b = e.target.closest(".lp-fchip"); if (b) setCat(b.dataset.cat);
+    });
+    grid.addEventListener("click", function (e) {
+      var t = e.target.closest(".lp-cats .cc");
+      if (t) setCat(t.textContent.trim().toLowerCase());
+    });
+    apply();
+  })();
+  </script>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
@@ -405,10 +697,10 @@
           <p class="faint" style="font-size:0.8rem">Powered by <a href="https://kinship.systems" target="_blank" rel="noopener">Kinship Intelligence™</a>, Human Agency for the Agentic Era.</p>
         </div>
         <div><h4>Explore</h4><a href="tech.html">The Tech</a><a href="law.html">The Law</a><a href="economics.html">Economics</a><a href="culture.html">Culture</a><a href="events.html">Events</a><a href="showcase.html">Showcase</a></div>
-        <div><h4>Get started</h4><a href="register.html">Register</a><a href="app.html?skiplogin=1">Sign in</a><a href="events.html#duna-day">DUNA Day</a><a href="law.html#registered-agent">The Registered Agent</a></div>
+        <div><h4>Get started</h4><a href="https://luma.com/dunathon" target="_blank" rel="noopener">Register</a><a href="events.html#duna-day">DUNA Day</a><a href="law.html#registered-agent">The Registered Agent</a></div>
         <div><h4>About the Institute</h4><p class="faint" style="margin:0 0 0.7rem;font-size:0.85rem;max-width:34ch"><a class="kin-link" href="https://kinship.systems" target="_blank" rel="noopener">Kinship Intelligence Institute</a> is an independent 501(c)(3) ensuring the agentic AI era serves the wellbeing, autonomy, and prosperity of people and communities the market would otherwise pass over.</p><a href="https://kinship.institute" target="_blank" rel="noopener">Learn more ↗</a></div>
       </div>
-      <div class="footer-bottom"><span>© 2026 Kiduna Club™, all rights reserved. Patent Pending.</span><span class="draft-flag">Draft preview</span></div>
+      <div class="footer-bottom"><span>© 2026 Kiduna Club™, all rights reserved. Patent Pending.</span><span class="legal-links"><a href="tos.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></span></div>
     </div>
   </footer>
 

@@ -2,3 +2,10 @@
 .DS_Store
 .vercel
 node_modules
+
+# Loose source photos in repo root (optimized copies live under assets/)
+/*.png
+/*.jpg
+/*.JPG
+/*.jpeg
+/*.svg

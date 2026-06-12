@@ -272,6 +272,10 @@ section { position: relative; }
   .spotlight .panel { padding: 28px 22px; }
 }
 
+.legal-links { font-size: 0.78rem; color: var(--fg-soft); }
+.legal-links a { color: var(--fg-soft); text-decoration: none; }
+.legal-links a:hover { color: var(--fg-muted); text-decoration: underline; }
+
 /* signup hero: text + form side by side, stacked on mobile */
 .signup-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 @media (max-width: 920px) { .signup-hero-grid { grid-template-columns: 1fr; gap: 32px; } }
