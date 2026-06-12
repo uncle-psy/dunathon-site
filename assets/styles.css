@@ -272,6 +272,10 @@ section { position: relative; }
   .spotlight .panel { padding: 28px 22px; }
 }
 
+/* signup hero: text + form side by side, stacked on mobile */
+.signup-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+@media (max-width: 920px) { .signup-hero-grid { grid-template-columns: 1fr; gap: 32px; } }
+
 /* =========================================================================
    DUNA directory (dunas.html) + profile (duna.html) + auth modal
    ========================================================================= */

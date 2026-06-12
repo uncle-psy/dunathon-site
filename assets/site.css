@@ -218,6 +218,10 @@
   @media (max-width: 920px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } }
 
+  /* speakers: 3-up desktop, 2-up tablet, 1-up phone (declared late to win the cascade) */
+  @media (max-width: 920px) and (min-width: 641px) { body .speakers { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { body .speakers { grid-template-columns: 1fr; } }
+
   @media (max-width: 920px) {
     .nav-links { display: none; }
     .triad-grid, .def-row, .def-row.two, .pair, .sponsor-grid, .steps { grid-template-columns: 1fr; }
