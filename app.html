@@ -139,6 +139,7 @@
         <button class="navitem" data-go="instruct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg><span class="nv-label">Instruct</span></button>
         <button class="navitem" data-go="empower"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5"/><path d="M7 8h10v3a5 5 0 0 1-10 0z"/><path d="M12 16v5"/></svg><span class="nv-label">Empower</span></button>
         <button class="navitem" data-go="align"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span class="nv-label">Enact</span></button>
+        <button class="navitem" data-go="sentinel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="14" y2="7"/><line x1="18" y1="7" x2="20" y2="7"/><circle cx="16" cy="7" r="2"/><line x1="4" y1="12" x2="6" y2="12"/><line x1="10" y1="12" x2="20" y2="12"/><circle cx="8" cy="12" r="2"/><line x1="4" y1="17" x2="11" y2="17"/><line x1="15" y1="17" x2="20" y2="17"/><circle cx="13" cy="17" r="2"/></svg><span class="nv-label">Align</span></button>
         <button class="navitem" data-go="approve" data-minlevel="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="nv-label">Actions</span><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
 
         <span class="nav-group-label">Economics</span>
@@ -433,6 +434,70 @@
               <div class="skill-head"><span class="s-name">Morning Briefing</span><span class="s-state"><i></i>Program · running</span><a class="more-link" style="margin-left:auto" href="#">Skill.md ↗</a></div>
               <div class="recipe-line"><span class="kw when">When</span> it's 7:00am</div>
               <div class="recipe-line"><span class="kw do">Do</span> summarize new proposals across my DUNAs and send me a briefing</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ ALIGN · SENTINEL (HEARTS) ============ -->
+        <style>
+          .snt-presets{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+          .snt-presets button{font:inherit;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--fg-muted);border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:600;transition:140ms}
+          .snt-presets button:hover{color:var(--fg);border-color:var(--border-strong)}
+          .snt-presets button.active{background:var(--accent);color:var(--on-accent);border-color:transparent}
+          .snt-name{display:flex;gap:10px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+          .snt-name label{font-size:.72rem;color:var(--fg-soft);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+          .snt-name input{background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--fg);font:inherit;padding:10px 12px;min-width:240px;flex:1}
+          .snt-name input:focus{outline:none;border-color:var(--accent)}
+          .meters{display:flex;flex-direction:column;gap:18px;margin-top:4px}
+          .meter .m-top{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+          .meter .m-name{font-weight:700;color:var(--fg)}
+          .meter .m-tag{font-size:.74rem;color:var(--fg-soft)}
+          .meter .m-val{margin-left:auto;font-size:.82rem;font-weight:700;font-family:var(--font-mono)}
+          .meter input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
+          .meter .m-scale{display:flex;justify-content:space-between;font-size:.67rem;color:var(--fg-soft);margin-top:4px;gap:8px}
+          .meter .m-scale span:nth-child(2){color:var(--fg-muted)}
+          .m-val.c0{color:var(--success)}.m-val.c1{color:var(--kin-skyblue)}.m-val.c2{color:var(--accent)}.m-val.c3{color:var(--danger)}
+          .snt-foot{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:18px}
+          .snt-foot .note{font-size:.82rem;color:var(--fg-soft);margin-right:auto}
+          #snt-status{font-size:.82rem;color:var(--success);opacity:0;transition:opacity .25s;flex-basis:100%}
+        </style>
+        <section class="view" data-view="sentinel">
+          <div class="page page-wide">
+            <div class="pg-head">
+              <div>
+                <div class="pg-eyebrow">Building mode · Sentinel</div>
+                <h1 class="pg-title">Align</h1>
+                <p class="pg-sub">Every ally runs a <b>Sentinel</b> — an emotional-regulation layer built on <b>HEARTS</b>. It reads seven signals on a −100 to +100 meter and keeps your ally near center as it works. The default is <em class="wv-emph">aligned at the zeros</em>: attuned, self-authoring, grounded. You can also align an ally very differently — more dominant, more accommodating, more guarded — so it fits alongside the others on the network.</p>
+              </div>
+              <button class="btn btn-gold" id="new-sentinel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New Sentinel</button>
+            </div>
+
+            <div class="pg-eyebrow" style="margin-bottom:10px">Your sentinels</div>
+            <div class="grid g3" id="sentinel-list" style="margin-bottom:24px">
+              <div class="wb"><div class="k"><i></i>The Big Kiduna · default</div><div class="v" style="font-size:.95rem;line-height:1.3">Aligned · all signals centered</div></div>
+              <div class="wb"><div class="k"><i></i>Treasury Guard</div><div class="v" style="font-size:.95rem;line-height:1.3">Grounded · Self-Authorship · Purposeful</div></div>
+            </div>
+
+            <div class="card" id="sentinel-builder">
+              <div class="snt-name">
+                <label for="snt-name-input">Sentinel name</label>
+                <input id="snt-name-input" type="text" placeholder="Aligned Sentinel">
+              </div>
+              <p class="muted" style="font-size:.82rem;margin:0 0 18px">Start from a preset, then drag any signal. Center (0) is the healthy default; the ends are the strong and weak extremes the Sentinel watches for. Each notch is a HEARTS landmark.</p>
+              <div class="snt-presets" id="snt-presets">
+                <button class="active" data-preset="aligned">Aligned (zeros)</button>
+                <button data-preset="dominant">Dominant</button>
+                <button data-preset="accommodating">Accommodating</button>
+                <button data-preset="guarded">Guarded</button>
+                <button data-preset="visionary">Visionary</button>
+              </div>
+              <div class="meters" id="snt-meters"></div>
+              <div class="snt-foot">
+                <span class="note">Default is aligned at the zeros — centered on all seven signals.</span>
+                <button class="btn btn-ghost btn-sm" id="snt-reset">Reset to center</button>
+                <button class="btn btn-gold btn-sm" id="snt-save">Save Sentinel</button>
+                <span id="snt-status"></span>
+              </div>
             </div>
           </div>
         </section>
@@ -956,5 +1021,91 @@
 </aside>
 
 <script src="assets/app.js"></script>
+<script>
+/* HEARTS Sentinel aligner — builds the seven signal meters in the Align view. */
+(function () {
+  var SIGNALS = [
+    ["harmony","Harmony","attunement — sensing, resonating, relating",["Relational Breakdown","Chronic Conflict","Discord","Social Drift","Attunement","Over-Accommodation","People-Pleasing","Fawning","Self-Abandonment"]],
+    ["empowerment","Empowerment","agency — choosing, initiating, following through",["Collapse","Resignation","Helplessness","Hesitation","Self-Authorship","Forceful Drive","Pushiness","Domination","Coercive Control"]],
+    ["artistry","Artistry","adaptability — learning, iterating, transforming",["Deadlock","Calcification","Stagnation","Cautious Repetition","Adaptability","Constant Tweaking","Novelty Chasing","Restlessness","Identity Whiplash"]],
+    ["reason","Reason","purpose — making meaning, choosing direction",["Void","Despair","Aimlessness","Drift","Purposeful","Rigid Certainty","Dogma","Obsession","Fanatic Fixation"]],
+    ["trust","Trust","safety — secure enough to engage",["Panic Loop","Chronic Fear","Anxiety","Tension","Grounded","Over-Optimism","Reckless Faith","Naïveté","Self-Endangerment"]],
+    ["synthIn","Synthesis · Inward","integration — digesting experience",["Shutdown","Dissociation","Numbness","Emotional Distance","Integrated","Over-Processing","Rumination","Navel-Gazing","Self-Absorption"]],
+    ["synthOut","Synthesis · Outward","expression — coherent outward form",["Vanishing","Chronic Invisibility","Disappearing","Holding Back","Coherent","Over-Performing","Image-Driven","Performative Projection","Steamroll"]]
+  ];
+  var PRESETS = {
+    aligned: {},
+    dominant: { empowerment:75, synthOut:50, reason:25, harmony:-25, trust:50 },
+    accommodating: { harmony:75, empowerment:-50, synthOut:-25, trust:25 },
+    guarded: { trust:-50, harmony:-25, synthIn:-25, synthOut:-25 },
+    visionary: { artistry:50, reason:25, synthOut:25, empowerment:25 }
+  };
+  var wrap = document.getElementById("snt-meters");
+  if (!wrap) return;
+  var marksByKey = {};
+  SIGNALS.forEach(function (s) {
+    var key = s[0], name = s[1], tag = s[2], marks = s[3];
+    marksByKey[key] = marks;
+    var d = document.createElement("div");
+    d.className = "meter"; d.setAttribute("data-key", key);
+    d.innerHTML =
+      '<div class="m-top"><span class="m-name">' + name + '</span><span class="m-tag">' + tag + '</span><span class="m-val"></span></div>' +
+      '<input type="range" min="-100" max="100" step="25" value="0">' +
+      '<div class="m-scale"><span>−100 ' + marks[0] + '</span><span>0 ' + marks[4] + '</span><span>+100 ' + marks[8] + '</span></div>';
+    wrap.appendChild(d);
+    var rng = d.querySelector("input"), val = d.querySelector(".m-val");
+    function upd() {
+      var v = parseInt(rng.value, 10), a = Math.abs(v);
+      var c = a === 0 ? "c0" : a === 25 ? "c1" : a === 50 ? "c2" : "c3";
+      val.className = "m-val " + c;
+      val.textContent = (v > 0 ? "+" : (v < 0 ? "−" : "")) + Math.abs(v) + " · " + marks[(v / 25) + 4];
+    }
+    rng.addEventListener("input", upd);
+    d._set = function (v) { rng.value = v; upd(); };
+    upd();
+  });
+  function setActiveChip(p) {
+    document.querySelectorAll("#snt-presets button").forEach(function (b) {
+      b.classList.toggle("active", b.getAttribute("data-preset") === p);
+    });
+  }
+  function applyPreset(p) {
+    var map = PRESETS[p] || {};
+    wrap.querySelectorAll(".meter").forEach(function (m) { m._set(map[m.getAttribute("data-key")] || 0); });
+  }
+  document.querySelectorAll("#snt-presets button").forEach(function (b) {
+    b.addEventListener("click", function () { setActiveChip(b.getAttribute("data-preset")); applyPreset(b.getAttribute("data-preset")); });
+  });
+  var nameI = document.getElementById("snt-name-input");
+  document.getElementById("new-sentinel").addEventListener("click", function () {
+    setActiveChip("aligned"); applyPreset("aligned");
+    if (nameI) { nameI.value = ""; nameI.focus(); }
+    document.getElementById("sentinel-builder").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  document.getElementById("snt-reset").addEventListener("click", function () { setActiveChip("aligned"); applyPreset("aligned"); });
+  document.getElementById("snt-save").addEventListener("click", function () {
+    var nm = (nameI && nameI.value.trim()) || "Aligned Sentinel";
+    var offs = [];
+    wrap.querySelectorAll(".meter").forEach(function (m) {
+      var v = parseInt(m.querySelector("input").value, 10);
+      if (v !== 0) offs.push(marksByKey[m.getAttribute("data-key")][(v / 25) + 4]);
+    });
+    var summary = offs.length ? offs.slice(0, 3).join(" · ") : "Aligned · all signals centered";
+    var list = document.getElementById("sentinel-list");
+    var card = document.createElement("div");
+    card.className = "wb";
+    card.innerHTML = '<div class="k"><i></i>' + nm + '</div><div class="v" style="font-size:.95rem;line-height:1.3">' + summary + '</div>';
+    list.insertBefore(card, list.firstChild);
+    var st = document.getElementById("snt-status");
+    if (st) {
+      st.textContent = offs.length
+        ? 'Saved "' + nm + '" — aligned away from center on ' + offs.length + ' signal' + (offs.length > 1 ? "s" : "") + "."
+        : 'Saved "' + nm + '" — aligned at the zeros, fully centered.';
+      st.style.opacity = 1;
+      setTimeout(function () { st.style.opacity = 0; }, 4500);
+    }
+  });
+})();
+</script>
 </body>
 </html>
