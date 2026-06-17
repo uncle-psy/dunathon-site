@@ -82,13 +82,23 @@
     $$("#rail-builder [data-go]").forEach(function (n) { VIEW_MODE[n.getAttribute("data-go")] = "builder"; });
     VIEW_MODE["chat"] = "active"; VIEW_MODE["setup"] = "builder";
   }
+  /* ---- Deep-link / URL state (hash <-> view) --------------------------- */
+  function viewExists(v) { return !!(v && (VIEW_MODE[v] || $('.view[data-view="' + v + '"]'))); }
+  function hashView() { return (location.hash || "").replace(/^#/, "") || ""; }
+  var pendingView = null;   // deep-link target to honor after the prototype login
+  var routingHash = false;  // guard: navigation came FROM the URL, so don't rewrite it
+  function syncHash(view) {
+    if (routingHash || !view) return;
+    var nh = "#" + view;
+    if (location.hash !== nh) { try { history.replaceState(null, "", nh); } catch (e) { location.hash = view; } }
+  }
   function go(view) {
     if (view === "newduna") { toast("Prototype: New-DUNA flow includes name, mission, Coin price, and a theme step in Builder."); return; }
     if (view === "account") beforeAccount();
     if (view === "directory") renderDirectory(curDirTab);
     var m = VIEW_MODE[view];
     if (m && m !== state.mode) setMode(m, { go: false });
-    state.view = view; save();
+    state.view = view; save(); syncHash(view);
     $$(".view").forEach(function (v) { v.classList.toggle("is-active", v.getAttribute("data-view") === view); });
     $$("[data-go]").forEach(function (n) { n.classList.toggle("active", n.getAttribute("data-go") === view); });
     var sc = $(".main-scroll"); if (sc) sc.scrollTop = 0;
@@ -197,6 +207,7 @@
     // dock default: open on wide screens
     if (state.dockOpen === null) state.dockOpen = window.innerWidth > 1100;
     app.classList.toggle("dock-open", !!state.dockOpen);
+    if (pendingView && viewExists(pendingView)) { var pv = pendingView; pendingView = null; go(pv); return; }  // deep link
     if (!state.firstBuyDone) { go("account"); return; }   // post-onboarding -> buy coins
     go("chat"); openChat(state.firstRun ? "host" : "alchemist");
   }
@@ -454,6 +465,13 @@
   /* ---- Bind ------------------------------------------------------------ */
   function bind() {
     indexViews();
+    // Deep links: route when the hash changes (pasted link, manual edit, back/forward)
+    window.addEventListener("hashchange", function () {
+      var v = hashView();
+      if (!v || !viewExists(v) || v === state.view) return;
+      if (!state.loggedIn) { pendingView = v; return; }  // honor after login
+      routingHash = true; go(v); routingHash = false;
+    });
     $("#login-btn") && $("#login-btn").addEventListener("click", function (e) { e.preventDefault(); login(); });
     $("#logout") && $("#logout").addEventListener("click", logout);
     $("#logout-2") && $("#logout-2").addEventListener("click", logout);
@@ -567,11 +585,15 @@
     var lvlb = $('[data-proto-level="' + LEVELS[levelIdx()].id + '"]'); if (lvlb) segSelect("[data-proto-level]", lvlb);
     applyDuna(); applyLevel(); applyPlatform();
     if (params.get("skiplogin") === "1") {
+      var wantView = params.get("view") || hashView() || null;
+      pendingView = wantView;
       login();
       if (params.get("duna") && DUNAS[params.get("duna")]) switchDuna(params.get("duna"));
-      if (params.get("mode")) setMode(params.get("mode"), { go: false });
-      if (params.get("view")) go(params.get("view"));
-    } else { app.hidden = true; $("#auth").hidden = false; }
+      if (params.get("mode") && !wantView) setMode(params.get("mode"));
+    } else {
+      pendingView = hashView() || null;   // remember deep-link target; honored after login
+      app.hidden = true; $("#auth").hidden = false;
+    }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();
