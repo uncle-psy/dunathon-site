@@ -143,10 +143,10 @@
         <button class="navitem" data-go="approve" data-minlevel="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="nv-label">Actions</span><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
 
         <span class="nav-group-label">Economics</span>
-        <button class="navitem" data-go="offerings" data-minlevel="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13l7-9 9 7-7 9z"/><circle cx="14" cy="9" r="1.4"/></svg><span class="nv-label">Offerings</span><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
+        <button class="navitem" data-go="offerings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13l7-9 9 7-7 9z"/><circle cx="14" cy="9" r="1.4"/></svg><span class="nv-label">Offerings</span></button>
         <button class="navitem" data-go="coins"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span class="nv-label">Coins</span></button>
         <button class="navitem" data-go="codes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15l6-6"/><path d="M10 6l1-1a4 4 0 0 1 6 6l-1 1"/><path d="M14 18l-1 1a4 4 0 0 1-6-6l1-1"/></svg><span class="nv-label">Codes</span></button>
-        <button class="navitem" data-go="team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20a6 6 0 0 1 12 0M14.5 20a4.5 4.5 0 0 1 7-3.7"/></svg><span class="nv-label">Alliances</span></button>
+        <button class="navitem" data-go="alliances"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20a6 6 0 0 1 12 0M14.5 20a4.5 4.5 0 0 1 7-3.7"/></svg><span class="nv-label">Alliances</span></button>
 
         <span class="nav-group-label">Flows</span>
         <button class="navitem" data-go="gatherings" data-minlevel="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><span class="nv-label">Gatherings</span><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button>
@@ -520,12 +520,207 @@
         <!-- ============ OFFERINGS ============ -->
         <section class="view" data-view="offerings">
           <div class="page page-wide">
-            <div class="pg-head"><div><div class="pg-eyebrow">Studio mode · Economics</div><h1 class="pg-title">Offerings</h1><p class="pg-sub">Products and services your DUNA and allies offer to the network.</p></div><button class="btn btn-gold" data-lockbtn data-minlevel="2">＋ New offering</button></div>
-            <div class="upgrade-note" data-minlevel="2"><span class="un-ico">🔒</span><div><h4>Offerings open at Founder</h4><p>Reach <b>Founder</b> (hold $100 in Kidunaverse) to list paid products and services under your DUNA's legal standing.</p></div><button class="btn btn-gold btn-sm" data-go="earn">See levels</button></div>
-            <div class="grid g3">
-              <div class="studio-card"><div class="sc-head"><span class="sc-ico">◷</span><span class="tag green">Live</span></div><h3>Coverage as a service</h3><p>Service Alliance sells verified wireless coverage to carriers. $4,200 / mo recurring.</p></div>
-              <div class="studio-card"><div class="sc-head"><span class="sc-ico">✦</span><span class="tag gold">Draft</span></div><h3>Ally subscriptions</h3><p>Let members subscribe to your published allies, priced in Kidunaverse.</p></div>
+            <style>
+              [hidden]{display:none!important}
+              .of-tools{display:flex;gap:10px;flex-wrap:wrap}
+              .of-models{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 22px}
+              .of-model{border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 16px;background:var(--surface)}
+              .of-model .mh{font-weight:700;color:var(--fg);font-size:.9rem}
+              .of-model .md{font-size:.76rem;color:var(--fg-soft);margin-top:3px;line-height:1.45}
+              .of-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px}
+              .of-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 18px 14px;display:flex;flex-direction:column;gap:10px}
+              .of-card.archived{opacity:.5}
+              .of-top{display:flex;align-items:center;gap:10px}
+              .of-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:var(--surface-elev);color:var(--accent);flex:none;font-size:.95rem}
+              .of-name{font-family:var(--font-display);font-size:1.05rem;color:var(--fg);line-height:1.1}
+              .of-status{margin-left:auto;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid var(--border);color:var(--fg-soft);white-space:nowrap}
+              .of-status.live{color:var(--success);border-color:rgba(0,235,117,.4)}
+              .of-status.draft{color:var(--kin-skyblue);border-color:rgba(3,204,217,.4)}
+              .of-badges{display:flex;flex-wrap:wrap;gap:6px}
+              .of-b{font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--fg-soft);border:1px solid var(--border);border-radius:999px;padding:3px 8px}
+              .of-b.kind{color:var(--kin-skyblue);border-color:rgba(3,204,217,.35)}
+              .of-b.cat{color:var(--kin-magenta);border-color:rgba(236,0,140,.35)}
+              .of-price{font-family:var(--font-display);font-size:1.1rem;color:var(--fg)}
+              .of-price small{font-family:var(--font-sans);font-size:.72rem;color:var(--fg-soft)}
+              .of-sub{font-size:.74rem;color:var(--fg-soft)}
+              .of-acts{display:flex;flex-wrap:wrap;gap:6px}
+              .of-acts .chip{cursor:pointer}
+              .of-panel{border:1px solid var(--border-strong);border-radius:var(--radius-xl);padding:24px;margin:4px 0 22px;background:linear-gradient(150deg,#100E59,#0A0D33)}
+              .of-panel h3{font-family:var(--font-display);font-size:1.2rem;color:var(--fg);margin:0 0 4px}
+              .of-fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+              .of-panel label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-soft);margin-bottom:6px}
+              .of-panel input,.of-panel select,.of-panel textarea{width:100%;font:inherit;font-size:.88rem;color:var(--fg);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xs);padding:8px 10px}
+              .of-panel .full{grid-column:1 / -1}
+              .of-drop{border:1px dashed var(--border-strong);border-radius:var(--radius-lg);padding:24px;text-align:center;color:var(--fg-soft);font-size:.84rem;background:var(--surface);line-height:1.5}
+              .of-note{font-size:.78rem;color:var(--fg-soft);margin:14px 0 0}
+              .of-conn{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px dashed var(--border)}
+              .of-conn:last-child{border-bottom:0}
+              @media(max-width:820px){.of-grid,.of-models,.of-fgrid{grid-template-columns:1fr}}
+            </style>
+
+            <div class="pg-head"><div>
+              <div class="pg-eyebrow">Building mode · Economics</div>
+              <h1 class="pg-title">Offerings</h1>
+              <p class="pg-sub">Anything your DUNA, alliances, and allies offer to the network — <b>physical or digital</b>, sold <b>one-time</b>, by <b>subscription</b> (monthly or annual), or unlocked by <b>holding a coin</b>. Every offering is listed under your DUNA's legal standing and paid through agentic commerce.</p>
+            </div><div class="of-tools"><button class="btn btn-soft" id="of-upload">Upload catalogue</button><button class="btn btn-gold" id="of-new">＋ New offering</button></div></div>
+
+            <div class="grid g3" style="margin-bottom:18px">
+              <div class="wb"><div class="k"><i></i>Live offerings</div><div class="v">5</div></div>
+              <div class="wb"><div class="k"><i></i>Active subscribers</div><div class="v">222</div></div>
+              <div class="wb"><div class="k"><i></i>Revenue · 30d</div><div class="v">$8.9k</div></div>
             </div>
+
+            <div class="of-models">
+              <div class="of-model"><div class="mh">One-time payment</div><div class="md">A single purchase — physical goods, a digital download, a ticket. Priced in USD or any DUNA coin.</div></div>
+              <div class="of-model"><div class="mh">Subscription</div><div class="md">Recurring access billed monthly or annually — memberships, ally access, a box that ships each month.</div></div>
+              <div class="of-model"><div class="mh">Token-gated</div><div class="md">No payment — unlocked while the buyer holds a set amount of a particular coin in their wallet. Stop holding, lose access.</div></div>
+              <div class="of-model"><div class="mh">Physical or digital</div><div class="md">Ship a product and track inventory, or deliver a file, link, or an Ally. Both run through the same checkout.</div></div>
+            </div>
+
+            <!-- CREATE -->
+            <div class="of-panel" id="of-create" hidden>
+              <h3>Create an offering</h3>
+              <p class="of-note" style="margin:0 0 6px">Listed under <b>Kidunaverse</b> · paid through agentic commerce with full identity, authority, and accountability.</p>
+              <div class="of-fgrid">
+                <div class="full"><label>Name</label><input id="of-f-name" type="text" placeholder="e.g. Appalachian Roast — 12 oz"></div>
+                <div class="full"><label>Description</label><textarea rows="2" placeholder="What the buyer gets."></textarea></div>
+                <div><label>Kind</label><div class="seg" id="of-kind"><button class="active" data-k="Physical">Physical</button><button data-k="Digital">Digital</button></div></div>
+                <div><label>Listed under <small style="text-transform:none;letter-spacing:0;color:var(--fg-dim);font-weight:400">— one or more</small></label><select multiple size="4"><option selected>Kidunaverse</option><option>Service Alliance</option><option>Cosmicon</option><option>Mapshifting</option></select></div>
+                <div class="of-physical full"><label>Fulfillment</label><input type="text" placeholder="SKU, inventory count, shipping options"></div>
+                <div class="of-digital full" hidden><label>Deliverable</label><input type="text" placeholder="File, link, license key, or an Ally to grant access to"></div>
+                <div class="full"><label>Pricing</label><div class="seg" id="of-pricing"><button class="active" data-p="onetime">One-time</button><button data-p="sub">Subscription</button><button data-p="gated">Token-gated</button></div></div>
+                <div id="of-onetime" class="full"><div class="of-fgrid" style="margin:0">
+                  <div><label>Price</label><input type="number" placeholder="18.00"></div>
+                  <div><label>Currency <small style="text-transform:none;letter-spacing:0;color:var(--fg-dim);font-weight:400">— accept any</small></label><select multiple size="5"><option selected>USDC</option><option>KIDUNA · Kidunaverse</option><option>SRVA · Service Alliance</option><option>CSMC · Cosmicon</option><option>MAPS · Mapshifting</option></select></div>
+                </div></div>
+                <div id="of-sub" class="full" hidden><div class="of-fgrid" style="margin:0">
+                  <div><label>Monthly price</label><input type="number" placeholder="9.00"></div>
+                  <div><label>Annual price</label><input type="number" placeholder="90.00"></div>
+                  <div><label>Currency <small style="text-transform:none;letter-spacing:0;color:var(--fg-dim);font-weight:400">— accept any</small></label><select multiple size="5"><option selected>USDC</option><option>KIDUNA</option><option>SRVA</option><option>CSMC</option><option>MAPS</option></select></div>
+                  <div><label>Billing</label><select><option>Monthly &amp; annual</option><option>Monthly only</option><option>Annual only</option></select></div>
+                </div></div>
+                <div id="of-gated" class="full" hidden><div class="of-fgrid" style="margin:0">
+                  <div><label>Coin to hold</label><select><option>KIDUNA · Kidunaverse</option><option>SRVA · Service Alliance</option><option>CSMC · Cosmicon</option><option>MAPS · Mapshifting</option></select></div>
+                  <div><label>Amount held in wallet</label><input type="number" placeholder="100"></div>
+                  <div class="full"><label>Access unlocked</label><input type="text" placeholder="A channel, a download, an event, an Ally — granted while held"></div>
+                </div></div>
+                <div class="full"><label>Card payments</label><label style="display:flex;align-items:center;gap:10px;margin:0;font-weight:400;letter-spacing:0;text-transform:none;color:var(--fg-muted);font-size:.88rem"><input type="checkbox" style="width:auto"> Accept cards via <b style="color:var(--fg);margin:0 .25em">Stripe</b> — in addition to crypto (USDC and DUNA coins)</label></div>
+                <div><label>Visibility</label><div class="seg"><button class="active">Public</button><button>Private</button><button>Secret</button></div></div>
+                <div><label>Connect to catalogue</label><select><option>None</option><option>Mountain State Goods (Shopify)</option><option>Cosmicon Merch (CSV)</option></select></div>
+              </div>
+              <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;align-items:center">
+                <button class="btn btn-gold btn-sm" id="of-create-go">Create offering</button>
+                <button class="btn btn-soft btn-sm" id="of-create-cancel">Cancel</button>
+                <span class="of-note" id="of-create-msg" style="margin:0"></span>
+              </div>
+            </div>
+
+            <!-- CATALOGUE -->
+            <div class="of-panel" id="of-catalogue" hidden>
+              <h3>Upload a catalogue</h3>
+              <p class="of-note" style="margin:0 0 12px">Import many offerings at once from a spreadsheet or store, and keep them <b>connected</b> — edits to the source sync back, and the imported items stay linked to it.</p>
+              <div class="of-fgrid">
+                <div><label>Source</label><select id="of-cat-src"><option>CSV / spreadsheet</option><option>Shopify store</option><option>Square catalog</option><option>Product feed URL</option></select></div>
+                <div><label>Listed under <small style="text-transform:none;letter-spacing:0;color:var(--fg-dim);font-weight:400">— one or more</small></label><select multiple size="4"><option selected>Kidunaverse</option><option>Service Alliance</option><option>Cosmicon</option><option>Mapshifting</option></select></div>
+                <div class="full"><div class="of-drop">Drop a CSV here, or paste a feed URL.<br>Columns map to <b>name, description, kind, price, currency, subscription, coin-gate, SKU, image</b>.</div></div>
+              </div>
+              <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;align-items:center">
+                <button class="btn btn-gold btn-sm" id="of-cat-import">Import &amp; connect</button>
+                <button class="btn btn-soft btn-sm" id="of-cat-cancel">Cancel</button>
+                <span class="of-note" id="of-cat-msg" style="margin:0"></span>
+              </div>
+              <div style="margin-top:20px">
+                <div class="pg-eyebrow" style="margin-bottom:8px">Connected catalogues</div>
+                <div id="of-conns">
+                  <div class="of-conn"><span class="of-ico">▤</span><div style="flex:1"><div style="color:var(--fg);font-weight:600;font-size:.9rem">Mountain State Goods</div><div class="of-sub">Shopify · 24 items · synced 2h ago</div></div><span class="of-b cat">Connected</span></div>
+                  <div class="of-conn"><span class="of-ico">▤</span><div style="flex:1"><div style="color:var(--fg);font-weight:600;font-size:.9rem">Cosmicon Merch</div><div class="of-sub">CSV · 12 items · synced yesterday</div></div><span class="of-b cat">Connected</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OFFERINGS -->
+            <div class="of-grid" id="of-grid">
+              <div class="of-card">
+                <div class="of-top"><span class="of-ico">☕</span><div class="of-name">Appalachian Roast — 12 oz</div><span class="of-status live">Live</span></div>
+                <div class="of-badges"><span class="of-b kind">Physical</span><span class="of-b">One-time</span><span class="of-b">Cosmicon</span><span class="of-b cat">Mountain State Goods</span></div>
+                <div class="of-price">$18 <small>one-time</small></div><div class="of-sub">240 sold · ships in 2–3 days</div>
+                <div class="of-acts"><button class="chip">Edit</button><button class="chip">View</button><button class="chip" data-act="pause">Pause</button><button class="chip" data-act="archive">Archive</button></div>
+              </div>
+              <div class="of-card">
+                <div class="of-top"><span class="of-ico">✦</span><div class="of-name">The Concierge — Ally access</div><span class="of-status live">Live</span></div>
+                <div class="of-badges"><span class="of-b kind">Digital</span><span class="of-b">Subscription</span><span class="of-b">Kidunaverse</span></div>
+                <div class="of-price">$9 <small>/mo · $90 /yr</small></div><div class="of-sub">184 subscribers</div>
+                <div class="of-acts"><button class="chip">Edit</button><button class="chip">View</button><button class="chip" data-act="pause">Pause</button><button class="chip" data-act="archive">Archive</button></div>
+              </div>
+              <div class="of-card">
+                <div class="of-top"><span class="of-ico">✷</span><div class="of-name">Founders' Lounge</div><span class="of-status live">Live</span></div>
+                <div class="of-badges"><span class="of-b kind">Digital</span><span class="of-b">Token-gated</span><span class="of-b">Kidunaverse</span></div>
+                <div class="of-price">Hold 100 <small>KIDUNA</small></div><div class="of-sub">96 members holding · access while held</div>
+                <div class="of-acts"><button class="chip">Edit</button><button class="chip">View</button><button class="chip" data-act="pause">Pause</button><button class="chip" data-act="archive">Archive</button></div>
+              </div>
+              <div class="of-card">
+                <div class="of-top"><span class="of-ico">▦</span><div class="of-name">Seed Box — monthly</div><span class="of-status live">Live</span></div>
+                <div class="of-badges"><span class="of-b kind">Physical</span><span class="of-b">Subscription</span><span class="of-b">Service Alliance</span><span class="of-b cat">Mountain State Goods</span></div>
+                <div class="of-price">$25 <small>/mo</small></div><div class="of-sub">38 subscribers · ships monthly</div>
+                <div class="of-acts"><button class="chip">Edit</button><button class="chip">View</button><button class="chip" data-act="pause">Pause</button><button class="chip" data-act="archive">Archive</button></div>
+              </div>
+              <div class="of-card">
+                <div class="of-top"><span class="of-ico">❡</span><div class="of-name">New River Field Guide (PDF)</div><span class="of-status draft">Draft</span></div>
+                <div class="of-badges"><span class="of-b kind">Digital</span><span class="of-b">One-time</span><span class="of-b">Service Alliance</span></div>
+                <div class="of-price">$12 <small>one-time</small></div><div class="of-sub">Draft · ready to publish</div>
+                <div class="of-acts"><button class="chip">Edit</button><button class="chip">Publish</button><button class="chip" data-act="archive">Archive</button></div>
+              </div>
+              <div class="of-card">
+                <div class="of-top"><span class="of-ico">◷</span><div class="of-name">Coverage as a service</div><span class="of-status live">Live</span></div>
+                <div class="of-badges"><span class="of-b kind">Digital</span><span class="of-b">Subscription</span><span class="of-b">Service Alliance</span></div>
+                <div class="of-price">$4,200 <small>/mo</small></div><div class="of-sub">Sold to carriers · 3 active contracts</div>
+                <div class="of-acts"><button class="chip">Edit</button><button class="chip">View</button><button class="chip" data-act="pause">Pause</button><button class="chip" data-act="archive">Archive</button></div>
+              </div>
+            </div>
+
+            <script>
+            (function(){
+              var P=document.getElementById('of-create'), C=document.getElementById('of-catalogue');
+              var nb=document.getElementById('of-new'), ub=document.getElementById('of-upload');
+              if(!P||!nb) return;
+              function reveal(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); }
+              nb.addEventListener('click', function(){ P.hidden=!P.hidden; C.hidden=true; if(!P.hidden){ reveal(P); var n=document.getElementById('of-f-name'); if(n) n.focus(); } });
+              ub.addEventListener('click', function(){ C.hidden=!C.hidden; P.hidden=true; if(!C.hidden) reveal(C); });
+              document.getElementById('of-create-cancel').addEventListener('click', function(){ P.hidden=true; });
+              document.getElementById('of-cat-cancel').addEventListener('click', function(){ C.hidden=true; });
+              var kind='Physical', pricing='onetime';
+              P.querySelectorAll('#of-kind button').forEach(function(b){ b.addEventListener('click', function(){ P.querySelectorAll('#of-kind button').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); kind=b.getAttribute('data-k'); var ph=(kind==='Physical'); P.querySelector('.of-physical').hidden=!ph; P.querySelector('.of-digital').hidden=ph; }); });
+              P.querySelectorAll('#of-pricing button').forEach(function(b){ b.addEventListener('click', function(){ P.querySelectorAll('#of-pricing button').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); pricing=b.getAttribute('data-p'); ['onetime','sub','gated'].forEach(function(k){ document.getElementById('of-'+k).hidden=(k!==pricing); }); }); });
+              P.querySelectorAll('.seg').forEach(function(seg){ if(seg.id) return; seg.querySelectorAll('button').forEach(function(b){ b.addEventListener('click', function(){ seg.querySelectorAll('button').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); }); }); });
+              document.getElementById('of-create-go').addEventListener('click', function(){
+                var nm=(document.getElementById('of-f-name').value||'').trim()||'New offering';
+                var pl=(pricing==='onetime')?'One-time':(pricing==='sub')?'Subscription':'Token-gated';
+                var ph=(pricing==='gated')?'Hold a coin <small>to access</small>':(pricing==='sub')?'$— <small>/mo</small>':'$— <small>one-time</small>';
+                var grid=document.getElementById('of-grid');
+                var card=document.createElement('div'); card.className='of-card';
+                card.innerHTML='<div class="of-top"><span class="of-ico">✦</span><div class="of-name">'+nm+'</div><span class="of-status draft">Draft</span></div>'
+                  +'<div class="of-badges"><span class="of-b kind">'+kind+'</span><span class="of-b">'+pl+'</span><span class="of-b">Kidunaverse</span></div>'
+                  +'<div class="of-price">'+ph+'</div><div class="of-sub">Draft · finish pricing and publish</div>'
+                  +'<div class="of-acts"><button class="chip">Edit</button><button class="chip">Publish</button><button class="chip" data-act="archive">Archive</button></div>';
+                grid.insertBefore(card, grid.firstChild); P.hidden=true;
+                var m=document.getElementById('of-create-msg'); if(m){ m.textContent='Created “'+nm+'” as a draft '+pl.toLowerCase()+' offering.'; m.style.color='var(--success)'; }
+              });
+              document.getElementById('of-cat-import').addEventListener('click', function(){
+                var src=document.getElementById('of-cat-src').value;
+                var conns=document.getElementById('of-conns');
+                var row=document.createElement('div'); row.className='of-conn';
+                row.innerHTML='<span class="of-ico">▤</span><div style="flex:1"><div style="color:var(--fg);font-weight:600;font-size:.9rem">New catalogue</div><div class="of-sub">'+src+' · 18 items · just now</div></div><span class="of-b cat">Connected</span>';
+                conns.insertBefore(row, conns.firstChild);
+                var m=document.getElementById('of-cat-msg'); if(m){ m.textContent='Imported 18 offerings — connected and syncing.'; m.style.color='var(--success)'; }
+              });
+              document.getElementById('of-grid').addEventListener('click', function(e){
+                var a=e.target.closest('[data-act="archive"]');
+                if(a){ var c=a.closest('.of-card'); var st=c.querySelector('.of-status'); if(st){ st.textContent='Archived'; st.className='of-status'; } c.classList.add('archived'); return; }
+                var p=e.target.closest('[data-act="pause"]');
+                if(p){ var c2=p.closest('.of-card'); var st2=c2.querySelector('.of-status'); if(st2){ st2.textContent='Paused'; st2.className='of-status'; } }
+              });
+            })();
+            </script>
           </div>
         </section>
 
@@ -814,8 +1009,8 @@
           </div>
         </section>
 
-        <!-- ============ TEAM (Founders) ============ -->
-        <section class="view" data-view="team">
+        <!-- ============ ALLIANCES ============ -->
+        <section class="view" data-view="alliances">
           <div class="page page-wide">
             <style>
               .al-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px}
