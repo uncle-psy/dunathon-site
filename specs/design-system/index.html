@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiduna — Design System</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  :root { --maxw: 1160px; }
+  body { margin: 0; background: var(--bg-deep); color: var(--fg); }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- Masthead ---------- */
+  .masthead { position: relative; overflow: hidden; border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(1100px 460px at 86% -16%, rgba(234,170,0,0.26), transparent 56%),
+      radial-gradient(720px 520px at -8% 70%, rgba(3,204,217,0.16), transparent 60%),
+      linear-gradient(160deg, #100E59, #09073A 78%); }
+  .masthead .ridge { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 150px; object-fit: cover; opacity: 0.9; pointer-events: none; }
+  .masthead .inner { position: relative; z-index: 1; padding: 30px 28px 78px; max-width: var(--maxw); margin: 0 auto; }
+  .masthead .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 76px; }
+  .masthead .lockup { height: 40px; width: auto; display: block; }
+  .masthead .ver { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-soft);
+    border: 1px solid var(--border); border-radius: var(--radius-pill); padding: 7px 14px; }
+  .masthead .eyebrow { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--kin-skyblue); margin-bottom: 18px; }
+  .masthead h1 { font-family: var(--font-display); font-size: 76px; line-height: 0.98; margin: 0; max-width: 14ch; text-wrap: balance; }
+  .masthead .lede { font-size: 18px; color: var(--fg-muted); max-width: 56ch; line-height: 1.55; margin: 22px 0 0; }
+  .threeword { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
+  .threeword span { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--on-accent); background: var(--accent); padding: 8px 16px; border-radius: var(--radius-pill); }
+  .threeword span.sky { background: var(--kin-skyblue); }
+  .threeword span.ghost { background: transparent; color: var(--fg-soft); border: 1px solid var(--border-strong); }
+
+  /* ---------- Section scaffolding ---------- */
+  section.block { padding: 76px 0 8px; border-top: 1px solid var(--border); }
+  section.block:first-of-type { border-top: 0; }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 36px; }
+  .sec-head .num { font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; }
+  .sec-head h2 { font-family: var(--font-display); font-size: 40px; margin: 0; }
+  .sec-head .desc { margin-left: auto; max-width: 42ch; font-size: 14px; color: var(--fg-soft); line-height: 1.5; text-align: right; }
+  .subhead { font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-soft); margin: 40px 0 16px; }
+  .subhead:first-child { margin-top: 0; }
+
+  /* ---------- Logo ---------- */
+  .logo-hero { border: 1px solid var(--border); border-radius: var(--radius-xl); overflow: hidden;
+    background: radial-gradient(900px 380px at 70% 120%, rgba(3,204,217,0.12), transparent 60%), linear-gradient(150deg,#100E59,#0A0D33); }
+  .logo-hero .stage { padding: 72px; display: flex; align-items: center; justify-content: center; }
+  .logo-hero .stage img { height: 96px; width: auto; }
+  .logo-hero .cap { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-top: 1px solid var(--border); font-size: 12px; color: var(--fg-soft); }
+  .logo-hero .cap code { font-family: var(--font-mono); color: var(--fg-muted); }
+
+  .logo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 16px; }
+  .swatch-logo { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .swatch-logo .field { height: 132px; display: grid; place-items: center; }
+  .swatch-logo .field img { height: 42px; width: auto; }
+  .swatch-logo .meta { padding: 12px 16px; border-top: 1px solid var(--border); background: var(--surface); }
+  .swatch-logo .meta b { display: block; font-family: var(--font-sans); font-weight: 700; font-size: 13px; color: var(--fg); }
+  .swatch-logo .meta span { font-size: 11px; color: var(--fg-soft); }
+  .f-navy { background: var(--bg); } .f-flag { background: var(--wv-flagblue); }
+  .f-gold { background: var(--accent); } .f-cream { background: var(--kin-cream-white); } .f-deep { background: var(--bg-deep); }
+
+  .mark-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 16px; }
+  .mark-card { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); padding: 22px; display: grid; gap: 14px; justify-items: center; }
+  .mark-card .disc { width: 100%; height: 120px; border-radius: var(--radius-md); display: grid; place-items: center; }
+  .mark-card .disc img { height: 72px; width: auto; }
+  .mark-card .lbl { font-size: 11px; color: var(--fg-soft); letter-spacing: 0.06em; }
+
+  /* clearspace + misuse */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+  .panel h4 { font-family: var(--font-display); font-size: 22px; margin: 0 0 6px; }
+  .panel p.note { font-size: 13px; color: var(--fg-soft); margin: 0 0 18px; line-height: 1.5; }
+  .clearbox { position: relative; background: var(--bg); border-radius: var(--radius-md); padding: 40px; display: grid; place-items: center; }
+  .clearbox .pad { position: relative; padding: 38px; }
+  .clearbox .pad::before { content: ""; position: absolute; inset: 0; border: 1px dashed rgba(3,204,217,0.55); border-radius: 6px; }
+  .clearbox img { height: 44px; width: auto; display: block; }
+  .clearbox .x { position: absolute; bottom: 12px; right: 16px; font-family: var(--font-mono); font-size: 10px; color: var(--kin-skyblue); letter-spacing: 0.1em; }
+
+  .dont-list { display: grid; gap: 12px; }
+  .dont { display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; }
+  .dont .mini { width: 64px; height: 48px; border-radius: 6px; display: grid; place-items: center; overflow: hidden; position: relative; }
+  .dont .mini img { height: 26px; width: auto; }
+  .dont .mini.bad::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,58,58,0.18) 6px, rgba(255,58,58,0.18) 12px); }
+  .dont .cross { position: absolute; top: 3px; right: 4px; color: var(--kin-error); font-weight: 900; font-size: 14px; }
+  .dont .txt { font-size: 13px; color: var(--fg-muted); line-height: 1.45; }
+  .dont .txt b { color: var(--fg); font-weight: 700; }
+
+  /* ---------- Colors ---------- */
+  .color-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  .color-grid.semantic { grid-template-columns: repeat(5,1fr); }
+  .chip { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+  .chip .fill { height: 96px; }
+  .chip .info { padding: 12px 14px; }
+  .chip .info .nm { font-family: var(--font-sans); font-weight: 700; font-size: 13px; color: var(--fg); }
+  .chip .info .hex { font-family: var(--font-mono); font-size: 11px; color: var(--fg-soft); text-transform: uppercase; margin-top: 3px; }
+  .chip .info .tok { font-family: var(--font-mono); font-size: 10px; color: var(--fg-dim); margin-top: 6px; }
+  .chip .info .role { font-size: 11px; color: var(--fg-soft); margin-top: 6px; line-height: 1.4; }
+  .ring-gold { box-shadow: 0 0 0 1px var(--wv-gold-deep); }
+
+  /* ---------- Type ---------- */
+  .type-row { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); padding: 26px 28px; display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: center; margin-bottom: 12px; }
+  .type-row .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-soft); line-height: 1.7; }
+  .type-row .meta b { display:block; color: var(--fg); font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .specimen-display { font-family: var(--font-display); line-height: 1.0; }
+  .specimen-body { font-family: var(--font-sans); color: var(--fg); }
+  .glyphs { font-family: var(--font-display); font-size: 30px; color: var(--fg-muted); letter-spacing: 0.04em; }
+  .emph-demo { font-family: var(--font-display); font-size: 46px; line-height: 1.08; }
+  .logotype-note { border: 1px solid var(--border); border-radius: var(--radius-lg); background: linear-gradient(160deg,#100E59,#0A0D33); padding: 26px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+  .logotype-note img { height: 56px; width: auto; }
+
+  /* ---------- Spacing / radius / elevation ---------- */
+  .triple { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .spacing-stack { display: grid; gap: 10px; }
+  .sp { display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 14px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-soft); }
+  .sp .bar { height: 14px; background: var(--accent); border-radius: 3px; }
+  .radii-stack { display: grid; gap: 12px; }
+  .rad { display: flex; align-items: center; gap: 14px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-soft); }
+  .rad .box { width: 56px; height: 40px; background: var(--surface-elev); border: 1px solid var(--border-strong); }
+  .elev-stack { display: grid; gap: 16px; }
+  .elev { height: 56px; border-radius: var(--radius-md); background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; padding: 0 16px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-soft); }
+
+  /* ---------- Components ---------- */
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .comp { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+  .comp h4 { font-family: var(--font-display); font-size: 22px; margin: 0 0 18px; }
+  .btn { font-family: var(--font-sans); font-weight: 700; font-size: 14px; padding: 12px 20px; border-radius: var(--radius-xs); border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 160ms; }
+  .btn-primary { background: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary { background: transparent; color: var(--fg); border-color: var(--border-strong); }
+  .btn-secondary:hover { border-color: var(--fg); }
+  .btn-ghost { background: transparent; color: var(--fg-muted); }
+  .btn-ghost:hover { color: var(--fg); }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .inp { width: 100%; box-sizing: border-box; background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 12px 14px; color: var(--fg); font-family: var(--font-sans); font-size: 14px; }
+  .inp::placeholder { color: var(--fg-dim); }
+  .inp:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .field-stack { display: grid; gap: 12px; }
+  .field-lbl { font-size: 11px; font-weight: 700; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg-soft); margin-bottom: 7px; display: block; }
+  .badge-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .badge { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 12px; border-radius: var(--radius-pill); }
+  .badge.gold { background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(234,170,0,0.35); }
+  .badge.sky { background: rgba(3,204,217,0.14); color: var(--kin-skyblue); border: 1px solid rgba(3,204,217,0.32); }
+  .badge.solid { background: var(--accent); color: var(--on-accent); }
+  .badge.neutral { background: var(--surface-muted); color: var(--fg-muted); border: 1px solid var(--border); }
+  .badge.success { background: rgba(0,235,117,0.12); color: var(--kin-complete); border: 1px solid rgba(0,235,117,0.3); }
+  .demo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .demo-card .cover { height: 90px; background: radial-gradient(circle at 30% 30%, #EAAA00 0%, #7B3F00 48%, #09073A 100%); position: relative; }
+  .demo-card .cover .badge { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.45); color:#fff; border:0; backdrop-filter: blur(6px); }
+  .demo-card .cbody { padding: 16px; display: grid; gap: 8px; }
+  .demo-card h3 { font-family: var(--font-display); font-size: 20px; margin: 0; }
+  .demo-card .by { font-size: 12px; color: var(--fg-soft); }
+  .demo-card .num { font-family: var(--font-display); font-size: 20px; }
+
+  footer { margin: 80px 0 60px; padding-top: 26px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; color: var(--fg-soft); font-size: 12px; }
+  footer img { height: 26px; width: auto; opacity: 0.9; }
+
+  @media (max-width: 860px){
+    .logo-grid,.color-grid,.color-grid.semantic,.mark-row,.comp-grid,.two-col,.triple,.logotype-note { grid-template-columns: 1fr 1fr; }
+    .sec-head .desc { display:none; }
+    .masthead h1 { font-size: 52px; }
+  }
+  /* shared site chrome (scoped — no global body/h1/a overrides) */
+  .dn-topbar{position:sticky;top:0;z-index:25;background:rgba(3,1,27,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .dn-topbar-in{display:flex;align-items:center;gap:18px;max-width:1240px;margin:0 auto;padding:11px 22px}
+  .dn-brand{display:inline-flex;align-items:center}
+  .dn-brand img{height:24px;width:auto;display:block}
+  .dn-nav{display:flex;gap:18px;flex-wrap:wrap}
+  .dn-nav a{font-family:var(--font-sans);font-size:13.5px;color:var(--fg-muted);white-space:nowrap}
+  .dn-nav a:hover{color:var(--fg)}
+  .dn-nav a.active{color:var(--fg)}
+  .dn-cta{margin-left:auto;font-family:var(--font-sans);font-weight:700;font-size:13.5px;padding:9px 16px;border-radius:var(--radius-pill);background:var(--accent);color:var(--on-accent);white-space:nowrap}
+  .dn-cta:hover{background:var(--accent-hover,#FFC229)}
+  .dn-footer{border-top:1px solid var(--border);background:var(--bg-deep)}
+  .dn-footer-in{max-width:1240px;margin:0 auto;padding:26px 22px;display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+  .dn-foot-nav{display:flex;flex-wrap:wrap;gap:14px 20px}
+  .dn-foot-nav a{font-family:var(--font-sans);font-size:13px;color:var(--fg-soft)}
+  .dn-foot-nav a:hover{color:var(--fg)}
+  .dn-foot-meta{margin-left:auto;font-size:12px;color:var(--fg-soft)}
+  @media(max-width:880px){.dn-nav{display:none}.dn-cta{display:none}.dn-foot-meta{margin-left:0}}
+</style></head>
+<body>
+<div class="dn-topbar"><div class="dn-topbar-in"><a class="dn-brand" href="../../index.html"><img src="../../assets/kiduna-logo.svg" alt="Kiduna Club"></a><nav class="dn-nav"><a href="../../tech.html">The Tech</a><a href="../../law.html">The Law</a><a href="../../economics.html">Economics</a><a href="../../culture.html">Culture</a><a href="../../events.html">Events</a><a href="../../showcase.html">Showcase</a><a class="active" href="../../specs/index.html">Specs</a><a href="../../app.html">Prototype</a><a href="../../tasks.html">Tasks</a></nav><a class="dn-cta" href="https://luma.com/dunathon" target="_blank" rel="noopener">Register →</a></div></div>
+
+<!-- ===== MASTHEAD ===== -->
+<header class="masthead">
+  <img class="ridge" src="assets/ridge-motif.svg" alt="">
+  <div class="inner">
+    <div class="topbar">
+      <img class="lockup" src="assets/kiduna-logo.svg" alt="Kiduna">
+      <div class="ver">Design System · v2</div>
+    </div>
+    <div class="eyebrow">Kiduna · A West Virginia DUNA</div>
+    <h1>Wild, wonderful, <em class="wv-emph" style="font-size:76px">and self-governed.</em></h1>
+    <p class="lede">The brand and interface system for Kiduna — a decentralized, member-owned nonprofit rooted in West Virginia. Old Gold on deep navy, a sky-blue counterpoint, and a celestial mark — wild, wonderful, and self-governed.</p>
+    <div class="threeword">
+      <span>Deep</span><span class="sky">Golden</span><span class="ghost">Civic</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ===== 01 LOGO ===== -->
+  <section class="block">
+    <div class="sec-head">
+      <span class="num">01</span>
+      <h2>Logo</h2>
+      <p class="desc">A celestial mark — a gold sun cradling a warm-cream crescent moon, ringed by sparkles — paired with the custom rounded <b>“Kiduna”</b> wordmark in sky blue. Gold sun, warm-cream moon (#FFF6D5), sky-blue type on deep navy.</p>
+    </div>
+
+    <div class="subhead">Primary lockup</div>
+    <div class="logo-hero">
+      <div class="stage"><img src="assets/kiduna-logo.svg" alt="Kiduna primary lockup"></div>
+      <div class="cap"><span>Cosmic mark + “Kiduna” wordmark · the default signature</span><code>kiduna-logo.svg</code></div>
+    </div>
+
+    <div class="subhead">Colorways</div>
+    <div class="logo-grid">
+      <div class="swatch-logo"><div class="field f-navy"><img src="assets/kiduna-logo.svg" alt=""></div><div class="meta"><b>On deep navy</b><span>Default — full color</span></div></div>
+      <div class="swatch-logo"><div class="field f-flag"><img src="assets/kiduna-logo.svg" alt=""></div><div class="meta"><b>On flag blue</b><span>Editorial fields</span></div></div>
+      <div class="swatch-logo"><div class="field f-gold"><img src="assets/kiduna-logo-navy.svg" alt=""></div><div class="meta"><b>On Old Gold</b><span>Navy ink</span></div></div>
+      <div class="swatch-logo"><div class="field f-cream"><img src="assets/kiduna-logo-navy.svg" alt=""></div><div class="meta"><b>On cream</b><span>Navy ink · print</span></div></div>
+      <div class="swatch-logo"><div class="field f-deep"><img src="assets/kiduna-logo-white.svg" alt=""></div><div class="meta"><b>White mono</b><span>Single-ink / reversed</span></div></div>
+      <div class="swatch-logo"><div class="field f-navy"><img src="assets/wv-cosmic-mark-mono-gold.svg" alt="" style="height:48px"></div><div class="meta"><b>Gold mono mark</b><span>Stamps & favicons</span></div></div>
+    </div>
+
+    <div class="subhead">Stacked lockup</div>
+    <div class="mark-row">
+      <div class="mark-card"><div class="disc f-navy" style="padding:18px"><img src="assets/kiduna-logo-stacked.svg" alt="Kiduna stacked lockup" style="height:120px;width:auto"></div><div class="lbl">Full color · on navy</div></div>
+      <div class="mark-card"><div class="disc f-gold" style="padding:18px"><img src="assets/kiduna-logo-stacked-navy.svg" alt="" style="height:120px;width:auto"></div><div class="lbl">Navy · on gold</div></div>
+      <div class="mark-card"><div class="disc f-cream" style="padding:18px"><img src="assets/kiduna-logo-stacked-navy.svg" alt="" style="height:120px;width:auto"></div><div class="lbl">Navy · on cream</div></div>
+      <div class="mark-card"><div class="disc f-deep" style="padding:18px"><img src="assets/kiduna-logo-stacked-white.svg" alt="" style="height:120px;width:auto"></div><div class="lbl">White · mono</div></div>
+    </div>
+    <p style="font-size:13px;color:var(--fg-soft);max-width:62ch;margin:14px 2px 0">The stacked lockup sets the mark above a gold “Kiduna” wordmark. Use it for <b style="color:var(--fg-muted)">square and tight compositions</b> — avatars, app tiles, cover slides, merch. Prefer the linear lockup everywhere else. <code class="kin-mono" style="color:var(--fg-muted)">kiduna-logo-stacked.svg</code></p>
+
+    <div class="subhead">The mark, on its own</div>
+    <div class="mark-row">
+      <div class="mark-card"><div class="disc f-navy"><img src="assets/wv-cosmic-mark.svg" alt=""></div><div class="lbl">Full color · on navy</div></div>
+      <div class="mark-card"><div class="disc f-gold"><img src="assets/wv-cosmic-mark-navy.svg" alt=""></div><div class="lbl">Navy · on gold</div></div>
+      <div class="mark-card"><div class="disc f-cream"><img src="assets/wv-cosmic-mark-navy.svg" alt=""></div><div class="lbl">Navy · on cream</div></div>
+      <div class="mark-card"><div class="disc f-deep"><img src="assets/wv-cosmic-mark-white.svg" alt=""></div><div class="lbl">White · mono</div></div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h4>Clearspace &amp; minimum size</h4>
+        <p class="note">Keep clear space equal to the height of the <b>moon</b> on all sides. Never crowd the lockup with type or UI. Minimum legible size: 120px wide on screen, 24mm in print; below that, use the mark alone.</p>
+        <div class="clearbox"><div class="pad"><img src="assets/kiduna-logo.svg" alt=""></div><span class="x">= moon height</span></div>
+      </div>
+      <div class="panel">
+        <h4>Don't</h4>
+        <p class="note">The mark's two-color logic — gold sun, sky moon — is fixed. Protect it.</p>
+        <div class="dont-list">
+          <div class="dont"><div class="mini bad f-navy"><img src="assets/wv-cosmic-mark.svg" alt="" style="filter:hue-rotate(120deg) saturate(1.6)"><span class="cross">✕</span></div><div class="txt"><b>Don't recolor</b> the mark to orange, magenta, lime, or violet.</div></div>
+          <div class="dont"><div class="mini bad f-navy"><img src="assets/wv-cosmic-mark.svg" alt="" style="transform:scaleX(0.62)"><span class="cross">✕</span></div><div class="txt"><b>Don't stretch, skew,</b> or distort the proportions.</div></div>
+          <div class="dont"><div class="mini bad f-cream"><img src="assets/wv-cosmic-mark.svg" alt=""><span class="cross">✕</span></div><div class="txt"><b>Don't place the color mark</b> on light fields — use the navy mark instead.</div></div>
+          <div class="dont"><div class="mini bad f-navy"><img src="assets/wv-cosmic-mark.svg" alt="" style="filter:drop-shadow(0 3px 4px rgba(0,0,0,.9))"><span class="cross">✕</span></div><div class="txt"><b>Don't add</b> shadows, glows, gradients, or outlines.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02 COLOR ===== -->
+  <section class="block">
+    <div class="sec-head">
+      <span class="num">02</span>
+      <h2>Color</h2>
+      <p class="desc">One pulse of <b>Old Gold</b> on deep navy, with sky blue as the single secondary. Text on gold is always navy. Orange and the wider palette are editorial-only — never UI actions.</p>
+    </div>
+
+    <div class="subhead">Brand leads</div>
+    <div class="color-grid">
+      <div class="chip ring-gold"><div class="fill" style="background:var(--wv-gold)"></div><div class="info"><div class="nm">Old Gold</div><div class="hex">#EAAA00</div><div class="tok">--wv-gold / --accent</div><div class="role">Primary pulse — every action.</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--kin-darkblue)"></div><div class="info"><div class="nm">Deep Navy</div><div class="hex">#09073A</div><div class="tok">--bg / --on-accent</div><div class="role">Page field; text on gold.</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--kin-skyblue)"></div><div class="info"><div class="nm">Sky Blue</div><div class="hex">#03CCD9</div><div class="tok">--link / --kin-skyblue</div><div class="role">Secondary — links, signal.</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--wv-flagblue)"></div><div class="info"><div class="nm">Flag Blue</div><div class="hex">#002855</div><div class="tok">--wv-flagblue</div><div class="role">Editorial fields, imagery.</div></div></div>
+    </div>
+
+    <div class="subhead">Surfaces &amp; ink (dark theme)</div>
+    <div class="color-grid semantic">
+      <div class="chip"><div class="fill" style="background:var(--bg-deep)"></div><div class="info"><div class="nm">BG Deep</div><div class="hex">#03011B</div><div class="tok">--bg-deep</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--bg)"></div><div class="info"><div class="nm">Background</div><div class="hex">#09073A</div><div class="tok">--bg</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--surface)"></div><div class="info"><div class="nm">Surface</div><div class="hex">#0A0D33</div><div class="tok">--surface</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--surface-elev)"></div><div class="info"><div class="nm">Surface Elev</div><div class="hex">#100E59</div><div class="tok">--surface-elev</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--kin-cream-white)"></div><div class="info"><div class="nm">Cream</div><div class="hex">#FFFFE6</div><div class="tok">--kin-cream-white</div></div></div>
+    </div>
+
+    <div class="subhead">Accents &amp; feedback — <span style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--fg-dim)">editorial / status only</span></div>
+    <div class="color-grid">
+      <div class="chip"><div class="fill" style="background:var(--kin-complete)"></div><div class="info"><div class="nm">Success</div><div class="hex">#00EB75</div><div class="tok">--success</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--kin-error)"></div><div class="info"><div class="nm">Error</div><div class="hex">#FF3A3A</div><div class="tok">--danger</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--kin-orange);position:relative"><span style="position:absolute;bottom:8px;left:10px;font-family:var(--font-mono);font-size:9px;color:#1E1F20;background:rgba(255,255,255,.6);padding:2px 6px;border-radius:4px">no UI</span></div><div class="info"><div class="nm">Orange</div><div class="hex">#F7941D</div><div class="tok">--kin-orange</div><div class="role">Imagery only — never an action.</div></div></div>
+      <div class="chip"><div class="fill" style="background:var(--kin-cream)"></div><div class="info"><div class="nm">Warm Cream</div><div class="hex">#F9DDB7</div><div class="tok">--kin-cream</div></div></div>
+    </div>
+  </section>
+
+  <!-- ===== 03 TYPOGRAPHY ===== -->
+  <section class="block">
+    <div class="sec-head">
+      <span class="num">03</span>
+      <h2>Typography</h2>
+      <p class="desc">Goudy Heavyface carries display; Avenir handles everything else; <b>IBM Plex Sans</b> speaks only in call-outs. The wordmark is a custom logotype. Numbers are always Goudy.</p>
+    </div>
+
+    <div class="type-row">
+      <div class="meta"><b>Display</b>Goudy Heavyface<br>54–76px · LH 1.0</div>
+      <div class="specimen-display" style="font-size:60px">Governed by its members.</div>
+    </div>
+    <div class="type-row">
+      <div class="meta"><b>Glyphs</b>Goudy Heavyface</div>
+      <div class="glyphs">A B C D E F G a b c d e f g &nbsp; 0 1 2 3 4 5 6 7 8 9 &nbsp; $ &amp; →</div>
+    </div>
+    <div class="type-row">
+      <div class="meta"><b>Body</b>Avenir 400 / 700<br>16px · LH 1.5</div>
+      <div class="specimen-body" style="font-size:16px;max-width:60ch;color:var(--fg-muted)">Register a decentralized nonprofit with the West Virginia Secretary of State, adopt your bylaws on-chain, and open a member-owned treasury. We write to <b style="color:var(--fg)">members</b>, <b style="color:var(--fg)">organizers</b>, and <b style="color:var(--fg)">stewards</b> — never "users".</div>
+    </div>
+    <div class="type-row">
+      <div class="meta"><b>Call-out</b>IBM Plex Sans 400 / 600<br>15px · LH 1.6</div>
+      <div style="font-family:var(--font-callout);font-size:15px;max-width:60ch;color:var(--fg-muted);line-height:1.6">A <b style="font-weight:600;color:var(--fg)">third voice</b> for asides, definitions, pull-facts, and “how it works” notes — plainspoken and technical where Goudy is grand and Avenir is warm. Call-outs only; never body, never display.</div>
+    </div>
+
+    <div class="subhead">The signature move · <code class="kin-mono" style="color:var(--fg-muted)">em.wv-emph</code></div>
+    <div class="type-row" style="grid-template-columns:1fr">
+      <div class="emph-demo">Wild, wonderful, <em class="wv-emph">and self-governed.</em></div>
+    </div>
+    <p style="font-size:13px;color:var(--fg-soft);max-width:60ch;margin:4px 2px 0">One italic Goudy phrase, set in Old Gold, inside a display headline. <b style="color:var(--fg-muted)">One phrase per headline — never two.</b></p>
+
+    <div class="subhead">Call-outs · <code class="kin-mono" style="color:var(--fg-muted)">.wv-callout</code></div>
+    <div class="two-col" style="margin-top:0">
+      <div class="wv-callout">
+        <span class="callout-tag">How it works</span>
+        A <b>DUNA</b> is a Decentralized Unincorporated Nonprofit Association — a legal wrapper that lets a DAO hold a treasury, sign contracts, and limit member liability.
+      </div>
+      <div class="wv-callout gold">
+        <span class="callout-tag">Worth knowing</span>
+        Registering for the Dunathon means joining the <b>genesis DUNA</b> — the Dunathon acts as your registered agent from day one.
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--fg-soft);max-width:60ch;margin:14px 2px 0">Sky tag for explainers, gold for emphasis. <b style="color:var(--fg-muted)">One or two per screen</b> — if everything is a call-out, nothing is.</p>
+
+    <div class="subhead">Logotype</div>
+    <div class="logotype-note">
+      <img src="assets/kiduna-logo.svg" alt="Kiduna wordmark">
+      <div style="font-size:14px;color:var(--fg-muted);line-height:1.55">The <b style="color:var(--fg)">Kiduna</b> wordmark is a custom-drawn logotype reserved for the lockup — a rounded geometric “Kiduna” in sky blue. It is <b style="color:var(--fg)">not</b> a UI typeface; set body and headlines in Avenir and Goudy.</div>
+    </div>
+  </section>
+
+  <!-- ===== 04 SPACING ===== -->
+  <section class="block">
+    <div class="sec-head">
+      <span class="num">04</span>
+      <h2>Space, radius &amp; elevation</h2>
+      <p class="desc">A 4pt grid. Pills for nav and badges; squared buttons; soft 14px cards. Cool, dim shadows — never bright.</p>
+    </div>
+    <div class="triple">
+      <div class="panel">
+        <h4>Spacing · 4pt</h4>
+        <div class="spacing-stack">
+          <div class="sp"><span>4</span><div class="bar" style="width:4px"></div></div>
+          <div class="sp"><span>8</span><div class="bar" style="width:8px"></div></div>
+          <div class="sp"><span>12</span><div class="bar" style="width:12px"></div></div>
+          <div class="sp"><span>16</span><div class="bar" style="width:16px"></div></div>
+          <div class="sp"><span>24</span><div class="bar" style="width:24px"></div></div>
+          <div class="sp"><span>32</span><div class="bar" style="width:32px"></div></div>
+          <div class="sp"><span>48</span><div class="bar" style="width:48px"></div></div>
+          <div class="sp"><span>64</span><div class="bar" style="width:64px"></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h4>Radius</h4>
+        <div class="radii-stack">
+          <div class="rad"><div class="box" style="border-radius:4px"></div><span>--radius-xs · 4 · buttons</span></div>
+          <div class="rad"><div class="box" style="border-radius:6px"></div><span>--radius-sm · 6 · inputs</span></div>
+          <div class="rad"><div class="box" style="border-radius:10px"></div><span>--radius-md · 10</span></div>
+          <div class="rad"><div class="box" style="border-radius:14px"></div><span>--radius-lg · 14 · cards</span></div>
+          <div class="rad"><div class="box" style="border-radius:9999px"></div><span>--radius-pill · nav, badges</span></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h4>Elevation</h4>
+        <div class="elev-stack">
+          <div class="elev" style="box-shadow:var(--shadow-sm)">shadow-sm</div>
+          <div class="elev" style="box-shadow:var(--shadow-md)">shadow-md</div>
+          <div class="elev" style="box-shadow:var(--shadow-lg)">shadow-lg</div>
+          <div class="elev" style="box-shadow:var(--shadow-glow-accent)">glow-accent · one per screen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 COMPONENTS ===== -->
+  <section class="block">
+    <div class="sec-head">
+      <span class="num">05</span>
+      <h2>Components</h2>
+      <p class="desc">Built straight from the tokens. Gold primary with navy text; sky used sparingly; arrows as the default "continue" glyph.</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp">
+        <h4>Buttons</h4>
+        <div class="btn-row">
+          <button class="btn btn-primary">Register a movement →</button>
+          <button class="btn btn-secondary">Browse</button>
+          <button class="btn btn-ghost">Sign in</button>
+        </div>
+        <div class="btn-row" style="margin-top:14px">
+          <button class="btn btn-primary" style="padding:16px 26px;font-size:15px">Become a Steward →</button>
+        </div>
+      </div>
+      <div class="comp">
+        <h4>Inputs</h4>
+        <div class="field-stack">
+          <div><label class="field-lbl">Association name</label><input class="inp" placeholder="New River Land Trust"></div>
+          <div><label class="field-lbl">County</label><input class="inp" value="Kanawha"></div>
+        </div>
+      </div>
+      <div class="comp">
+        <h4>Badges &amp; chips</h4>
+        <div class="badge-row">
+          <span class="badge solid">Featured</span>
+          <span class="badge gold">Treasury</span>
+          <span class="badge sky">On-chain</span>
+          <span class="badge success">Quorum reached</span>
+          <span class="badge neutral">Draft</span>
+        </div>
+      </div>
+      <div class="comp">
+        <h4>Card</h4>
+        <div class="demo-card">
+          <div class="cover"><span class="badge">Land &amp; Water</span></div>
+          <div class="cbody">
+            <h3>New River Land Trust</h3>
+            <div class="by">by <b style="color:var(--fg-muted)">Fayette County Collective</b></div>
+            <div style="display:flex;justify-content:space-between;align-items:end;margin-top:4px"><span class="num">$81.4k</span><span style="font-size:12px;color:var(--fg-soft)">of $120k treasury</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 VOICE ===== -->
+  <section class="block">
+    <div class="sec-head">
+      <span class="num">06</span>
+      <h2>Voice</h2>
+      <p class="desc">Warm, direct, slightly literary, with a civic undertone. We write to members — never "users".</p>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <h4 style="color:var(--kin-complete)">We say</h4>
+        <ul style="margin:10px 0 0;padding-left:18px;color:var(--fg-muted);font-size:15px;line-height:1.9">
+          <li>members, organizers, stewards, the block, kin</li>
+          <li>register · adopt bylaws · hold a treasury · pass a proposal</li>
+          <li>"A nonprofit, <em class="wv-emph" style="font-size:15px">on-chain.</em>"</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4 style="color:var(--kin-error)">We avoid</h4>
+        <ul style="margin:10px 0 0;padding-left:18px;color:var(--fg-muted);font-size:15px;line-height:1.9">
+          <li>"users", synergy, leverage, disrupt</li>
+          <li>hollow CTAs — "Learn more", stacked emoji</li>
+          <li>web3 jargon that isn't load-bearing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="assets/kiduna-logo-white.svg" alt="Kiduna">
+    <div>© Kiduna · A West Virginia DUNA · Built on the Kinship stack</div>
+  </footer>
+</div>
+<template id="__bundler_thumbnail" data-bg-color="#09073A">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#09073A"/>
+    <circle cx="600" cy="400" r="150" fill="none" stroke="#EAAA00" stroke-width="20"/>
+    <path d="M 540 320 A 150 150 0 1 0 540 480 A 120 120 0 1 1 540 320 Z" fill="#03CCD9"/>
+    <g fill="#03CCD9">
+      <path d="M 820 280 l 12 30 30 12 -30 12 -12 30 -12 -30 -30 -12 30 -12 z"/>
+      <path d="M 360 500 l 9 22 22 9 -22 9 -9 22 -9 -22 -22 -9 22 -9 z"/>
+    </g>
+  </svg>
+</template>
+<div class="dn-footer"><div class="dn-footer-in"><nav class="dn-foot-nav"><a href="../../tech.html">The Tech</a><a href="../../law.html">The Law</a><a href="../../economics.html">Economics</a><a href="../../culture.html">Culture</a><a href="../../events.html">Events</a><a href="../../showcase.html">Showcase</a><a href="../../specs/index.html">Specs</a><a href="../../app.html">Prototype</a><a href="../../tasks.html">Tasks</a><a href="../../register.html">Register</a></nav><div class="dn-foot-meta">© 2026 Summerlong Dunathon · A West Virginia DUNA · July 7 – Sept 9, 2026</div></div></div>
+</body></html>

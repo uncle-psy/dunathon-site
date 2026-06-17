@@ -9,3 +9,9 @@ node_modules
 /*.JPG
 /*.jpeg
 /*.svg
+
+# vendored specs: keep source/build artifacts out of the deploy (site itself ships)
+specs/archive/
+specs/build_site.js
+specs/site.json
+specs/vercel.json

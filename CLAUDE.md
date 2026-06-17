@@ -40,6 +40,14 @@ Never commit `WV DUNA-handoff (1).zip`, `.DS_Store`, `.vercel`, or `node_modules
 - Logos: `assets/dunathon-logo*.svg` (lockup), `assets/wv-cosmic-mark*.svg` (mark),
   `assets/ridge-motif.svg`, `assets/kiduna-logo*.svg` (used in the app).
 - Photos: `assets/speakers/<name>.jpg` (≈square), `assets/sponsors/*`.
+- **`specs/`** — the vendored Kiduna Club **Product Specifications** docs site (33 pages; its own
+  `styles.css` that `@import`s `specs/design-system/colors_and_type.css`, self-contained with relative
+  links). It's linked from the main nav and the footer menu as **Specs** (`specs/index.html`), placed
+  right after Showcase. Each spec page carries the shared site top bar + footer (class `dn-topbar` /
+  `dn-footer`, injected into the page and styled at the bottom of `specs/styles.css`); the docs sidebar's
+  logo was removed to avoid redundancy. If these pages are regenerated from their source build, the
+  top bar/footer and the logo removal must be re-applied. Build/source leftovers under `specs/`
+  (`archive/`, `build_site.js`, `site.json`, `vercel.json`) are git-ignored.
 
 ## Design system — keep these rules
 - **Old Gold** `var(--accent)` (#EAAA00) on **deep navy** `var(--bg)`. Text/icons on gold are

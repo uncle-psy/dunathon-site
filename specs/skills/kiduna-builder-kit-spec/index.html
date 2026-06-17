@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiduna-builder-kit-spec — Kiduna Club Product Specifications</title>
+<link rel="stylesheet" href="../../styles.css">
+</head><body>
+<div class="dn-topbar"><div class="dn-topbar-in"><a class="dn-brand" href="../../../index.html"><img src="../../../assets/kiduna-logo.svg" alt="Kiduna Club"></a><nav class="dn-nav"><a href="../../../tech.html">The Tech</a><a href="../../../law.html">The Law</a><a href="../../../economics.html">Economics</a><a href="../../../culture.html">Culture</a><a href="../../../events.html">Events</a><a href="../../../showcase.html">Showcase</a><a class="active" href="../../../specs/index.html">Specs</a><a href="../../../app.html">Prototype</a><a href="../../../tasks.html">Tasks</a></nav><a class="dn-cta" href="https://luma.com/dunathon" target="_blank" rel="noopener">Register →</a></div></div>
+<button class="menu-toggle" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>
+<div class="dn-layout">
+<nav class="sidebar"><a class="nav-home" href="../../index.html"><span class="nav-home-sub">Product Specifications</span></a><div class="nav-group"><div class="nav-group-name">Foundations</div><ul><li><a href="../../overview/index.html">Kiduna Club Overview</a></li><li><a href="../../actors-identity/index.html">Actors &amp; Identity <span class="dot planned"></span></a></li><li><a href="../../allies-performers/index.html">Allies, Performers &amp; the Five Phases <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Frameworks, Templates &amp; the Builder Kit</div><ul><li><a href="../../frameworks/index.html">DUNA Frameworks</a></li><li><a href="../../framework-service/index.html">Service Organizations Framework</a></li><li><a href="../../framework-factory/index.html">The Kiduna Factory Framework</a></li><li><a href="../../program-templates/index.html">Program Templates</a></li><li><a href="../../builder-kit/index.html">The Builder Kit</a></li></ul></div><div class="nav-group"><div class="nav-group-name">Organization &amp; People</div><ul><li><a href="../../alliances/index.html">Alliances <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Economy &amp; Commerce</div><ul><li><a href="../../offerings/index.html">Offerings <span class="dot planned"></span></a></li><li><a href="../../economy-markets/index.html">Economy, Markets &amp; Launchpad <span class="dot planned"></span></a></li><li><a href="../../transactions-commerce/index.html">Transactions &amp; Commerce <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Surfaces &amp; Experience</div><ul><li><a href="../../chat/index.html">Chat <span class="dot planned"></span></a></li><li><a href="../../vibes/index.html">Vibes <span class="dot planned"></span></a></li><li><a href="../../documents-media/index.html">Documents, Media &amp; Artifacts <span class="dot planned"></span></a></li><li><a href="../../notifications/index.html">Notifications <span class="dot planned"></span></a></li><li><a href="../../seek-directory/index.html">Seek &amp; Directory <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Brand &amp; Design</div><ul><li><a href="../../design/index.html">Brand &amp; Design System</a></li></ul></div><div class="nav-group"><div class="nav-group-name">Platform &amp; Architecture</div><ul><li><a href="../../platform/index.html">Platform &amp; Architecture <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Reference</div><ul><li class="current"><a href="../../skills/index.html">Skills library</a></li><li><a href="../../dev-log/index.html">Dev Log</a></li></ul></div></nav>
+<main><div class="content">
+<div class="breadcrumb"><a href="../../index.html">Home</a> › <a href="../index.html">Skills library</a> › kiduna-builder-kit-spec</div>
+<div class="page-head"><div class="eyebrow">Skill </div><h1>kiduna-builder-kit-spec</h1></div><p class="lead"></p><div class="downloads"><a class="btn" href="SKILL.md" download>⬇ Download SKILL.md</a></div><div class="skill-desc"><strong>When to use:</strong> &gt;-</div><hr><h2 id="skill-md">SKILL.md</h2><h1 id="kiduna-builder-kit-specification">Kiduna Builder Kit specification</h1>
+<p>Specifies the Builder Kit: the downloadable kit + API + connector that opens the Kiduna network to outside developers. Produces a Word + Markdown spec. This skill is about understanding and creating the kit itself, not the starter assets that ship inside it (those are specified by the framework/template skills).</p>
+<h2 id="what-the-kit-is">What the kit is</h2>
+<p>Three parts: a <strong>downloadable kit</strong> (a zip, or a connection from a coding agent such as Claude Code, carrying the skills and an API key tied to a member account); an <strong>API</strong> (the programmatic surface for everything a person does in-product); and a <strong>connector</strong> (authenticates the kit to the account and network, exchanges Codes, keeps local work in sync).</p>
+<h2 id="the-governing-principle">The governing principle</h2>
+<p>Everything a member can do, a developer can do — plus everything a developer needs — with one boundary: they cannot modify Kiduna's core code. They build on the foundation, not in it.</p>
+<h2 id="what-to-specify">What to specify</h2>
+<ul><li><strong>The three parts</strong> and how they fit (kit, API, connector).</li><li><strong>Two modes</strong> — create an Ally (build/register entities from outside) and be an</li></ul>
+<p>  Ally (the developer's own client acts as an Ally on the network).</p>
+<ul><li><strong>The API surface</strong> — auth (member account, API key, FROST or external</li></ul>
+<p>  wallet); create/define DUNAs, frameworks, Program Templates, Allies,   Performers (the five phases); registration, Handles, Codes; registry/directory   read and search; Handle resolution and Code verification; code exchange and   sessions; transact-and-settle through the Distribution Waterfall; read/write   graph state; publish Offers and Program Templates.</p>
+<ul><li><strong>Handles</strong> — the root-handle namespace, uniqueness, and levels; a prerequisite.</li><li><strong>Graph database</strong> — the prerequisite that makes the relationships clean to</li></ul>
+<p>  expose.</p>
+<ul><li><strong>Parity, trust, safety</strong> — parity with the in-product builder; trust only</li></ul>
+<p>  through Handle + registry + Code + session; the Sentinel safety check on   anything published.</p>
+<ul><li><strong>Open source &amp; fees</strong> — the open-source path once the code base is ready; the</li></ul>
+<p>  small per-transaction fee model.</p>
+<ul><li><strong>Sequencing</strong> — built last, after the framework system, Handles, and the graph</li></ul>
+<p>  database.</p>
+<ul><li><strong>Acceptance criteria and open questions.</strong></li></ul>
+<h2 id="workflow">Workflow</h2>
+<ol><li>Confirm scope (full kit spec or a refinement of one area).</li><li>Specify the three parts, the two modes, and the API surface.</li><li>Specify Handles and the graph-DB dependency; parity, trust, and safety.</li><li>Cover open source, fees, and sequencing.</li><li>Write the spec, render with the bundled converter (<code>npm install docx</code>; copy</li></ol>
+<p>   <code>scripts/build_docx.js</code>; run it), save both files, and present.</p>
+<h2 id="principles">Principles</h2>
+<ul><li>The kit exposes the whole network — so it ships last, once the rest works.</li><li>Trust for kit-built Allies is identical to in-product Allies: Handle, registry,</li></ul>
+<p>  Code, session, Sentinel.</p>
+<ul><li>The boundary (no core-code modification) is what keeps independently-built</li></ul>
+<p>  clients coherent.</p>
+<ul><li>A specification, not code. Don't fabricate; flag packaging, fee, and</li></ul>
+<p>  open-source-timing questions.</p><h2 id="bundled">Bundled files</h2><ul class="link-list"><li><a href="SKILL.md">SKILL.md</a></li><li><a href="index.html">index.html</a></li><li><a href="scripts/build_docx.js">scripts/build_docx.js</a></li></ul>
+<footer>Kiduna Club Product Specifications · Kinship Systems · generated 2026-06-17</footer>
+</div></main>
+</div>
+
+<div class="dn-footer"><div class="dn-footer-in"><nav class="dn-foot-nav"><a href="../../../tech.html">The Tech</a><a href="../../../law.html">The Law</a><a href="../../../economics.html">Economics</a><a href="../../../culture.html">Culture</a><a href="../../../events.html">Events</a><a href="../../../showcase.html">Showcase</a><a href="../../../specs/index.html">Specs</a><a href="../../../app.html">Prototype</a><a href="../../../tasks.html">Tasks</a><a href="../../../register.html">Register</a></nav><div class="dn-foot-meta">© 2026 Summerlong Dunathon · A West Virginia DUNA · July 7 – Sept 9, 2026</div></div></div>
+</body></html>

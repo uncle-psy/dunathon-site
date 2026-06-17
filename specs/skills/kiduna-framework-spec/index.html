@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiduna-framework-spec — Kiduna Club Product Specifications</title>
+<link rel="stylesheet" href="../../styles.css">
+</head><body>
+<div class="dn-topbar"><div class="dn-topbar-in"><a class="dn-brand" href="../../../index.html"><img src="../../../assets/kiduna-logo.svg" alt="Kiduna Club"></a><nav class="dn-nav"><a href="../../../tech.html">The Tech</a><a href="../../../law.html">The Law</a><a href="../../../economics.html">Economics</a><a href="../../../culture.html">Culture</a><a href="../../../events.html">Events</a><a href="../../../showcase.html">Showcase</a><a class="active" href="../../../specs/index.html">Specs</a><a href="../../../app.html">Prototype</a><a href="../../../tasks.html">Tasks</a></nav><a class="dn-cta" href="https://luma.com/dunathon" target="_blank" rel="noopener">Register →</a></div></div>
+<button class="menu-toggle" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>
+<div class="dn-layout">
+<nav class="sidebar"><a class="nav-home" href="../../index.html"><span class="nav-home-sub">Product Specifications</span></a><div class="nav-group"><div class="nav-group-name">Foundations</div><ul><li><a href="../../overview/index.html">Kiduna Club Overview</a></li><li><a href="../../actors-identity/index.html">Actors &amp; Identity <span class="dot planned"></span></a></li><li><a href="../../allies-performers/index.html">Allies, Performers &amp; the Five Phases <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Frameworks, Templates &amp; the Builder Kit</div><ul><li><a href="../../frameworks/index.html">DUNA Frameworks</a></li><li><a href="../../framework-service/index.html">Service Organizations Framework</a></li><li><a href="../../framework-factory/index.html">The Kiduna Factory Framework</a></li><li><a href="../../program-templates/index.html">Program Templates</a></li><li><a href="../../builder-kit/index.html">The Builder Kit</a></li></ul></div><div class="nav-group"><div class="nav-group-name">Organization &amp; People</div><ul><li><a href="../../alliances/index.html">Alliances <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Economy &amp; Commerce</div><ul><li><a href="../../offerings/index.html">Offerings <span class="dot planned"></span></a></li><li><a href="../../economy-markets/index.html">Economy, Markets &amp; Launchpad <span class="dot planned"></span></a></li><li><a href="../../transactions-commerce/index.html">Transactions &amp; Commerce <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Surfaces &amp; Experience</div><ul><li><a href="../../chat/index.html">Chat <span class="dot planned"></span></a></li><li><a href="../../vibes/index.html">Vibes <span class="dot planned"></span></a></li><li><a href="../../documents-media/index.html">Documents, Media &amp; Artifacts <span class="dot planned"></span></a></li><li><a href="../../notifications/index.html">Notifications <span class="dot planned"></span></a></li><li><a href="../../seek-directory/index.html">Seek &amp; Directory <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Brand &amp; Design</div><ul><li><a href="../../design/index.html">Brand &amp; Design System</a></li></ul></div><div class="nav-group"><div class="nav-group-name">Platform &amp; Architecture</div><ul><li><a href="../../platform/index.html">Platform &amp; Architecture <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Reference</div><ul><li class="current"><a href="../../skills/index.html">Skills library</a></li><li><a href="../../dev-log/index.html">Dev Log</a></li></ul></div></nav>
+<main><div class="content">
+<div class="breadcrumb"><a href="../../index.html">Home</a> › <a href="../index.html">Skills library</a> › kiduna-framework-spec</div>
+<div class="page-head"><div class="eyebrow">Skill </div><h1>kiduna-framework-spec</h1></div><p class="lead"></p><div class="downloads"><a class="btn" href="SKILL.md" download>⬇ Download SKILL.md</a></div><div class="skill-desc"><strong>When to use:</strong> &gt;-</div><hr><h2 id="skill-md">SKILL.md</h2><h1 id="kiduna-framework-specification">Kiduna framework specification</h1>
+<p>This skill walks an author through specifying one Kiduna framework in full, then produces a polished, engineer-ready specification in two forms: a Word document (<code>.docx</code>, in the Kiduna house style) and a structured Markdown file. The output is a design document an engineering team can build from. It is not an implementation, and it should not prescribe specific technologies.</p>
+<p>A Kiduna framework is a complete, pre-formed <strong>Ally</strong> for a kind of work, assembled across five phases, that a person can adopt and then tailor. Your job when running this skill is to capture everything needed to build that Ally for one specific domain and Actor, and to write it down clearly.</p>
+<p>If you need the master concept reference (what frameworks are and how the system works overall), it lives alongside this skill's output as "Kiduna Frameworks — Product Specification". This skill specifies one framework; that document specifies the system.</p>
+<h2 id="before-you-start-load-the-canonical-definitions">Before you start: load the canonical definitions</h2>
+<p>Read these bundled references so you use the exact Kiduna vocabulary and don't reinvent terms:</p>
+<ul><li><code>references/primitives.md</code> — Actors, user subtypes, the four agent types,</li></ul>
+<p>  supporting objects. The shared language.</p>
+<ul><li><code>references/five-phases.md</code> — the field-by-field checklist for each phase,</li></ul>
+<p>  including the Program cardinality rules. This is your interview guide.</p>
+<ul><li><code>references/spec-outline.md</code> — the exact section structure of the output</li></ul>
+<p>  document, with the question each section answers.</p>
+<p>The fill-in skeleton you will complete is <code>assets/spec-template.md</code>.</p>
+<h2 id="workflow">Workflow</h2>
+<h3 id="1-establish-identity">1. Establish identity</h3>
+<p>Pin down three things first, because everything else depends on them:</p>
+<ul><li><strong>Framework name</strong> and the <strong>domain</strong> it serves (Travel, Service, Gaming, …).</li><li>The <strong>Actor</strong> the resulting Ally represents: a DUNA, an Alliance, a</li></ul>
+<p>  Member/User, a Sponsor, or an Offer. The Actor type changes what the Ally can   contain (only a DUNA can have a Coin and a Market, for example).</p>
+<ul><li>A one-paragraph description of <strong>what the resulting Ally does</strong> for the people</li></ul>
+<p>  who adopt it.</p>
+<p>If the user hasn't said, ask. Keep it to the few questions that actually change the spec; infer sensible defaults for the rest and state them.</p>
+<h3 id="2-interview-across-the-five-phases">2. Interview across the five phases</h3>
+<p>Walk the five phases in order, using <code>references/five-phases.md</code> as the checklist. For each phase, capture what the framework ships and mark each element as <strong>fixed</strong>, <strong>fill-in</strong>, or <strong>discovered</strong>:</p>
+<ol><li><strong>Inform → Wisdom.</strong> What starter knowledge ships? What does the Ally search</li></ol>
+<p>   for on the network instead of storing? How should it present knowledge    (cards, grids, diagrams, sequences with links)?</p>
+<ol><li><strong>Instruct → Stance.</strong> Draft the system prompt for this domain, with clearly</li></ol>
+<p>   marked fill-in slots (business name, tone, commitments).</p>
+<ol><li><strong>Empower → Abilities.</strong> Which accounts/tools are required, which optional,</li></ol>
+<p>   and why each is needed (Gmail, Docs/Drive, Calendar, Meet, Bluesky, Solana    external wallet, Telegram).</p>
+<ol><li><strong>Enact → Programs.</strong> Specify each Program. Honor the cardinality rules:</li></ol>
+<p>   exactly <strong>one Prompt</strong> per Program; <strong>zero or more</strong> Triggers, Database    Connections, Polling/Web Hook listeners, and Tools. Lay out the Sequence and    mark the <strong>human-approval points</strong> before consequential actions (paying,    signing, sending, booking).</p>
+<ol><li><strong>Align → Sentinel.</strong> Give default HEARTS dial settings appropriate to the</li></ol>
+<p>   domain and their adjustable ranges. Treat HEARTS as a named set of bounded    dials; if the canonical dial set is unknown, say so and propose sensible    defaults rather than inventing definitive meanings.</p>
+<p>Then capture the <strong>discovery</strong> configuration (what the Ally finds on the network) and the consolidated <strong>slot list</strong> (every fill-in across phases), so the adopt experience can be short.</p>
+<h3 id="3-write-the-specification-markdown">3. Write the specification (Markdown)</h3>
+<p>Copy <code>assets/spec-template.md</code> to a working file named <code>&lt;framework-name&gt;-framework-spec.md</code> and fill every section. Follow <code>references/spec-outline.md</code> for what each section must answer.</p>
+<p>Write the way a careful engineer writes a spec: concrete, technology-agnostic, plain. Describe experience and functionality, not implementation. Avoid manifesto cadence and avoid "not X, but Y" constructions. Keep sentences varied and unforced. Include acceptance criteria for each phase so engineering knows when it is done.</p>
+<p>Minimize fill-in. A good framework ships most content as fixed or discovered, so the adopter supplies very little. Say explicitly what is discovered from the network versus entered by hand.</p>
+<h3 id="4-render-the-word-document">4. Render the Word document</h3>
+<p>The Markdown file is the source of truth. Render it to a Word document in the Kiduna house style (Georgia font, black type, US Letter, auto table of contents, page numbers) with the bundled converter.</p>
+<p>The converter needs the <code>docx</code> npm package. The most reliable way to run it:</p>
+<p>```bash</p>
+<h1 id="from-a-writable-working-directory">from a writable working directory:</h1>
+<p>npm install docx                 # once per environment cp "&lt;this-skill&gt;/scripts/build_docx.js" . node build_docx.js "&lt;framework-name&gt;-framework-spec.md" "&lt;framework-name&gt;-framework-spec.docx" ```</p>
+<p>Copying the script next to where <code>docx</code> is installed guarantees Node can resolve the dependency. The converter reads the front matter at the top of the Markdown for the title page, so keep that block intact.</p>
+<p>If the host environment already provides a Word-document capability you prefer, you may use it instead, but match the house style: Georgia, black type only, clear headings, a table of contents, and page numbers.</p>
+<h3 id="5-save-and-present-both-deliverables">5. Save and present both deliverables</h3>
+<p>Save both files (<code>.md</code> and <code>.docx</code>) to the user's Kiduna Frameworks folder if one is connected, otherwise to the outputs directory. Then present both files to the user. Keep the closing summary short; the documents speak for themselves.</p>
+<h2 id="output-what-a-finished-framework-spec-contains">Output: what a finished framework spec contains</h2>
+<p>Every framework spec, regardless of domain, has these sections (see <code>references/spec-outline.md</code> for the prompts behind each):</p>
+<p>```</p>
+<ol><li>Identity            name, version, author, Actor type, domain, what it does</li><li>Summary             one or two paragraphs an engineer can orient from</li><li>Inform / Wisdom     starter knowledge, presentation, fixed/fill-in/discovered</li><li>Instruct / Stance   the draft system prompt with marked slots</li><li>Empower / Abilities required and optional connections, with reasons</li><li>Enact / Programs    each Program: Prompt, Sequence, Triggers, Data, Polling/</li></ol>
+<p>                       Web Hook, Tools, approval points  (one Prompt each)</p>
+<ol><li>Align / Sentinel    default HEARTS dials and ranges</li><li>Assembly            Actor binding, Code/handle, how the parts compose</li><li>Discovery           what the Ally finds on the network</li><li>Slots              the consolidated fill-in list for the adopt flow</li><li>Acceptance criteria per phase, plus open questions</li></ol>
+<p>```</p>
+<h2 id="principles-to-hold-onto">Principles to hold onto</h2>
+<ul><li><strong>This is a specification, not code.</strong> Describe user experience and</li></ul>
+<p>  functionality. Leave technology choices to engineering.</p>
+<ul><li><strong>Use the canonical vocabulary</strong> from <code>references/primitives.md</code>. Don't coin</li></ul>
+<p>  new terms for things that already have names.</p>
+<ul><li><strong>Honor the cardinality rules</strong> for Programs: one Prompt; many Triggers, Data</li></ul>
+<p>  Connections, Polling/Web Hook listeners, and Tools.</p>
+<ul><li><strong>Safety is first-class.</strong> Every Ally has a Sentinel; consequential actions</li></ul>
+<p>  pause for human approval. Build that into the Programs you spec.</p>
+<ul><li><strong>Mark fixed / fill-in / discovered</strong> for everything, and minimize fill-in.</li><li><strong>Don't fabricate.</strong> If something (like the exact HEARTS dial set) is not</li></ul>
+<p>  established, say so and flag it as an open question rather than inventing it.</p><h2 id="bundled">Bundled files</h2><ul class="link-list"><li><a href="SKILL.md">SKILL.md</a></li><li><a href="assets/spec-template.md">assets/spec-template.md</a></li><li><a href="index.html">index.html</a></li><li><a href="references/five-phases.md">references/five-phases.md</a></li><li><a href="references/primitives.md">references/primitives.md</a></li><li><a href="references/spec-outline.md">references/spec-outline.md</a></li><li><a href="scripts/build_docx.js">scripts/build_docx.js</a></li></ul>
+<footer>Kiduna Club Product Specifications · Kinship Systems · generated 2026-06-17</footer>
+</div></main>
+</div>
+
+<div class="dn-footer"><div class="dn-footer-in"><nav class="dn-foot-nav"><a href="../../../tech.html">The Tech</a><a href="../../../law.html">The Law</a><a href="../../../economics.html">Economics</a><a href="../../../culture.html">Culture</a><a href="../../../events.html">Events</a><a href="../../../showcase.html">Showcase</a><a href="../../../specs/index.html">Specs</a><a href="../../../app.html">Prototype</a><a href="../../../tasks.html">Tasks</a><a href="../../../register.html">Register</a></nav><div class="dn-foot-meta">© 2026 Summerlong Dunathon · A West Virginia DUNA · July 7 – Sept 9, 2026</div></div></div>
+</body></html>

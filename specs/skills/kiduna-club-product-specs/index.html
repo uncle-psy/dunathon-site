@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiduna-club-product-specs — Kiduna Club Product Specifications</title>
+<link rel="stylesheet" href="../../styles.css">
+</head><body>
+<div class="dn-topbar"><div class="dn-topbar-in"><a class="dn-brand" href="../../../index.html"><img src="../../../assets/kiduna-logo.svg" alt="Kiduna Club"></a><nav class="dn-nav"><a href="../../../tech.html">The Tech</a><a href="../../../law.html">The Law</a><a href="../../../economics.html">Economics</a><a href="../../../culture.html">Culture</a><a href="../../../events.html">Events</a><a href="../../../showcase.html">Showcase</a><a class="active" href="../../../specs/index.html">Specs</a><a href="../../../app.html">Prototype</a><a href="../../../tasks.html">Tasks</a></nav><a class="dn-cta" href="https://luma.com/dunathon" target="_blank" rel="noopener">Register →</a></div></div>
+<button class="menu-toggle" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>
+<div class="dn-layout">
+<nav class="sidebar"><a class="nav-home" href="../../index.html"><span class="nav-home-sub">Product Specifications</span></a><div class="nav-group"><div class="nav-group-name">Foundations</div><ul><li><a href="../../overview/index.html">Kiduna Club Overview</a></li><li><a href="../../actors-identity/index.html">Actors &amp; Identity <span class="dot planned"></span></a></li><li><a href="../../allies-performers/index.html">Allies, Performers &amp; the Five Phases <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Frameworks, Templates &amp; the Builder Kit</div><ul><li><a href="../../frameworks/index.html">DUNA Frameworks</a></li><li><a href="../../framework-service/index.html">Service Organizations Framework</a></li><li><a href="../../framework-factory/index.html">The Kiduna Factory Framework</a></li><li><a href="../../program-templates/index.html">Program Templates</a></li><li><a href="../../builder-kit/index.html">The Builder Kit</a></li></ul></div><div class="nav-group"><div class="nav-group-name">Organization &amp; People</div><ul><li><a href="../../alliances/index.html">Alliances <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Economy &amp; Commerce</div><ul><li><a href="../../offerings/index.html">Offerings <span class="dot planned"></span></a></li><li><a href="../../economy-markets/index.html">Economy, Markets &amp; Launchpad <span class="dot planned"></span></a></li><li><a href="../../transactions-commerce/index.html">Transactions &amp; Commerce <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Surfaces &amp; Experience</div><ul><li><a href="../../chat/index.html">Chat <span class="dot planned"></span></a></li><li><a href="../../vibes/index.html">Vibes <span class="dot planned"></span></a></li><li><a href="../../documents-media/index.html">Documents, Media &amp; Artifacts <span class="dot planned"></span></a></li><li><a href="../../notifications/index.html">Notifications <span class="dot planned"></span></a></li><li><a href="../../seek-directory/index.html">Seek &amp; Directory <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Brand &amp; Design</div><ul><li><a href="../../design/index.html">Brand &amp; Design System</a></li></ul></div><div class="nav-group"><div class="nav-group-name">Platform &amp; Architecture</div><ul><li><a href="../../platform/index.html">Platform &amp; Architecture <span class="dot planned"></span></a></li></ul></div><div class="nav-group"><div class="nav-group-name">Reference</div><ul><li class="current"><a href="../../skills/index.html">Skills library</a></li><li><a href="../../dev-log/index.html">Dev Log</a></li></ul></div></nav>
+<main><div class="content">
+<div class="breadcrumb"><a href="../../index.html">Home</a> › <a href="../index.html">Skills library</a> › kiduna-club-product-specs</div>
+<div class="page-head"><div class="eyebrow">Skill </div><h1>kiduna-club-product-specs</h1></div><p class="lead"></p><div class="downloads"><a class="btn" href="SKILL.md" download>⬇ Download SKILL.md</a></div><div class="skill-desc"><strong>When to use:</strong> &gt;-</div><hr><h2 id="skill-md">SKILL.md</h2><h1 id="kiduna-club-product-specifications-knowledge-base-skill">Kiduna Club Product Specifications — knowledge base skill</h1>
+<p>This is the top-level skill for the Kiduna Club product knowledge base. It keeps the specifications and skills organized, interlinked, and ready to publish. Use it to find where something belongs, to add a new spec or area or skill, to update the Dev Log after a standup, and to regenerate and deploy the site.</p>
+<h2 id="how-the-knowledge-base-is-organized">How the knowledge base is organized</h2>
+<p>A static, interlinked HTML site generated from Markdown, plus a library of skills. The structure:</p>
+<p>``<code> kiduna-club-product-specs/ ├── index.html              the top-level hub (generated) ├── &lt;area&gt;/index.html       one page per product area (generated) ├── skills/&lt;skill&gt;/         each skill: SKILL.md + references + scripts ├── content/                Markdown sources for area pages │   ├── overview.md, builder-kit.md, program-templates.md, dev-log.md │   └── frameworks/         frameworks.md, service-organizations.md, kiduna-factory.md ├── site.json               the taxonomy: groups → areas, and the skills list ├── build_site.js           the generator (Markdown → HTML) ├── styles.css              generated house style (Georgia, black) └── README.md               GitHub + Vercel instructions </code>``</p>
+<p>The product areas (in <code>site.json</code>): Foundations (Overview, Actors &amp; Identity, Allies/Performers/Phases); Frameworks, Templates &amp; the Builder Kit (DUNA Frameworks + each framework, Program Templates, Builder Kit); Organization &amp; People (Alliances); Economy &amp; Commerce (Offerings, Economy/Markets/Launchpad, Transactions &amp; Commerce); Surfaces &amp; Experience (Chat, Vibes, Documents &amp; Media, Notifications, Seek &amp; Directory); Platform &amp; Architecture.</p>
+<h2 id="core-vocabulary-keep-consistent-across-all-specs">Core vocabulary (keep consistent across all specs)</h2>
+<ul><li><strong>Framework</strong> — for a DUNA; assembles Wisdom, Stance, Programs, roles, offers</li></ul>
+<p>  for a kind of organization (a domain). Specified with <strong>kiduna-framework-spec</strong>.</p>
+<ul><li><strong>Template</strong> — a publishable <strong>Program</strong> (deep-agent routine) for Allies and</li></ul>
+<p>  Performers. A Program is private; a Template is shared. Specified with   <strong>kiduna-program-template</strong>.</p>
+<ul><li><strong>Program (Magic)</strong> — the Enact-phase unit; bundles Skills.</li><li><strong>Ally / Performer / Envoy / Sentinel</strong>; **DUNA / Alliance / Member / Sponsor</li></ul>
+<p>  / Offer<strong>; </strong>Codes / Handles<strong>; </strong>Coin / Treasury / Distribution Waterfall**.</p>
+<ul><li><strong>Builder Kit</strong> — kit + API + connector for outside developers. Specified with</li></ul>
+<p>  <strong>kiduna-builder-kit-spec</strong>.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="add-or-update-a-spec">Add or update a spec</h3>
+<ol><li>Write or edit the Markdown in <code>content/</code> (front matter: title, subtitle,</li></ol>
+<p>   author, date, status, footer).</p>
+<ol><li>If it is a new area, add it to the right group in <code>site.json</code> (slug, title,</li></ol>
+<p>   desc, and <code>source</code> pointing at the Markdown; or leave <code>source</code> off and set    <code>status: planned</code> for a stub).</p>
+<ol><li>Regenerate: <code>node build_site.js</code>.</li></ol>
+<h3 id="add-or-link-a-skill">Add or link a skill</h3>
+<ol><li>Put the skill at <code>skills/&lt;slug&gt;/SKILL.md</code> (plus references/scripts).</li><li>Add an entry to <code>skills</code> in <code>site.json</code> (slug, group, name, short).</li><li>Regenerate. The skill renders as a page and is downloadable as Markdown.</li></ol>
+<h3 id="update-the-dev-log-after-a-standup">Update the Dev Log after a standup</h3>
+<p>Add a dated entry at the top of <code>content/dev-log.md</code> (newest first) with Decisions, Product structure, Priorities, and Status. Reconcile any decisions into the affected specs. Regenerate.</p>
+<h3 id="regenerate-the-site">Regenerate the site</h3>
+<p><code>node build_site.js</code> — pure Node, no dependencies. Open <code>index.html</code> to check.</p>
+<h3 id="deploy">Deploy</h3>
+<p>See <code>README.md</code> for the Claude Code steps to create the GitHub repo and deploy to Vercel.</p>
+<h2 id="principles">Principles</h2>
+<ul><li>Keep terminology consistent (Framework vs Template above all).</li><li>Frameworks and the Builder Kit have full specs; most other areas are stubs to</li></ul>
+<p>  flesh out — keep stubs short and link to where the detail currently lives   (often the Factory framework and its skills).</p>
+<ul><li>Skills are Markdown so humans read them in the browser and agents download</li></ul>
+<p>  them; keep them in <code>skills/</code> and listed in <code>site.json</code>.</p>
+<ul><li>Regenerate after every change so the HTML and the sources stay in step.</li></ul><h2 id="bundled">Bundled files</h2><ul class="link-list"><li><a href="SKILL.md">SKILL.md</a></li><li><a href="index.html">index.html</a></li></ul>
+<footer>Kiduna Club Product Specifications · Kinship Systems · generated 2026-06-17</footer>
+</div></main>
+</div>
+
+<div class="dn-footer"><div class="dn-footer-in"><nav class="dn-foot-nav"><a href="../../../tech.html">The Tech</a><a href="../../../law.html">The Law</a><a href="../../../economics.html">Economics</a><a href="../../../culture.html">Culture</a><a href="../../../events.html">Events</a><a href="../../../showcase.html">Showcase</a><a href="../../../specs/index.html">Specs</a><a href="../../../app.html">Prototype</a><a href="../../../tasks.html">Tasks</a><a href="../../../register.html">Register</a></nav><div class="dn-foot-meta">© 2026 Summerlong Dunathon · A West Virginia DUNA · July 7 – Sept 9, 2026</div></div></div>
+</body></html>
