@@ -1,5 +1,5 @@
 /* =========================================================================
-   DUNATHON — Integrated App prototype engine (v2)
+   Kidunaverse — Integrated App prototype engine (v2)
    Adds: 3 DUNAs with themes + Coin economics, persistence (localStorage),
    Coins (not tokens), Buy-Coins / Load-Wallet, contextual DUNA-Ally chat
    dock, Directory, Codes/Claims, selector Home logic, level-from-balance.
@@ -23,18 +23,20 @@
 
   /* ---- DUNAs ----------------------------------------------------------- */
   var DUNAS = {
-    wv:   { id:"wv",   name:"DUNATHON",          short:"DT", tag:"Genesis", sym:"DUNATHON", coinPrice:0.10,   mult:1,   theme:"wv",   coinClass:"duna-wv",
-            ally:"DUNATHON Ally",        bonus:0.10, blurb:"The genesis DUNA. Legal standing for you and your agents; the on-ramp to the DUNAVERSE." },
-    mesh: { id:"mesh", name:"Mountain Mesh",    short:"MM", tag:"",        sym:"MESH",   coinPrice:0.0333, mult:0.5, theme:"mesh", coinClass:"duna-mesh",
-            ally:"Mountain Mesh Ally",  bonus:0.15, blurb:"Community wireless across rural West Virginia. Coins are 1/3 the value of DUNATHON; joining costs half." },
-    cc:   { id:"cc",   name:"WV Commerce Club", short:"CC", tag:"",        sym:"CCLUB",  coinPrice:0.0667, mult:2,   theme:"cc",   coinClass:"duna-cc",
-            ally:"Commerce Club Ally",  bonus:0.05, blurb:"Appalachian businesses pooling reach and capital. Coins are 2/3 the value of DUNATHON; joining costs double." }
+    wv:   { id:"wv",   name:"Kidunaverse",      short:"KV", tag:"Genesis", sym:"KIDUNA", coinPrice:0.10,   mult:1,   theme:"wv",   coinClass:"duna-wv",
+            ally:"Kidunaverse Ally",     bonus:0.10, blurb:"The genesis DUNA. Legal standing for you and your agents; the on-ramp to the DUNAVERSE." },
+    mesh: { id:"mesh", name:"Service Alliance", short:"SA", tag:"",        sym:"SRVA",   coinPrice:0.0333, mult:0.5, theme:"mesh", coinClass:"duna-mesh",
+            ally:"Service Alliance Ally", bonus:0.15, blurb:"Verified support for veterans, first responders, and the communities they serve. Coins are 1/3 the value of Kidunaverse; joining costs half." },
+    cc:   { id:"cc",   name:"Cosmicon",         short:"CX", tag:"",        sym:"CSMC",   coinPrice:0.0667, mult:2,   theme:"cc",   coinClass:"duna-cc",
+            ally:"Cosmicon Ally",        bonus:0.05, blurb:"A festival and marketplace for cosmic culture and its creators. Coins are 2/3 the value of Kidunaverse; joining costs double." },
+    map:  { id:"map",  name:"Mapshifting",      short:"MS", tag:"",        sym:"MAPS",   coinPrice:0.05,   mult:1,   theme:"cc",   coinClass:"duna-cc",
+            ally:"Mapshifting Ally",     bonus:0.08, blurb:"A launchpad for founders and creatives mapping new paths and backing each other." }
   };
 
   /* ---- Persistent state ------------------------------------------------ */
   var KEY = "wvduna_proto_v2";
   var DEFAULTS = {
-    coins: { wv: 150, mesh: 200, cc: 3500 },   // holdings -> levels: WV Member, Mesh Member, CC Founder
+    coins: { wv: 150, mesh: 200, cc: 3500, map: 50 },   // holdings -> levels: WV Member, Mesh Member, CC Founder
     home: "wv", current: "wv",
     firstBuyDone: true, allyCreated: false,
     dockOpen: null, model: "Auto",
@@ -189,7 +191,7 @@
     var banner = $("#install-banner");
     if (banner) { banner.hidden = state.env !== "web";
       var t = $("#install-text");
-      if (t) t.innerHTML = mobile ? "You're on the web app. <b>Get the DUNATHON app</b> for " + osName + "." : "You're on the web app. <b>Install DUNATHON for " + osName + "</b> for a faster, native experience.";
+      if (t) t.innerHTML = mobile ? "You're on the web app. <b>Get the Kidunaverse app</b> for " + osName + "." : "You're on the web app. <b>Install Kidunaverse for " + osName + "</b> for a faster, native experience.";
       var cta = $("#install-cta"); if (cta) cta.textContent = mobile ? "Open in App Store" : "Download for " + osName;
     }
     if ($("#reader-note")) $("#reader-note").hidden = state.env !== "installed";
@@ -215,7 +217,7 @@
 
   /* ---- Chat (main) ----------------------------------------------------- */
   var CHATS = {
-    host: { name:"The Big Kiduna", tag:"Your Host's Ally · DUNATHON", ava:"K", cls:"host",
+    host: { name:"The Big Kiduna", tag:"Your Host's Ally · Kidunaverse", ava:"K", cls:"host",
       greeting:"Welcome to the DUNAVERSE. I'm the Big Kiduna — the ally your host left running for you. Ask me anything, or tell me what you're here to do. You don't have to set anything up to start." },
     concierge: { name:"Your Concierge", tag:"Personal Ally", ava:"C", cls:"",
       greeting:"Hi — I'm your Concierge. I can keep track of what matters to you across the DUNAVERSE. Want to teach me something, or just talk?" },
@@ -398,14 +400,14 @@
 
   /* ---- Directory ------------------------------------------------------- */
   var DIR = [
-    { type:"duna", name:"DUNATHON", sub:"Genesis · 312,000 members", badge:"DT", cls:"duna-wv", to:"host" },
-    { type:"duna", name:"Mountain Mesh", sub:"Community wireless · 1,420 members", badge:"MM", cls:"duna-mesh" },
-    { type:"duna", name:"WV Commerce Club", sub:"Business alliance · 4,180 members", badge:"CC", cls:"duna-cc" },
+    { type:"duna", name:"Kidunaverse", sub:"Genesis · 312,000 members", badge:"KV", cls:"duna-wv", to:"host" },
+    { type:"duna", name:"Service Alliance", sub:"Veterans & first responders · 9,640 members", badge:"SA", cls:"duna-mesh" },
+    { type:"duna", name:"Cosmicon", sub:"Cosmic culture & creators · 4,180 members", badge:"CX", cls:"duna-cc" },
     { type:"member", name:"Ada Whitfield", sub:"@ada · Member · genesis", badge:"A", cls:"duna-wv" },
     { type:"member", name:"Rue", sub:"@rue · Founder · Coalfield Mutual", badge:"R", cls:"duna-mesh" },
     { type:"member", name:"Jules", sub:"@jules · Builder · 3 DUNAs", badge:"J", cls:"duna-cc" },
-    { type:"alliance", name:"Coalfield ↔ Mesh", sub:"Alliance · rooted in Mountain Mesh", badge:"⌘", cls:"duna-mesh" },
-    { type:"alliance", name:"Main Street Co-op", sub:"Alliance · rooted in WV Commerce Club", badge:"⌘", cls:"duna-cc" },
+    { type:"alliance", name:"Coalfield ↔ Mesh", sub:"Alliance · rooted in Service Alliance", badge:"⌘", cls:"duna-mesh" },
+    { type:"alliance", name:"Main Street Co-op", sub:"Alliance · rooted in Cosmicon", badge:"⌘", cls:"duna-cc" },
     { type:"program", name:"Inbox Concierge", sub:"Program · email triage & replies", badge:"▦", cls:"duna-wv" },
     { type:"program", name:"Treasury Guard", sub:"Program · monthly treasury review", badge:"▦", cls:"duna-mesh" }
   ];
