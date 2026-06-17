@@ -22,6 +22,48 @@ Never commit `WV DUNA-handoff (1).zip`, `.DS_Store`, `.vercel`, or `node_modules
 (already in `.gitignore` / `.vercelignore`). Loose source images in the project root
 (`*.jpg`, `*.png`) are fine — the site references copies under `assets/`.
 
+## Deploying from local with Claude Code
+This machine is fully set up to ship end-to-end — no external tooling or manual steps.
+When asked to "push this to production," do the whole flow locally:
+
+**One-command flow (the normal path).** Vercel's Git integration auto-deploys every push
+to `main`, so a push *is* a production deploy:
+```bash
+git add -A                       # or name specific files
+git commit -m "…"
+git push origin main             # Vercel auto-builds & promotes to production
+```
+A new Production deployment appears within seconds (confirm with `vercel ls dunathon-site`);
+it typically reaches `● Ready` in a few seconds since the site is static/zero-config.
+
+**Manual fallback.** Only needed if Git integration is ever disconnected, you must deploy
+without a commit, or you want to force a rebuild from the current working tree:
+```bash
+vercel --prod --yes              # deploys the local folder straight to production
+```
+
+**Auth that makes this work (already in place):**
+- GitHub: `gh` is installed and logged in (account `uncle-psy`, token scope includes `repo`),
+  remote `origin` → `github.com/uncle-psy/dunathon-site` over HTTPS. `git push` authenticates
+  with no prompt. Re-auth if ever needed: `gh auth login` (or add an SSH key and switch the remote).
+- Vercel: CLI installed and logged in (`vercel whoami`), `.vercel/project.json` links this folder
+  to project `dunathon-site`. Re-auth if ever needed: `npm i -g vercel && vercel login && vercel link`.
+
+**URLs.** Production: `https://dunathon-site.vercel.app`. Custom domain: `kiduna.club` (if mapped —
+the canonical `.vercel.app` URL is always live regardless).
+
+**Never commit:** secrets, API tokens, `.env*` files — hard rule, no exceptions. Also (already
+git-ignored) `*.zip`, `.DS_Store`, `.vercel`, `node_modules`, loose root images (`/*.jpg`, `/*.png`,
+`/*.svg`, …), and the vendored specs build artifacts (`specs/archive/`, `specs/build_site.js`,
+`specs/site.json`, `specs/vercel.json`). Run `git status` before staging; if `git add -A` would
+catch anything outside the intended change, stage explicit paths instead.
+
+**Pre-push checklist (see "After any change — verify" below for the full version):**
+1. Tag balance — `<div>`/`</div>` and `<section>`/`</section>` counts match on every touched page.
+2. Every internal link (`href="*.html"`) and asset path (`assets/…`) resolves.
+3. Brand QA — one `wv-emph` per headline, one gold CTA per screenful, navy-on-gold, numbers in Goudy.
+4. `git status` + `git diff` show only the intended change before committing.
+
 ## File map
 - **Marketing pages** (shared look): `index.html` (home), `tech.html`, `law.html`,
   `economics.html`, `culture.html`, `events.html`, `showcase.html`, `register.html`.
