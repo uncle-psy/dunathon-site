@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/tasks.html", "destination": "/tracker.html", "permanent": true }
+  ]
+}
