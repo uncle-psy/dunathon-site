@@ -96,6 +96,7 @@
   }
   function go(view) {
     if (view === "newduna") { toast("Prototype: New-DUNA flow includes name, mission, Coin price, and a theme step in Builder."); return; }
+    if (view === "projectnew") { toast("Prototype: the New-Project flow — name, objective, allies, tasks, and timeline — comes next."); return; }
     if (view === "account") beforeAccount();
     if (view === "directory") renderDirectory(curDirTab);
     var m = VIEW_MODE[view];
