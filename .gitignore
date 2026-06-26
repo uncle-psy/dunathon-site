@@ -15,3 +15,9 @@ specs/archive/
 specs/build_site.js
 specs/site.json
 specs/vercel.json
+
+# internal documents (not part of the deployed site)
+*.docx
+
+# local backup snapshot (not part of the deployed site)
+/kiduna web v1/
