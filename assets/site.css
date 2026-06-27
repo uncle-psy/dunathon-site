@@ -542,3 +542,10 @@
     .stat-strip, .grid-4, .tiers, .flow, .tracks { grid-template-columns: repeat(2,1fr); }
   }
 
+
+
+  /* top-nav actions: login link + Join Early Access */
+  .nav-actions{display:flex;align-items:center;gap:14px}
+  .nav-login{font-family:var(--font-sans);font-size:13.5px;font-weight:700;color:var(--fg-muted);white-space:nowrap;cursor:pointer}
+  .nav-login:hover{color:var(--fg)}
+  @media(max-width:920px){.nav-actions{display:none}}
