@@ -39,11 +39,65 @@
       <a class="navlink" href="index.html#about">About</a>
       <a class="navlink" href="nightpapers.html">Nightpapers</a>
       <span class="nav-sep"></span>
+      <a class="nav-login" href="index.html#contact">Get in Touch</a>
       <a class="nav-login" href="app.html">Log in</a>
       <a class="btn btn-gold" href="signup.html">Join Early Access</a>
     </nav>
   </div>
 </header>
+
+  <!-- ===== PROTOTYPE WARNING ===== -->
+  <div class="proto-banner" role="alert">
+    <div class="proto-inner">
+      <span class="proto-badge">Prototype · Demo only</span>
+      <h2 class="proto-title">This is a preview. Nothing here is live yet.</h2>
+      <p class="proto-lead">Early access and founding member registration open at <b>9:00&nbsp;AM Pacific on July&nbsp;2, 2026</b>. Please don't use the <strong>log in</strong> or <strong>sign up</strong> forms on this site yet. They will not work, and nothing you enter will be saved or recorded.</p>
+      <div class="proto-count" aria-label="Countdown to launch">
+        <div class="pc-cell"><span class="pc-n" id="proto-d">--</span><span class="pc-u">days</span></div>
+        <div class="pc-cell"><span class="pc-n" id="proto-h">--</span><span class="pc-u">hrs</span></div>
+        <div class="pc-cell"><span class="pc-n" id="proto-m">--</span><span class="pc-u">min</span></div>
+        <div class="pc-cell"><span class="pc-n" id="proto-s">--</span><span class="pc-u">sec</span></div>
+      </div>
+      <div class="proto-cta">
+        <a class="proto-btn" href="index.html#contact">Get in touch →</a>
+        <span class="proto-cta-note">Want to reach us before then? Use the <a href="index.html#contact">Get in Touch</a> form on our home page.</span>
+      </div>
+    </div>
+  </div>
+  <style>
+    .proto-banner { background: linear-gradient(180deg, var(--surface), var(--bg)); border-top: 3px solid var(--accent); border-bottom: 1px solid var(--border-strong); padding: 28px 20px; }
+    .proto-inner { max-width: 840px; margin: 0 auto; text-align: center; }
+    .proto-badge { display: inline-block; font-family: var(--font-sans); font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-accent); background: var(--accent); padding: 5px 12px; border-radius: 9999px; }
+    .proto-title { font-family: var(--font-display); color: var(--fg); font-size: clamp(20px, 3vw, 28px); margin: 14px 0 8px; }
+    .proto-lead { font-family: var(--font-sans); color: var(--fg-muted); font-size: 15px; line-height: 1.6; margin: 0 auto 18px; max-width: 64ch; }
+    .proto-lead b { color: var(--fg); }
+    .proto-count { display: flex; justify-content: center; gap: 14px; margin: 0 0 20px; }
+    .pc-cell { min-width: 74px; background: var(--surface); border: 1px solid var(--border-strong); border-radius: 14px; padding: 12px 10px; }
+    .pc-n { display: block; font-family: var(--font-display); color: var(--accent); font-size: 30px; line-height: 1; }
+    .pc-u { display: block; font-family: var(--font-sans); color: var(--fg-soft); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; }
+    .proto-cta { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .proto-btn { display: inline-block; background: var(--accent); color: var(--on-accent); font-family: var(--font-sans); font-weight: 800; font-size: 15px; text-decoration: none; padding: 13px 26px; border-radius: 9999px; }
+    .proto-btn:hover { background: var(--accent-hover); }
+    .proto-cta-note { font-family: var(--font-sans); color: var(--fg-soft); font-size: 13px; }
+    .proto-cta-note a { color: var(--accent); font-weight: 700; text-decoration: none; }
+    @media (max-width: 520px) { .proto-count { gap: 8px; } .pc-cell { min-width: 60px; padding: 10px 6px; } .pc-n { font-size: 24px; } }
+  </style>
+  <script>
+  (function(){
+    var target = new Date('2026-07-02T09:00:00-07:00').getTime();
+    var d=document.getElementById('proto-d'), h=document.getElementById('proto-h'),
+        m=document.getElementById('proto-m'), s=document.getElementById('proto-s');
+    function pad(n){ return (n<10?'0':'')+n; }
+    function tick(){
+      var diff = target - Date.now();
+      if (diff <= 0){ var c=document.querySelector('.proto-count'); if(c){ c.innerHTML='<span class="pc-u" style="font-size:14px">Registration is now open.</span>'; } return; }
+      var dd=Math.floor(diff/86400000), hh=Math.floor(diff/3600000)%24, mm=Math.floor(diff/60000)%60, ss=Math.floor(diff/1000)%60;
+      if(d)d.textContent=dd; if(h)h.textContent=pad(hh); if(m)m.textContent=pad(mm); if(s)s.textContent=pad(ss);
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+  </script>
+
 
 
 <!-- ============================================================= AUTH -->
