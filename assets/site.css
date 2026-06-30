@@ -361,6 +361,7 @@
   .callout { font-family: var(--font-plex); border-left: 3px solid var(--accent); background: var(--surface-muted); border-radius: 0 var(--radius-md) var(--radius-md) 0;
     padding: 20px 24px; margin: 28px 0; }
   .callout p { margin: 0; font-family: var(--font-plex); font-size: 16px; color: var(--fg-muted); line-height: 1.6; }
+  .callout p + p { margin-top: 0.9em; }
   .callout p b { color: var(--fg); }
   .callout.sky { border-left-color: var(--kin-skyblue); }
 
