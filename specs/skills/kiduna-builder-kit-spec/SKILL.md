@@ -2,7 +2,7 @@
 name: kiduna-builder-kit-spec
 description: >-
   Specify or extend the Kiduna Builder Kit product specification — the
-  downloadable kit, API, and connector that let outside developers create DUNAs,
+  downloadable kit, API, and connector that let outside developers create Dunas,
   frameworks, Program Templates, Allies, and Performers and build their own
   apps on the Kiduna network. Produces a Word (.docx, Kiduna house style) and
   Markdown spec. Use whenever the user wants to design, spec, or refine the
@@ -36,7 +36,7 @@ the foundation, not in it.
 - **Two modes** — create an Ally (build/register entities from outside) and be an
   Ally (the developer's own client acts as an Ally on the network).
 - **The API surface** — auth (member account, API key, FROST or external
-  wallet); create/define DUNAs, frameworks, Program Templates, Allies,
+  wallet); create/define Dunas, frameworks, Program Templates, Allies,
   Performers (the five phases); registration, Handles, Codes; registry/directory
   read and search; Handle resolution and Code verification; code exchange and
   sessions; transact-and-settle through the Distribution Waterfall; read/write

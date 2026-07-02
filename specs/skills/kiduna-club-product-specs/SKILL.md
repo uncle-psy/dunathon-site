@@ -40,20 +40,20 @@ kiduna-club-product-specs/
 ```
 
 The product areas (in `site.json`): Foundations (Overview, Actors & Identity,
-Allies/Performers/Phases); Frameworks, Templates & the Builder Kit (DUNA
+Allies/Performers/Phases); Frameworks, Templates & the Builder Kit (Duna
 Frameworks + each framework, Program Templates, Builder Kit); Organization &
 People (Alliances); Economy & Commerce (Offerings, Economy/Markets/Launchpad,
 Transactions & Commerce); Surfaces & Experience (Chat, Vibes, Documents & Media,
 Notifications, Seek & Directory); Platform & Architecture.
 
 ## Core vocabulary (keep consistent across all specs)
-- **Framework** — for a DUNA; assembles Wisdom, Stance, Programs, roles, offers
+- **Framework** — for a Duna; assembles Wisdom, Stance, Programs, roles, offers
   for a kind of organization (a domain). Specified with **kiduna-framework-spec**.
 - **Template** — a publishable **Program** (deep-agent routine) for Allies and
   Performers. A Program is private; a Template is shared. Specified with
   **kiduna-program-template**.
 - **Program (Magic)** — the Enact-phase unit; bundles Skills.
-- **Ally / Performer / Envoy / Sentinel**; **DUNA / Alliance / Member / Sponsor
+- **Ally / Performer / Envoy / Sentinel**; **Duna / Alliance / Member / Sponsor
   / Offer**; **Codes / Handles**; **Coin / Treasury / Distribution Waterfall**.
 - **Builder Kit** — kit + API + connector for outside developers. Specified with
   **kiduna-builder-kit-spec**.

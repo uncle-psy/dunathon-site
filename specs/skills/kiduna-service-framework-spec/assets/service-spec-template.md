@@ -12,7 +12,7 @@ footer: [Organization] — Service Framework Specification
 - **Name:** [organization / framework name]
 - **Version:** [e.g., 0.1]
 - **Author:** [name]
-- **Actor type:** [DUNA | Alliance]
+- **Actor type:** [Duna | Alliance]
 - **Service domains:** [military/veterans | law enforcement | fire & EMS | federal first responders | public-service professionals]
 
 [One paragraph: what the resulting Ally does for members.]

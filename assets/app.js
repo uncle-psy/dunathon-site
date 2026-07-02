@@ -1,7 +1,7 @@
 /* =========================================================================
    Kidunaverse — Integrated App prototype engine (v2)
-   Adds: 3 DUNAs with themes + Coin economics, persistence (localStorage),
-   Coins (not tokens), Buy-Coins / Load-Wallet, contextual DUNA-Ally chat
+   Adds: 3 Dunas with themes + Coin economics, persistence (localStorage),
+   Coins (not tokens), Buy-Coins / Load-Wallet, contextual Duna-Ally chat
    dock, Directory, Codes/Claims, selector Home logic, level-from-balance.
    Prototype only — no backend.
    ========================================================================= */
@@ -10,7 +10,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  /* ---- Levels (USDC thresholds, multiplied per DUNA) ------------------- */
+  /* ---- Levels (USDC thresholds, multiplied per Duna) ------------------- */
   var LEVELS = [
     { id: "guest",    name: "Guest",    base: 0,       allot: "Starter" },
     { id: "member",   name: "Member",   base: 10,      allot: "Monthly" },
@@ -21,10 +21,10 @@
     { id: "luminary", name: "Luminary", base: 1000000, allot: "Planetary" }
   ];
 
-  /* ---- DUNAs ----------------------------------------------------------- */
-  var DUNAS = {
-    wv:   { id:"wv",   name:"Kidunaverse",      short:"KV", tag:"Genesis", sym:"KIDUNA", coinPrice:0.10,   mult:1,   theme:"wv",   coinClass:"duna-wv",
-            ally:"Kidunaverse Ally",     bonus:0.10, blurb:"The genesis DUNA. Legal standing for you and your agents; the on-ramp to the DUNAVERSE." },
+  /* ---- Dunas ----------------------------------------------------------- */
+  var DunaS = {
+    wv:   { id:"wv",   name:"Kidunaverse",      short:"KV", tag:"Genesis", sym:"KIDuna", coinPrice:0.10,   mult:1,   theme:"wv",   coinClass:"duna-wv",
+            ally:"Kidunaverse Ally",     bonus:0.10, blurb:"The genesis Duna. Legal standing for you and your agents; the on-ramp to the DunaVERSE." },
     mesh: { id:"mesh", name:"Service Alliance", short:"SA", tag:"",        sym:"SRVA",   coinPrice:0.0333, mult:0.5, theme:"mesh", coinClass:"duna-mesh",
             ally:"Service Alliance Ally", bonus:0.15, blurb:"Verified support for veterans, first responders, and the communities they serve. Coins are 1/3 the value of Kidunaverse; joining costs half." },
     cc:   { id:"cc",   name:"Cosmicon",         short:"CX", tag:"",        sym:"CSMC",   coinPrice:0.0667, mult:2,   theme:"cc",   coinClass:"duna-cc",
@@ -52,9 +52,9 @@
   var app = $("#app");
 
   /* ---- Coin / level math ----------------------------------------------- */
-  function duna() { return DUNAS[state.current]; }
-  function usdOf(id) { return state.coins[id] * DUNAS[id].coinPrice; }
-  function thresholdsFor(id) { return LEVELS.map(function (L) { return L.base * DUNAS[id].mult; }); }
+  function duna() { return DunaS[state.current]; }
+  function usdOf(id) { return state.coins[id] * DunaS[id].coinPrice; }
+  function thresholdsFor(id) { return LEVELS.map(function (L) { return L.base * DunaS[id].mult; }); }
   function levelIdxOf(id) {
     var usd = usdOf(id), th = thresholdsFor(id), idx = 0;
     for (var i = 0; i < th.length; i++) if (usd + 1e-9 >= th[i]) idx = i;
@@ -95,7 +95,7 @@
     if (location.hash !== nh) { try { history.replaceState(null, "", nh); } catch (e) { location.hash = view; } }
   }
   function go(view) {
-    if (view === "newduna") { toast("Prototype: New-DUNA flow includes name, mission, Coin price, and a theme step in Builder."); return; }
+    if (view === "newduna") { toast("Prototype: New-Duna flow includes name, mission, Coin price, and a theme step in Builder."); return; }
     if (view === "projectnew") { toast("Prototype: the New-Project flow — name, objective, allies, tasks, and timeline — comes next."); return; }
     if (view === "account") beforeAccount();
     if (view === "directory") renderDirectory(curDirTab);
@@ -110,14 +110,14 @@
     renderDock(view);
   }
 
-  /* ---- DUNA apply (theme, selector, dock, coin tokens) ----------------- */
+  /* ---- Duna apply (theme, selector, dock, coin tokens) ----------------- */
   function switchDuna(id) {
-    if (!DUNAS[id]) return;
+    if (!DunaS[id]) return;
     state.current = id; save();
     applyDuna(); applyLevel();
-    // re-open the DUNA's host ally chat context
+    // re-open the Duna's host ally chat context
     renderDock(state.view);
-    toast("Now in " + DUNAS[id].name);
+    toast("Now in " + DunaS[id].name);
   }
   function applyDuna() {
     var d = duna();
@@ -219,15 +219,15 @@
   /* ---- Chat (main) ----------------------------------------------------- */
   var CHATS = {
     host: { name:"The Big Kiduna", tag:"Your Host's Ally · Kidunaverse", ava:"K", cls:"host",
-      greeting:"Welcome to the DUNAVERSE. I'm the Big Kiduna — the ally your host left running for you. Ask me anything, or tell me what you're here to do. You don't have to set anything up to start." },
+      greeting:"Welcome to the DunaVERSE. I'm the Big Kiduna — the ally your host left running for you. Ask me anything, or tell me what you're here to do. You don't have to set anything up to start." },
     concierge: { name:"Your Concierge", tag:"Personal Ally", ava:"C", cls:"",
-      greeting:"Hi — I'm your Concierge. I can keep track of what matters to you across the DUNAVERSE. Want to teach me something, or just talk?" },
+      greeting:"Hi — I'm your Concierge. I can keep track of what matters to you across the DunaVERSE. Want to teach me something, or just talk?" },
     alchemist: { name:"The Alchemist", tag:"Personal · Published", ava:"A", cls:"violet",
       greeting:"The Alchemist is really you. The work is to initiate you into the mysteries of your own soul. Where shall we begin?" }
   };
   var REPLIES = [
     "Here's how I'd approach that. The short version: you already have everything you need to begin, and we can deepen it whenever you want.",
-    "Good question. In DUNA terms that lives under your treasury and governance — I can walk you through it, or just handle the first step for you.",
+    "Good question. In Duna terms that lives under your treasury and governance — I can walk you through it, or just handle the first step for you.",
     "I can do that. Want me to draft it now, or set it up as a standing Program so it happens on its own?",
     "Done in spirit — in the live app I'd carry that out and report back. For now, here's what it would look like."
   ];
@@ -271,19 +271,19 @@
     setTimeout(function () { addMsg("ally", "K", REPLIES[replyTick % REPLIES.length], "host"); replyTick++; }, 420);
   }
 
-  /* ---- Contextual DUNA-Ally dock --------------------------------------- */
+  /* ---- Contextual Duna-Ally dock --------------------------------------- */
   var DOCK_CTX = {
-    codes: { intro: "Codes are how trust travels in the DUNAVERSE. Want to make one, or understand the Claims?",
+    codes: { intro: "Codes are how trust travels in the DunaVERSE. Want to make one, or understand the Claims?",
       chips: [ {t:"What's a Claim?", a:"A Claim is one field inside a Code — issuer, role, scope, splash, benefits, and so on. Together they define who the Code acts for and what it unlocks."},
                {t:"Create a Code", nav:"codenew"}, {t:"See my Code metrics", a:"Open the Metrics tab above to see joins and earnings per Code."}, {t:"Who is my Host?", nav:"host"} ] },
     account: { intro: "Your role here is set by how many Coins you hold. I can explain the tiers or help you load your wallet.",
-      chips: [ {t:"How do Coins set my role?", a:"Each role has a Coin threshold in USDC. Hold enough of this DUNA's Coin and you're at that role — no subscription."},
+      chips: [ {t:"How do Coins set my role?", a:"Each role has a Coin threshold in USDC. Hold enough of this Duna's Coin and you're at that role — no subscription."},
                {t:"Why only up to Sponsor?", a:"Card purchases (Stripe) cap around $25,000. Catalyst and Luminary are acquired inside by loading your wallet directly."},
                {t:"Load my wallet", a:"Scroll to Load Wallet — connect an external wallet, send USDC to your address, or use an on-ramp."} ] },
-    directory: { intro: "This is the network — DUNAs, Members, Alliances, and Programs. Open any card to meet its Ally.",
-      chips: [ {t:"Show me DUNAs", a:"Use the DUNAs tab. Each card opens that DUNA's Ally in chat."}, {t:"What's an Alliance?", a:"An Alliance is a container inside a DUNA where allies collaborate. It has no legal standing of its own."} ] },
-    agents: { intro: "Allies represent people, DUNAs, Alliances, Programs, and Sponsors. I can explain the types or states.",
-      chips: [ {t:"What types can I make?", a:"Members make Personal Allies and Alliances. Founders add DUNA Allies. Builders add Programs. Sponsors add offering allies."},
+    directory: { intro: "This is the network — Dunas, Members, Alliances, and Programs. Open any card to meet its Ally.",
+      chips: [ {t:"Show me Dunas", a:"Use the Dunas tab. Each card opens that Duna's Ally in chat."}, {t:"What's an Alliance?", a:"An Alliance is a container inside a Duna where allies collaborate. It has no legal standing of its own."} ] },
+    agents: { intro: "Allies represent people, Dunas, Alliances, Programs, and Sponsors. I can explain the types or states.",
+      chips: [ {t:"What types can I make?", a:"Members make Personal Allies and Alliances. Founders add Duna Allies. Builders add Programs. Sponsors add offering allies."},
                {t:"Draft vs Testing vs Published?", a:"Draft is private and unfinished. Testing is shareable to people you invite. Published is live on the app."}, {t:"Create a new Ally", nav:"setup"} ] },
     approve: { intro: "I'm your Actions ally. Tell me what to prioritize, hide, or escalate and I'll keep this inbox tidy.",
       chips: [ {t:"Only show urgent", a:"Filtering to Urgent — I'll keep approvals and time-sensitive items on top."}, {t:"Hide FYI items", a:"Hiding FYI. You can bring them back anytime."} ] },
@@ -315,7 +315,7 @@
     var box = $("#dock-scroll");
     var me = document.createElement("div"); me.className = "dock-msg me"; me.textContent = text; box.appendChild(me);
     var ti = $("#dock-input"); if (ti) { ti.value = ""; ti.style.height = "auto"; }
-    setTimeout(function () { var r = document.createElement("div"); r.className = "dock-msg ally"; r.textContent = "In the live app the " + duna().ally + " answers from this DUNA's knowledge and can take you where you need to go."; box.appendChild(r); box.scrollTop = box.scrollHeight; }, 320);
+    setTimeout(function () { var r = document.createElement("div"); r.className = "dock-msg ally"; r.textContent = "In the live app the " + duna().ally + " answers from this Duna's knowledge and can take you where you need to go."; box.appendChild(r); box.scrollTop = box.scrollHeight; }, 320);
     box.scrollTop = box.scrollHeight;
   }
   function toggleDock(open) { state.dockOpen = (open === undefined) ? !state.dockOpen : open; app.classList.toggle("dock-open", state.dockOpen); save(); }
@@ -360,7 +360,7 @@
         '<div class="pay-summary"><div><div class="pg-eyebrow">You\'re buying</div>' +
         '<div class="ps-fig">' + (price === 0 ? "Guest (Free)" : fmtUSD(price) + " · " + fmtCoins(total) + " " + d.sym) + '</div>' +
         '<div class="stripe-row">Secure card payment via <b>Stripe</b></div></div>' +
-        '<button class="btn btn-gold btn-lg" id="pay-go">' + (price === 0 ? "Continue as Guest →" : "Pay & enter the DUNAVERSE →") + '</button></div>' +
+        '<button class="btn btn-gold btn-lg" id="pay-go">' + (price === 0 ? "Continue as Guest →" : "Pay & enter the DunaVERSE →") + '</button></div>' +
         '<p class="fineprint">Initial Coin purchases <b>can\'t be traded for 30 days</b>. Once inside, there are more ways to fill your wallet (external wallet, USDC transfer, on-ramps). Stripe purchases are capped near $25,000 — <b>Catalyst</b> and <b>Luminary</b> are acquired inside.</p>' +
         '<p class="fineprint" id="reader-pay" hidden>On iOS and Android this is a <b>reader app</b>: purchases happen on <b>wvduna.com</b>, then you sign in here. (Prototype assumes web.)</p>';
       $("#pay-go").onclick = function () { purchase(selTier, true); };
@@ -406,7 +406,7 @@
     { type:"duna", name:"Cosmicon", sub:"Cosmic culture & creators · 4,180 members", badge:"CX", cls:"duna-cc" },
     { type:"member", name:"Ada Whitfield", sub:"@ada · Member · genesis", badge:"A", cls:"duna-wv" },
     { type:"member", name:"Rue", sub:"@rue · Founder · Coalfield Mutual", badge:"R", cls:"duna-mesh" },
-    { type:"member", name:"Jules", sub:"@jules · Builder · 3 DUNAs", badge:"J", cls:"duna-cc" },
+    { type:"member", name:"Jules", sub:"@jules · Builder · 3 Dunas", badge:"J", cls:"duna-cc" },
     { type:"alliance", name:"Coalfield ↔ Mesh", sub:"Alliance · rooted in Service Alliance", badge:"⌘", cls:"duna-mesh" },
     { type:"alliance", name:"Main Street Co-op", sub:"Alliance · rooted in Cosmicon", badge:"⌘", cls:"duna-cc" },
     { type:"program", name:"Inbox Concierge", sub:"Program · email triage & replies", badge:"▦", cls:"duna-wv" },
@@ -534,7 +534,7 @@
     $("#dock-send") && $("#dock-send").addEventListener("click", function () { dockSend($("#dock-input").value); });
 
     // selector home
-    $("#set-home-btn") && $("#set-home-btn").addEventListener("click", function () { state.home = state.current; save(); applyDuna(); toast(duna().name + " is now your Home DUNA"); });
+    $("#set-home-btn") && $("#set-home-btn").addEventListener("click", function () { state.home = state.current; save(); applyDuna(); toast(duna().name + " is now your Home Duna"); });
     $(".brand-lockup[data-go]") && $(".brand-lockup[data-go]").addEventListener("click", function (e) { e.preventDefault(); if (state.current !== state.home) switchDuna(state.home); go("chat"); });
 
     // wizard
@@ -591,7 +591,7 @@
       var wantView = params.get("view") || hashView() || null;
       pendingView = wantView;
       login();
-      if (params.get("duna") && DUNAS[params.get("duna")]) switchDuna(params.get("duna"));
+      if (params.get("duna") && DunaS[params.get("duna")]) switchDuna(params.get("duna"));
       if (params.get("mode") && !wantView) setMode(params.get("mode"));
     } else {
       pendingView = hashView() || null;   // remember deep-link target; honored after login

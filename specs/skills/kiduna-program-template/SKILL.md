@@ -9,7 +9,7 @@ description: >-
   deep-agent routine, or a task routine added to an Ally or Performer; or to
   define how Templates are picked, published, priced, or turned into Offers.
   Note the reserved meaning: a Template is a publishable Program (a Program is
-  private; a Template is shared). This is NOT for DUNA-level Frameworks — use
+  private; a Template is shared). This is NOT for Duna-level Frameworks — use
   kiduna-framework-spec for those. Produces a SPECIFICATION, not code.
 ---
 
@@ -18,20 +18,20 @@ description: >-
 Specifies one Program Template — a publishable Program (a reusable deep-agent
 routine) added to an Ally or a Performer for a specific task. Produces a Word +
 Markdown spec. For the concept and the rules, read the Program Templates page in
-the Kiduna Club Product Specifications; for DUNA-level work use
+the Kiduna Club Product Specifications; for Duna-level work use
 **kiduna-framework-spec** instead.
 
 ## The reserved meaning
 A **Program** is private to you. A **Template** is a Program you publish so others
 can choose it. Same object (one Prompt; many Sequences, Triggers, Database
 Connections, Polling/Web Hook listeners, Tools; on the deep-agent runtime); the
-difference is visibility. Free Templates are public within their home DUNA; to
-share across DUNAs, a Template is made an **Offer** (free or priced, with author
+difference is visibility. Free Templates are public within their home Duna; to
+share across Dunas, a Template is made an **Offer** (free or priced, with author
 attribution and lineage).
 
 ## What to specify for one Template
 - **Identity** — name, the task it performs, the Actor it attaches to (Ally
-  and/or Performer), the DUNA it is authored in.
+  and/or Performer), the Duna it is authored in.
 - **The routine** — the single Prompt; the Sequence of steps; Triggers; Database
   Connections; Polling/Web Hook listeners; the Tools/Abilities it uses; and the
   human-approval points for consequential actions.
@@ -39,7 +39,7 @@ attribution and lineage).
   connected) and what it produces.
 - **Level** — whether it is a standalone Program Template or a smaller routine
   meant to drop inside another Program.
-- **Publishing** — visibility (public within DUNA), whether it becomes an Offer
+- **Publishing** — visibility (public within Duna), whether it becomes an Offer
   (free or priced), author attribution, and lineage.
 - **Safety** — the Sentinel check (malicious content, prompt injection) it must
   pass before publishing; the approval expectation (no manual queue once the
@@ -50,7 +50,7 @@ attribution and lineage).
 - **Acceptance criteria.**
 
 ## Workflow
-1. Pin the Template's task, the Actor it attaches to, and its home DUNA.
+1. Pin the Template's task, the Actor it attaches to, and its home Duna.
 2. Specify the routine (Prompt + Sequence + Triggers + Data + Polling + Tools),
    honoring one Prompt per Program and marking approval points.
 3. Specify inputs/outputs, level, publishing (and Offer terms if shared), and

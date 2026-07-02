@@ -1,5 +1,5 @@
 /* Site-wide search for the homepage. Merges the static SITE_INDEX with the
-   DUNA directory (dunas-data.js) and filters live into a results dropdown. */
+   Duna directory (dunas-data.js) and filters live into a results dropdown. */
 (function () {
   var input = document.getElementById("site-search-input");
   var panel = document.getElementById("site-search-results");
@@ -9,10 +9,10 @@
 
   // Build the combined corpus once.
   var corpus = (window.SITE_INDEX || []).slice();
-  (window.DUNAS || []).forEach(function (d) {
+  (window.DunaS || []).forEach(function (d) {
     corpus.push({
       title: d.name,
-      type: "DUNA",
+      type: "Duna",
       url: d.symbol + ".html",
       text: d.by + " · " + d.tag + " · " + d.type + " · " + d.coin + " · " + d.blurb
     });

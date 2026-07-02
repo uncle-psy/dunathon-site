@@ -9,7 +9,7 @@ footer: Program Templates — Product Specification
 
 # 1. What a Template is now
 
-"Template" has a specific, reserved meaning. A **Template** is a publishable **Program** — a reusable deep-agent routine that can be added to an Ally or a Performer for a specific task. Templates are smaller than Frameworks. A [Framework](../frameworks/index.html) is for a whole DUNA; a Template is for one task an agent performs.
+"Template" has a specific, reserved meaning. A **Template** is a publishable **Program** — a reusable deep-agent routine that can be added to an Ally or a Performer for a specific task. Templates are smaller than Frameworks. A [Framework](../frameworks/index.html) is for a whole Duna; a Template is for one task an agent performs.
 
 The distinction that matters: a **Program** is private — you create it in the Enact phase and use it yourself. A **Template** is a Program that has been **published**, so anyone can choose it and add it to their own Ally or Performer. You build a Program for yourself; you make it a Template to share it.
 
@@ -19,12 +19,12 @@ In the Enact phase you can create a Program or a Template. They are the same kin
 
 | | Program | Template |
 | --- | --- | --- |
-| Who can use it | Just you | Anyone (within the DUNA where it is created; beyond that, if made an Offer) |
-| Visibility | Private | Public within its DUNA |
-| Where it appears | Your own Allies and Performers | The Template picker when anyone builds an Ally or Performer in that DUNA |
+| Who can use it | Just you | Anyone (within the Duna where it is created; beyond that, if made an Offer) |
+| Visibility | Private | Public within its Duna |
+| Where it appears | Your own Allies and Performers | The Template picker when anyone builds an Ally or Performer in that Duna |
 | Can be sold | No | Yes, by making it an Offer |
 
-A Template that is not made an Offer is free, and free Templates within a DUNA are always public within that DUNA — any member can choose and deploy them. Making a Template an Offer is what carries it beyond its home DUNA (section 4).
+A Template that is not made an Offer is free, and free Templates within a Duna are always public within that Duna — any member can choose and deploy them. Making a Template an Offer is what carries it beyond its home DUNA (section 4).
 
 # 3. How Templates are used — Allies and Performers
 
@@ -38,8 +38,8 @@ Anyone can create a Template, and the design intent is that a public Template is
 
 Sharing has two scopes:
 
-- **Within a DUNA.** A Template created in a DUNA is public within that DUNA. You cannot charge for it there — you are a member of that DUNA, and free Templates within the DUNA are part of its commons.
-- **Across DUNAs.** To share a Template with other DUNAs, make it an **Offer**. As an Offer it propagates and becomes available to other DUNAs, appears in the Offers surface, and can carry a price. When a Template is an Offer, it shows in the Enact/Template picker marked free or priced, and a person buys or deploys it. The author appears on it, and lineage routes commissions back to the author when it is reused.
+- **Within a Duna.** A Template created in a Duna is public within that Duna. You cannot charge for it there — you are a member of that Duna, and free Templates within the Duna are part of its commons.
+- **Across Dunas.** To share a Template with other Dunas, make it an **Offer**. As an Offer it propagates and becomes available to other Dunas, appears in the Offers surface, and can carry a price. When a Template is an Offer, it shows in the Enact/Template picker marked free or priced, and a person buys or deploys it. The author appears on it, and lineage routes commissions back to the author when it is reused.
 
 # 5. Two levels of Templates
 
@@ -47,19 +47,19 @@ There are Templates at more than one level. There are smaller Templates *within*
 
 # 6. Relationship to Frameworks
 
-A [Framework](../frameworks/index.html) assembles many things for a DUNA, including Programs. Frameworks and Templates therefore nest: a Framework can ship with Templates already chosen, and a person adopting a Framework can add more Templates to its Allies and Performers. The big Framework specifications are, in effect, aggregates that include Templates among their parts. Specifying Frameworks and Templates as distinct objects lets the team build a Template once and reuse it across many Frameworks.
+A [Framework](../frameworks/index.html) assembles many things for a Duna, including Programs. Frameworks and Templates therefore nest: a Framework can ship with Templates already chosen, and a person adopting a Framework can add more Templates to its Allies and Performers. The big Framework specifications are, in effect, aggregates that include Templates among their parts. Specifying Frameworks and Templates as distinct objects lets the team build a Template once and reuse it across many Frameworks.
 
 # 7. What the system must provide
 
 - **T1.** In Enact, the ability to create either a Program (private) or a Template (publishable), same object, different visibility.
 - **T2.** A Template picker under the skills section when creating or modifying an Ally or a Performer, listing predefined and member-created Templates, with selection rather than re-authoring.
-- **T3.** Public-within-DUNA visibility for free Templates; no charging inside the home DUNA.
-- **T4.** Publishing a Template as an Offer to propagate it across DUNAs, with free or priced display in the picker, author attribution, and lineage.
+- **T3.** Public-within-Duna visibility for free Templates; no charging inside the home Duna.
+- **T4.** Publishing a Template as an Offer to propagate it across Dunas, with free or priced display in the picker, author attribution, and lineage.
 - **T5.** A Sentinel safety check (malicious-content and prompt-injection screening) before publish, in place of a manual approval queue.
 - **T6.** Support for Templates at two levels — routines within a Program, and standalone Program Templates — both composable.
 
 # 8. Open questions
 
 - Confirm whether Template publishing needs any upload/approval flow before the Sentinel safety check is built, or whether predefined Templates carry the launch while user-created Templates follow.
-- Confirm how a Template's lineage and pricing interact with the DUNA where it was authored versus the DUNAs that adopt it.
+- Confirm how a Template's lineage and pricing interact with the Duna where it was authored versus the Dunas that adopt it.
 - Confirm the picker's surface and how predefined versus community Templates are distinguished and ranked.

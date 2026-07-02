@@ -9,7 +9,7 @@ Title (`<Org> — Service Framework Specification`), subtitle (the domains and A
 type), author, date, status. Used for the title page.
 
 ## 1. Identity
-Name, version, author, Actor type (DUNA/Alliance), the service domains covered,
+Name, version, author, Actor type (Duna/Alliance), the service domains covered,
 and one paragraph on what the resulting Ally does for members.
 
 ## 2. Summary

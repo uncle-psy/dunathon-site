@@ -14,11 +14,11 @@ Codes, the registry) see the general kiduna-framework-spec skill.
 | **Sponsor** | The outside entity that stands the org up and holds issuer authority (test case: Service Alliance LLC). | Sponsor |
 | **Curator** | An operator/program leader who runs a cohort or service for a defined share. | operator |
 | **Verifying Authority** | The source confirming service/eligibility per domain. | verification |
-| **Registered Agent** | The West Virginia agent of record a DUNA requires. | Registered Agent |
+| **Registered Agent** | The West Virginia agent of record a Duna requires. | Registered Agent |
 
-The organization is usually a **DUNA** (legal standing + treasury) or an
-**Alliance** (informal grouping). A federation = a DUNA with sub-groups, or an
-Alliance of DUNAs, with discovery linking them.
+The organization is usually a **Duna** (legal standing + treasury) or an
+**Alliance** (informal grouping). A federation = a Duna with sub-groups, or an
+Alliance of Dunas, with discovery linking them.
 
 ## Identity & verification
 

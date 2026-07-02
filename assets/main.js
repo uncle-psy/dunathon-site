@@ -1,4 +1,4 @@
-// WV DUNA — light front-end behavior (no dependencies)
+// WV Duna — light front-end behavior (no dependencies)
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile nav
   var toggle = document.querySelector(".nav-toggle");

@@ -1,9 +1,9 @@
-/* Shared DUNA directory dataset (draft sample data).
-   Consumed by the DUNAs list (dunas.html), the per-DUNA pages (/<symbol>),
+/* Shared Duna directory dataset (draft sample data).
+   Consumed by the Dunas list (dunas.html), the per-Duna pages (/<symbol>),
    site search, and the homepage. `symbol` is the coin ticker without the $,
    and is also the page handle: wvduna.com/<symbol>. `stage` is one of
    "Live", "Raising", or "Forming". */
-window.DUNAS = [
+window.DunaS = [
   { id: "new-river-land-trust", name: "New River Land Trust", by: "Fayette County Collective",
     tag: "Land & Water", accent: "cyan", type: "Public", coin: "$NRLT", symbol: "NRLT",
     stage: "Live", price: "$0.041", change: "+4.2%", holders: 980,

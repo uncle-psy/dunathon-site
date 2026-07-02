@@ -11,7 +11,7 @@ footer: The Builder Kit — Product Specification
 
 This document specifies the Kiduna Builder Kit: what it is, what it must do, and how the team should think about building it. It is written for the engineers who will build the kit. It describes experience and functionality, and it is about *understanding and creating the Builder Kit* — not the assets that will eventually ship inside it. Those assets (starter frameworks, Program Templates, examples) are specified elsewhere in the knowledge base and merely referenced here.
 
-The Builder Kit is the path that opens Kiduna to developers. Inside the product, a person assembles a DUNA and its Allies through the five phases. The Builder Kit extends that same capability to anyone on the open internet: download a kit (or connect a coding agent), authenticate with a Kiduna account, and create DUNAs, frameworks, Program Templates, Allies, and Performers programmatically — then build a custom interface, app, or website around them while still interoperating with the Kiduna network.
+The Builder Kit is the path that opens Kiduna to developers. Inside the product, a person assembles a Duna and its Allies through the five phases. The Builder Kit extends that same capability to anyone on the open internet: download a kit (or connect a coding agent), authenticate with a Kiduna account, and create Dunas, frameworks, Program Templates, Allies, and Performers programmatically — then build a custom interface, app, or website around them while still interoperating with the Kiduna network.
 
 It is sequenced last. The framework system, Offers, Alliances, the graph database, and Handles come first, because the Builder Kit is meant to expose all of them. Building it last is deliberate: the team wants everything else working so that the kit can surface the whole network rather than a fragment of it.
 
@@ -20,16 +20,16 @@ It is sequenced last. The framework system, Offers, Alliances, the graph databas
 The Builder Kit has three parts that work together:
 
 - **A downloadable kit.** A package a developer can download (a zip), or connect to directly from a coding agent such as Claude Code. It carries the equivalent of the in-product capabilities, the skills, and an API key tied to the developer's Kiduna member account.
-- **An API.** The programmatic surface that lets an external client do, through code, what a person does in the product: create and define DUNAs, frameworks, Program Templates, Allies, and Performers; register them and obtain Handles and Codes; connect Abilities; run Programs; reach discovery, sessions, settlement, and the graph.
+- **An API.** The programmatic surface that lets an external client do, through code, what a person does in the product: create and define Dunas, frameworks, Program Templates, Allies, and Performers; register them and obtain Handles and Codes; connect Abilities; run Programs; reach discovery, sessions, settlement, and the graph.
 - **A connector.** The piece that authenticates the kit to the member's account and the network, exchanges Codes, and keeps the developer's local work in sync with the live network.
 
-The model is the one a documentation platform uses when it ships a downloadable kit plus a connector that lets a developer manage everything locally and publish to the hosted service. Applied to Kiduna: download the kit, connect it with an account and an API key, and from then on build and manage Allies and DUNAs from your own environment.
+The model is the one a documentation platform uses when it ships a downloadable kit plus a connector that lets a developer manage everything locally and publish to the hosted service. Applied to Kiduna: download the kit, connect it with an account and an API key, and from then on build and manage Allies and Dunas from your own environment.
 
 # 3. The principle: everything a member can do, a developer can do
 
 A developer using the Builder Kit can do everything a member can do in the product, and everything a developer would additionally want to do — with one boundary. They cannot modify Kiduna's core code. They build *on* the foundation, not *in* it. Concretely, a developer can:
 
-- Create DUNAs, frameworks, Program Templates, Allies, and Performers through the API, using their member account.
+- Create Dunas, frameworks, Program Templates, Allies, and Performers through the API, using their member account.
 - Get their own GitHub repository and build on the whole foundation fabric — their own complete websites, web apps, mobile apps, and desktop apps — that talk to the network.
 - Transfer Codes and participate in agentic commerce through Handles: buy and sell, use the directory, address any Ally anywhere by its Handle.
 - Use their own model and tools, and run the whole thing from their own environment.
@@ -40,13 +40,13 @@ What they cannot do is change the protocol itself. The core code, the registry m
 
 The kit supports two uses, and both must work.
 
-**Create an Ally.** Use the kit to build and register an Ally (or a whole DUNA, or a Program Template) that runs on the network — the same thing a person could build in-product, produced from outside. A developer can drive this with a coding agent: give the agent the kit and a prompt, and it stands up a working Ally.
+**Create an Ally.** Use the kit to build and register an Ally (or a whole Duna, or a Program Template) that runs on the network — the same thing a person could build in-product, produced from outside. A developer can drive this with a coding agent: give the agent the kit and a prompt, and it stands up a working Ally.
 
 **Be an Ally.** Use the kit so the developer's own client *acts as* an Ally. For example, a developer's app asks the network to book something, and the app — as an Ally — finds a verified counterparty by Handle, exchanges Codes, opens a session, and transacts. The developer is not only creating Allies; their own front end becomes one on the network.
 
 # 5. Handles — addressing across the open internet
 
-Handles are the addressing layer the Builder Kit depends on, and they need to be right before the kit ships. Every DUNA, Member, Sponsor, and the other entities has a **root Handle** — `@my_duna`, `@my_name` — resolvable on the registry. Handles form a namespace with levels, like a domain name system, so an Ally can be reached at a particular DUNA. Uniqueness and the namespace rules are part of this layer.
+Handles are the addressing layer the Builder Kit depends on, and they need to be right before the kit ships. Every Duna, Member, Sponsor, and the other entities has a **root Handle** — `@my_duna`, `@my_name` — resolvable on the registry. Handles form a namespace with levels, like a domain name system, so an Ally can be reached at a particular Duna. Uniqueness and the namespace rules are part of this layer.
 
 Handles are what let a developer's app, built anywhere, send a message to the right Ally and always know which Ally it is addressing. Because Handles resolve through the registry and carry into the Code exchange, commerce initiated from an outside app is still verified and attributable. This is why Handles are specified as a prerequisite for the Builder Kit.
 
@@ -59,7 +59,7 @@ The Builder Kit should come after the move to a graph database. The network is a
 At the level of capability, the API must let an external client:
 
 - Authenticate with a member account, an API key, and a connected wallet (FROST or external).
-- Create and define a DUNA, a framework, a Program Template, an Ally, or a Performer, including the five phases (Wisdom, Stance, Abilities, Programs, Sentinel).
+- Create and define a Duna, a framework, a Program Template, an Ally, or a Performer, including the five phases (Wisdom, Stance, Abilities, Programs, Sentinel).
 - Register entities and obtain their Handles and Codes.
 - Read and search the registry and directory; resolve a Handle; verify a counterparty's Code.
 - Exchange Codes and open a scoped session with another Ally.
@@ -78,7 +78,7 @@ The intent is to open-source the platform once everything works and the code bas
 # 10. What the system must provide (consolidated)
 
 - **B1.** A downloadable kit and a connector that authenticate to a member account and the network with an API key, and a path to drive the kit from a coding agent (Claude Code first).
-- **B2.** An API exposing the full creation surface (DUNAs, frameworks, Program Templates, Allies, Performers, the five phases), registration, Handles, and Codes.
+- **B2.** An API exposing the full creation surface (Dunas, frameworks, Program Templates, Allies, Performers, the five phases), registration, Handles, and Codes.
 - **B3.** Both modes: create an Ally, and be an Ally.
 - **B4.** Registry and directory read/search, Handle resolution, Code verification, code exchange, and scoped sessions.
 - **B5.** Transaction within a session, settling and routing through the Distribution Waterfall; read/write of graph state (offers, lineage, membership, treasury).

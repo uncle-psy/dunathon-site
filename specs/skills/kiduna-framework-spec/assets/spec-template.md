@@ -12,7 +12,7 @@ footer: [Framework name] — Framework Specification
 - **Name:** [framework name]
 - **Version:** [e.g., 0.1]
 - **Author:** [name]
-- **Actor type:** [DUNA | Alliance | Member/User | Sponsor | Offer]
+- **Actor type:** [Duna | Alliance | Member/User | Sponsor | Offer]
 - **Domain:** [domain]
 
 [One paragraph: what the resulting Ally does for the people who adopt this framework.]
@@ -70,7 +70,7 @@ footer: [Framework name] — Framework Specification
 
 # 8. Assembly
 
-[The Actor the Ally is bound to; naming and Code issuance at the end; how the five outputs compose. Note any composition with a parent DUNA or an Alliance.]
+[The Actor the Ally is bound to; naming and Code issuance at the end; how the five outputs compose. Note any composition with a parent Duna or an Alliance.]
 
 # 9. Discovery
 

@@ -1,6 +1,6 @@
 # Kiduna operating model (grounded in the prototype)
 
-The shared model every Factory spec assumes. Drawn from the DUNATHON prototype,
+The shared model every Factory spec assumes. Drawn from the Dunathon prototype,
 a faithful front-end model of the live system.
 
 ## Modes
@@ -14,24 +14,24 @@ a faithful front-end model of the live system.
 | --- | --- | --- |
 | Guest | $0 | read-only in most places |
 | Member | $10 | vote, chat, join |
-| Founder | $100 | run a DUNA, Offerings, Markets, Alliances |
+| Founder | $100 | run a Duna, Offerings, Markets, Alliances |
 | Builder | $1,000 | build Programs |
 | Sponsor | $10,000 | Offering Allies, Electors |
 | Catalyst | $100,000 | enterprise |
 | Luminary | $1,000,000 | planetary |
 
-Each DUNA applies a **multiplier** to these thresholds. Stripe caps ~$25k →
+Each Duna applies a **multiplier** to these thresholds. Stripe caps ~$25k →
 Catalyst/Luminary reached by loading USDC. Initial coin buys are non-transferable
 30 days.
 
 ## Level → what you can create
 - Member: Personal Allies, Alliances
-- Founder: DUNA Allies
+- Founder: Duna Allies
 - Builder: Programs
 - Sponsor: Offering Allies
 
 ## Allies
-Five types: **DUNA Ally, Personal Ally (member), Alliance, Sponsor, Program.**
+Five types: **Duna Ally, Personal Ally (member), Alliance, Sponsor, Program.**
 Any can be **Primary** for its principal. States: **Draft / Testing /
 Published.** Visibilities: **Public** (any may connect, listed in Seek),
 **Private** (listed, needs a Code with matching entry Claim), **Secret** (not
@@ -39,13 +39,13 @@ listed; reached only by entering its Code). Codes are always exchanged on
 connect; visibility only decides who may initiate.
 
 ## Coin & economy
-Each DUNA can issue a coin; The Big Kiduna's is **KIDUNA**. Custody = Solana
+Each Duna can issue a coin; The Big Kiduna's is **KIDuna**. Custody = Solana
 **FROST** wallet (key split, no single party can move funds, no seed phrase).
 Fund via Stripe/on-ramps, external wallet (Phantom/Solflare), or USDC transfer.
 **Distribution Waterfall:** money (membership, sponsorship, computation, trading,
-offerings) splits atomically — lineage commissions up four levels, then DUNA
+offerings) splits atomically — lineage commissions up four levels, then Duna
 treasury / Sponsor / Curator / protocol. Surplus reinvests; no outside
-shareholder. **Team** defines DUNA-level roles and revenue splits.
+shareholder. **Team** defines Duna-level roles and revenue splits.
 
 ## Codes / Claims
 A Code = invitation + credential in one, signed, resolving on the WV registry.
@@ -74,11 +74,11 @@ resolves; outcome executes. Asymmetric thresholds protect mission-critical
 matters. Signed rationales stored in the graph.
 
 ## The Factory mechanic
-Members form **Alliances** (containers in a DUNA, no legal standing). When an
+Members form **Alliances** (containers in a Duna, no legal standing). When an
 Alliance reaches mass, the Governance Market votes to **graduate** it into a new
 Kiduna and how much to **seed** it (coin, treasury USDC, or a mix). The buy-in
 becomes the new Kiduna's treasury; lineage records the parent upstream.
 
 ## Names to confirm
-Genesis DUNA = **The Big Kiduna** (prototype themes it as DUNATHON for the launch
-event; coin shows DT). Canonical coin = **KIDUNA**. Confirm before build.
+Genesis Duna = **The Big Kiduna** (prototype themes it as Dunathon for the launch
+event; coin shows DT). Canonical coin = **KIDuna**. Confirm before build.

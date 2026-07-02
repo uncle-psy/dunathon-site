@@ -71,4 +71,4 @@ against wellbeing-and-safety.md.
   policy, issuer multisig.
 - **Discovery:** what a member's Ally searches for on the network.
 - **Slots:** the consolidated fill-in list for the adopt flow.
-- **Composition:** whether the org nests under a parent DUNA or joins an Alliance.
+- **Composition:** whether the org nests under a parent Duna or joins an Alliance.

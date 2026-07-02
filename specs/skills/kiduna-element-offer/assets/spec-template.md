@@ -1,17 +1,17 @@
 ---
-title: [DUNA] — Elements as Offers Specification
+title: [Duna] — Elements as Offers Specification
 subtitle: Element marketplace · pricing · lineage · contests & airdrops
 author: [Author], Kinship Systems
 date: [Month DD, YYYY]
 status: Draft for engineering
-footer: [DUNA] — Elements as Offers Specification
+footer: [Duna] — Elements as Offers Specification
 ---
 
 # 1. Elements
 [The reusable building blocks (Wisdom, Stance, Abilities, Programs/Magic, Sentinel/HEARTS, Vibes, Codes, Coin configs, Offers). Explore-and-pick to start/extend a Kiduna; the teaching function.]
 
 # 2. Listing an Element as an Offer
-[The listing flow; free or priced; under a DUNA's standing.]
+[The listing flow; free or priced; under a Duna's standing.]
 
 # 3. Pricing & payment
 [Show price in USD and Kiduna Coins; settle in KIDUNA (USD is a reference). The price Claim (e.g. usd:10/once).]

@@ -68,10 +68,10 @@ The fill-in skeleton you complete is `assets/service-spec-template.md`.
 
 Pin down: the organization's name and what it does; the **service domains** it
 covers (military/veterans, law enforcement, fire & EMS, federal first
-responders, public-service professionals); the **Actor** it is (usually a DUNA
+responders, public-service professionals); the **Actor** it is (usually a Duna
 when it needs legal standing and a treasury, or an Alliance when it is an
-informal grouping; a federation is a DUNA with sub-groups or an Alliance of
-DUNAs); and a paragraph on what the resulting Ally does for members. Ask only
+informal grouping; a federation is a Duna with sub-groups or an Alliance of
+Dunas); and a paragraph on what the resulting Ally does for members. Ask only
 what changes the spec; infer sensible defaults and state them.
 
 ### 2. Interview across the five phases

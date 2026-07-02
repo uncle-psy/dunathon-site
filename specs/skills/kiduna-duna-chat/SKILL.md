@@ -1,12 +1,12 @@
 ---
 name: kiduna-duna-chat
 description: >-
-  Specify a Kiduna DUNA Ally's chat experience — the Stance (system prompt), the
+  Specify a Kiduna Duna Ally's chat experience — the Stance (system prompt), the
   Wisdom (knowledge base / vector store / Pinecone), the contextual chips, how
   chats are mediated through Allies, and notifications. Produces a Word (.docx,
   Kiduna house style) and Markdown spec. Use whenever the user wants to design or
-  spec the DUNA Ally chat, the always-on help dock, contextual chips/quick
-  replies in chat, the Stance or system prompt for a DUNA Ally, the knowledge
+  spec the Duna Ally chat, the always-on help dock, contextual chips/quick
+  replies in chat, the Stance or system prompt for a Duna Ally, the knowledge
   base / Pinecone / vector store behind an Ally, how people and Allies
   communicate, chat mediation, multi-user chat, or notifications and how members
   set notification preferences by talking to their Personal Ally. Part of the
@@ -14,27 +14,27 @@ description: >-
   code.
 ---
 
-# Kiduna DUNA-Ally chat specification
+# Kiduna Duna-Ally chat specification
 
-Specifies how a DUNA Ally talks with people and how people talk with it: the
+Specifies how a Duna Ally talks with people and how people talk with it: the
 **Stance**, the **Wisdom**, the **contextual chips**, the **mediation** of all
 communication through Allies, and **notifications**. Produces a Word + Markdown
-spec. Ground it in the DUNATHON prototype, which models the live chat surfaces.
+spec. Ground it in the Dunathon prototype, which models the live chat surfaces.
 For the shared operating model see `kiduna-factory-spec/references/operating-model.md`.
 
 ## The two chat surfaces
 
-1. **Main Chat** — a person's conversations with the DUNA Ally (their Host),
+1. **Main Chat** — a person's conversations with the Duna Ally (their Host),
    their Personal Ally (concierge), and published Allies. Each opens from its
    Stance with a greeting and starter chips.
-2. **The always-on contextual dock** — "Ask [DUNA] ✦" on every page, opening the
-   current DUNA's Ally with a context-appropriate intro and chips. This is help;
+2. **The always-on contextual dock** — "Ask [Duna] ✦" on every page, opening the
+   current Duna's Ally with a context-appropriate intro and chips. This is help;
    it is always available; it answers from Wisdom and can navigate the person.
 
 ## What to specify
 
 ### Stance (the system prompt)
-Write the DUNA Ally's Stance: who it is, how it speaks (briefly, concretely),
+Write the Duna Ally's Stance: who it is, how it speaks (briefly, concretely),
 its rules for offering chips (always a low-pressure exploratory option; prefer
 the next concrete step; never push spend), and its accountability posture (acts
 under real identity; pauses for human approval on anything consequential; routes
@@ -75,7 +75,7 @@ suppresses, and delivers across in-app, push, Telegram, Bluesky, and email. See
 `references/chip-catalog.md` for the notification event catalog too.
 
 ## Workflow
-1. Identify the DUNA and its Ally (name, handle, line).
+1. Identify the Duna and its Ally (name, handle, line).
 2. Draft the Stance.
 3. Specify the Wisdom (topics, chunking, tags, retrieval, the three jobs).
 4. Build the per-context chip catalog (question/navigation/action), scoped.

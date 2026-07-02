@@ -4,11 +4,11 @@ description: >-
   Specify a single Kiduna framework in full detail and produce an engineer-ready
   specification as BOTH a Word document (.docx) and Markdown. Use whenever the
   user wants to design, spec, define, draft, or create a Kiduna framework — e.g.
-  "spec the Travel framework", "create a DUNA framework for veterans services",
+  "spec the Travel framework", "create a Duna framework for veterans services",
   "define a Kiduna Offer framework", "let's build out the gaming framework", or
   "write the spec for a Member Ally". Also use for any request to fully describe
   one Kiduna Ally across the five phases (Inform, Instruct, Empower, Enact,
-  Align) for a DUNA, Alliance, Member/User, Sponsor, or Offer. Err toward using
+  Align) for a Duna, Alliance, Member/User, Sponsor, or Offer. Err toward using
   this skill whenever "Kiduna" and "framework" appear together, or when the user
   is defining an Ally, its Wisdom, Stance, Abilities, Programs, or Sentinel.
   This skill produces a SPECIFICATION for engineers, not code.
@@ -53,9 +53,9 @@ The fill-in skeleton you will complete is `assets/spec-template.md`.
 Pin down three things first, because everything else depends on them:
 
 - **Framework name** and the **domain** it serves (Travel, Service, Gaming, …).
-- The **Actor** the resulting Ally represents: a DUNA, an Alliance, a
+- The **Actor** the resulting Ally represents: a Duna, an Alliance, a
   Member/User, a Sponsor, or an Offer. The Actor type changes what the Ally can
-  contain (only a DUNA can have a Coin and a Market, for example).
+  contain (only a Duna can have a Coin and a Market, for example).
 - A one-paragraph description of **what the resulting Ally does** for the people
   who adopt it.
 

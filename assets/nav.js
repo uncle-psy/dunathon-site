@@ -1,4 +1,4 @@
-/* DUNATHON shared nav: mobile toggle + active-link highlighting. */
+/* Dunathon shared nav: mobile toggle + active-link highlighting. */
 (function () {
   var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   if (path === '') path = 'index.html';

@@ -1,6 +1,6 @@
 /* ==========================================================================
-   DUNATHON — Tasks boards (prototype). Data-driven, multi-board Kanban.
-   Boards come from window.DUNA_BOARDS (see assets/boards-data.js). The default
+   Dunathon — Tasks boards (prototype). Data-driven, multi-board Kanban.
+   Boards come from window.Duna_BOARDS (see assets/boards-data.js). The default
    board is Kidunaverse, imported from the Kiduna Club Trello export. You can
    switch boards, spin up a new one, add tasks, claim them, hand work to an
    agent, and complete them. No drag-and-drop yet; status changes happen
@@ -9,8 +9,8 @@
 (function () {
   "use strict";
 
-  var BOARDS = window.DUNA_BOARDS || {};
-  var ORDER = (window.DUNA_BOARD_ORDER || Object.keys(BOARDS)).slice();
+  var BOARDS = window.Duna_BOARDS || {};
+  var ORDER = (window.Duna_BOARD_ORDER || Object.keys(BOARDS)).slice();
   var activeId = ORDER[0];
   var filter = "all";
   var newCounter = 9000;

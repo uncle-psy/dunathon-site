@@ -3,12 +3,12 @@ name: kiduna-graduation-governance
 description: >-
   Specify how Alliances are created and managed in a Kiduna, and how an Alliance
   graduates into its own Kiduna through the Governance Market — members voting on
-  whether to graduate and how much to seed the new Kiduna (in the DUNA's coin,
+  whether to graduate and how much to seed the new Kiduna (in the Duna's coin,
   USDC from the treasury, or a combination). Produces a Word (.docx, Kiduna house
   style) and Markdown spec. Use whenever the user wants to design or spec
   Alliances, the Alliance→Kiduna graduation, spinning out a Kiduna, Decision
   Markets, governance markets, Objectives, Proposals, Electors, treasury seeding,
-  or buy-in for a new DUNA. Part of the Kiduna Factory family (see
+  or buy-in for a new Duna. Part of the Kiduna Factory family (see
   kiduna-factory-spec). Produces a SPECIFICATION, not code.
 ---
 
@@ -20,8 +20,8 @@ Produces a Word + Markdown spec. Shared model:
 `kiduna-factory-spec/references/operating-model.md`.
 
 ## Alliances
-An Alliance is a container inside a DUNA where Allies collaborate; it has no legal
-standing of its own (that belongs to the DUNA). It can hold Members, Allies,
+An Alliance is a container inside a Duna where Allies collaborate; it has no legal
+standing of its own (that belongs to the Duna). It can hold Members, Allies,
 Offers, Sponsors, and other Alliances. Specify: forming an Alliance; inviting
 Allies by Code; giving it an Alliance Ally; shared resources (a squad's wallet);
 running its conversations as a mediated group; and representing it as a space in
@@ -50,7 +50,7 @@ The seed amount **buys into** the new Kiduna: it becomes the new Kiduna's starti
 treasury and the parent's stake. Because economics recirculate, this is the
 network investing in its offspring. Lineage records the parent upstream and the
 new founders at the apex of the new Kiduna's lineage. After graduation the new
-Kiduna files its standing, stands up its DUNA Ally (often from picked Elements),
+Kiduna files its standing, stands up its Duna Ally (often from picked Elements),
 issues its coin, and appears in the Directory — itself a Factory.
 
 ## What to specify
@@ -62,7 +62,7 @@ human-approval points (the buy-in spends treasury; surface for approval per the
 governance rules).
 
 ## Workflow
-1. Specify Alliance creation and management for the DUNA.
+1. Specify Alliance creation and management for the Duna.
 2. Specify the Decision-Market objects and resolver.
 3. Specify the graduation Proposal (graduate? + seed amount + source).
 4. Specify the buy-in execution, treasury seeding, and lineage.

@@ -12,27 +12,27 @@ mediated by an Ally. You never address an Actor directly; you talk to its Ally.
 
 | Actor | What it is | Standing |
 | --- | --- | --- |
-| **DUNA** | A Decentralized Unincorporated Nonprofit Association registered with the West Virginia Secretary of State. An online organization with legal standing. May have a Coin and a Market. | Registered |
-| **Alliance** | An informal organization without legal standing. A collection that can contain DUNAs, Members, Offers, Sponsors, Allies, and other Alliances. No Coin, no Market. | Not registered |
+| **Duna** | A Decentralized Unincorporated Nonprofit Association registered with the West Virginia Secretary of State. An online organization with legal standing. May have a Coin and a Market. | Registered |
+| **Alliance** | An informal organization without legal standing. A collection that can contain Dunas, Members, Offers, Sponsors, Allies, and other Alliances. No Coin, no Market. | Not registered |
 | **Member / User** | An individual human participant. States below. | Varies |
-| **Sponsor** | An outside entity that is not a DUNA but is registered elsewhere (LLC, corporation, non-profit, NGO) and holds a contractual relationship with a DUNA. | External |
+| **Sponsor** | An outside entity that is not a Duna but is registered elsewhere (LLC, corporation, non-profit, NGO) and holds a contractual relationship with a Duna. | External |
 | **Offer** | A good or service, digital or physical, that can be bought, sold, or transferred. Carries information and can communicate, so it is an Actor. | — |
 
 Any Member can create an Offer, Alliance, Ally, or Sponsor, subject to the
-conditions of the DUNA they work within. A Founder (a kind of Member) can create
-a DUNA.
+conditions of the Duna they work within. A Founder (a kind of Member) can create
+a Duna.
 
 ## User subtypes
 
-A person's state is contextual to a DUNA and to the Offer they accepted.
+A person's state is contextual to a Duna and to the Offer they accepted.
 
 | Subtype | Definition |
 | --- | --- |
 | **Visitor** | Not logged in, or not yet identified. |
-| **Guest** | Logged in, but has not joined any DUNA as a Member. |
-| **Member** | Met a DUNA's membership requirements, defined by an Offer: a one-time payment, a subscription, or holding a threshold of a token in a wallet. |
-| **Founder** | A Member who met the requirements to create a new DUNA (also via an Offer). Only a Founder in the context of the DUNA they created. |
-| **Designee** | A designated representative of a DUNA, contactable by the Registered Agent. |
+| **Guest** | Logged in, but has not joined any Duna as a Member. |
+| **Member** | Met a Duna's membership requirements, defined by an Offer: a one-time payment, a subscription, or holding a threshold of a token in a wallet. |
+| **Founder** | A Member who met the requirements to create a new DUNA (also via an Offer). Only a Founder in the context of the Duna they created. |
+| **Designee** | A designated representative of a Duna, contactable by the Registered Agent. |
 | **Registered Agent** | Holds a physical and mailing address in West Virginia. Designated by the Genesis DUNA (the Big Kiduna). |
 | **Wizard** | System administrator with super-user access everywhere. |
 
@@ -79,9 +79,9 @@ many.**
 
 | Object | Definition |
 | --- | --- |
-| **Coin** | A token associated with a DUNA (e.g., to gate membership by holdings). DUNA only. |
-| **Market** | A venue associated with a DUNA where offers and positions trade. DUNA only. |
-| **Squad's Wallet** | A shared wallet held by a DUNA or an Alliance. |
+| **Coin** | A token associated with a DUNA (e.g., to gate membership by holdings). Duna only. |
+| **Market** | A venue associated with a Duna where offers and positions trade. Duna only. |
+| **Squad's Wallet** | A shared wallet held by a Duna or an Alliance. |
 | **Membership** | A kind of Offer that defines how a Guest becomes a Member. |
 | **Code** | An Ally's network identity, placed on sites/apps/social and verified via the registry. |
 | **Registry** | The network index of valid Codes. |

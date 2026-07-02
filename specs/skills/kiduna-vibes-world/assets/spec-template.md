@@ -1,20 +1,20 @@
 ---
-title: [DUNA] — Vibe World Specification
+title: [Duna] — Vibe World Specification
 subtitle: Isometric world · actors · live state · [room | game | quest]
 author: [Author], Kinship Systems
 date: [Month DD, YYYY]
 status: Draft for engineering
-footer: [DUNA] — Vibe World Specification
+footer: [Duna] — Vibe World Specification
 ---
 
 # 1. Purpose
-[What this Vibe is for — representation of the DUNA, a room, a game, a quest, a studio.]
+[What this Vibe is for — representation of the Duna, a room, a game, a quest, a studio.]
 
 # 2. Spaces
-[The DUNA as a place; the Alliances within it as places. Layout and navigation.]
+[The Duna as a place; the Alliances within it as places. Layout and navigation.]
 
 # 3. Actor sprites
-[Sprites for the Allies of Members, DUNAs, Alliances, Sponsors, Programs. How each maps to an Ally and what its presence/behavior shows.]
+[Sprites for the Allies of Members, Dunas, Alliances, Sponsors, Programs. How each maps to an Ally and what its presence/behavior shows.]
 
 | Sprite | Represents | Behavior / source |
 | --- | --- | --- |

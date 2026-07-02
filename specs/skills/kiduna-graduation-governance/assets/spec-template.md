@@ -1,10 +1,10 @@
 ---
-title: [DUNA] — Alliances & Graduation Specification
+title: [Duna] — Alliances & Graduation Specification
 subtitle: Alliances · Governance Market · graduation buy-in
 author: [Author], Kinship Systems
 date: [Month DD, YYYY]
 status: Draft for engineering
-footer: [DUNA] — Alliances & Graduation Specification
+footer: [Duna] — Alliances & Graduation Specification
 ---
 
 # 1. Alliances
@@ -23,7 +23,7 @@ footer: [DUNA] — Alliances & Graduation Specification
 [The seed buys into the new Kiduna; becomes its treasury + the parent's stake; atomic execution; lineage recorded (parent upstream, new founders at apex). Human-approval points.]
 
 # 6. New-Kiduna stand-up
-[Files standing; DUNA Ally from picked Elements; issues coin; appears in Directory; itself a Factory.]
+[Files standing; Duna Ally from picked Elements; issues coin; appears in Directory; itself a Factory.]
 
 # 7. What the system must provide
 [Consolidated requirements.]

@@ -1,9 +1,9 @@
-/* DUNAs directory: search, sort, render, Join-with-login-dialog, and profile.
+/* Dunas directory: search, sort, render, Join-with-login-dialog, and profile.
    Draft only — no backend; the member is treated as logged out. */
 (function () {
-  var DUNAS = window.DUNAS || [];
+  var DunaS = window.DunaS || [];
   // Draft auth state. Set to true to simulate a logged-in member.
-  var LOGGED_IN = window.WVDUNA_LOGGED_IN === true;
+  var LOGGED_IN = window.WVDuna_LOGGED_IN === true;
 
   /* ---------- themed placeholder graphics (lucide-style line icons) ---------- */
   var ICONS = {
@@ -104,7 +104,7 @@
   function handleJoin(duna) {
     if (!LOGGED_IN) { openAuthModal(duna ? duna.name : null); return; }
     /* logged-in path would call the join API here */
-    alert("You've joined " + (duna ? duna.name : "this DUNA") + ".");
+    alert("You've joined " + (duna ? duna.name : "this Duna") + ".");
   }
 
   /* ---------- list page ---------- */
@@ -153,14 +153,14 @@
       '</article>';
     }
     function render() {
-      var rows = DUNAS.filter(matches).slice().sort(compare);
+      var rows = DunaS.filter(matches).slice().sort(compare);
       grid.innerHTML = rows.length
         ? rows.map(card).join("")
-        : '<div class="no-results">No DUNAs match “' + esc(state.q) + '”. Try another search.</div>';
-      if (countEl) countEl.textContent = rows.length + (rows.length === 1 ? " DUNA" : " DUNAs");
+        : '<div class="no-results">No Dunas match “' + esc(state.q) + '”. Try another search.</div>';
+      if (countEl) countEl.textContent = rows.length + (rows.length === 1 ? " Duna" : " Dunas");
       grid.querySelectorAll(".join-btn").forEach(function (b) {
         b.addEventListener("click", function () {
-          handleJoin(DUNAS.filter(function (x) { return x.id === b.getAttribute("data-id"); })[0]);
+          handleJoin(DunaS.filter(function (x) { return x.id === b.getAttribute("data-id"); })[0]);
         });
       });
     }
@@ -191,12 +191,12 @@
     var mount = document.getElementById("duna-profile");
     if (!mount) return;
     var id = new URLSearchParams(location.search).get("id");
-    var d = DUNAS.filter(function (x) { return x.id === id; })[0];
+    var d = DunaS.filter(function (x) { return x.id === id; })[0];
     if (!d) {
-      mount.innerHTML = '<div class="no-results">That DUNA wasn’t found. <a href="dunas.html">Back to all DUNAs</a>.</div>';
+      mount.innerHTML = '<div class="no-results">That Duna wasn’t found. <a href="dunas.html">Back to all Dunas</a>.</div>';
       return;
     }
-    document.title = d.name + " — WV DUNA";
+    document.title = d.name + " — WV Duna";
     mount.innerHTML =
       '<div class="profile-head accent-' + d.accent + '">' +
         '<span class="profile-ico">' + themeIcon(d.tag) + '<span class="coin-chip">' + esc(d.coin) + '</span></span>' +
@@ -216,12 +216,12 @@
       '</div>' +
       '<div class="hero-cta">' +
         '<button class="btn btn-gold btn-lg" id="profile-join">Join ' + esc(d.name) + '</button>' +
-        '<a class="btn btn-ghost btn-lg" href="dunas.html">← All DUNAs</a>' +
+        '<a class="btn btn-ghost btn-lg" href="dunas.html">← All Dunas</a>' +
       '</div>';
     var jb = document.getElementById("profile-join");
     if (jb) jb.addEventListener("click", function () { handleJoin(d); });
   }
 
-  window.WVDUNA = { openAuthModal: openAuthModal };
+  window.WVDuna = { openAuthModal: openAuthModal };
   document.addEventListener("DOMContentLoaded", function () { initList(); initProfile(); });
 })();

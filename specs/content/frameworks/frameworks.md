@@ -1,6 +1,6 @@
 ---
 title: Kiduna Frameworks
-subtitle: Product specification — the system for building DUNA Frameworks
+subtitle: Product specification — the system for building Duna Frameworks
 author: David Levine, Kinship Systems
 date: June 15, 2026
 status: Draft for engineering
@@ -11,11 +11,11 @@ footer: Kiduna Frameworks — Product Specification
 
 This document specifies what a Kiduna framework is and how the system that produces and runs frameworks should behave. It is written for the engineers who will build that system. It describes user experience and functionality. It does not prescribe languages, frameworks, datastores, or hosting. Where a capability maps cleanly onto a known pattern (for example, the long-running agent behavior described in the Deep Agents material), the document names the pattern so the team has a shared reference, but the implementation choice stays with engineering.
 
-This document is the main specification for **DUNA Frameworks**, and the hub that links to the individual framework specifications. A framework is the in-product experience that lets a person assemble a complete, working Ally by moving through five phases (Inform, Instruct, Empower, Enact, Align), together with the framework layer that pre-fills those phases for a given domain so a person can adopt a ready-made Ally and tailor it.
+This document is the main specification for **Duna Frameworks**, and the hub that links to the individual framework specifications. A framework is the in-product experience that lets a person assemble a complete, working Ally by moving through five phases (Inform, Instruct, Empower, Enact, Align), together with the framework layer that pre-fills those phases for a given domain so a person can adopt a ready-made Ally and tailor it.
 
 What this document is not: it is not a catalog of finished frameworks, and it does not commit the team to building any specific framework. Individual frameworks are specified separately, each using the companion framework-specification skill, and linked from here. The first two are the [Service Organizations Framework](../framework-service/index.html) and [The Kiduna Factory Framework](../framework-factory/index.html). This document defines the container those specifications fill.
 
-**A note on terminology: Frameworks and Templates.** These are now distinct. A **Framework** is for a DUNA — it assembles the Wisdom, Stance, Abilities, Programs, roles, and offers for a whole kind of organization (a domain such as Travel, Service, or a Kiduna Factory). A **Template** is reserved for a publishable **Program** — a reusable deep-agent routine that can be added to an Ally or a Performer for a specific task. A Program is private to you; publishing it as a Template lets others add it, and a Template can be offered free or for a price. Templates are covered in [Program Templates](../program-templates/index.html). Elsewhere: *Kiduna* refers to the network and the product; the underlying coordination protocol is the Kinship Agentic Protocol; and *Program* (also called *Magic*) is what earlier drafts called a *skill* (section 5.4).
+**A note on terminology: Frameworks and Templates.** These are now distinct. A **Framework** is for a Duna — it assembles the Wisdom, Stance, Abilities, Programs, roles, and offers for a whole kind of organization (a domain such as Travel, Service, or a Kiduna Factory). A **Template** is reserved for a publishable **Program** — a reusable deep-agent routine that can be added to an Ally or a Performer for a specific task. A Program is private to you; publishing it as a Template lets others add it, and a Template can be offered free or for a price. Templates are covered in [Program Templates](../program-templates/index.html). Elsewhere: *Kiduna* refers to the network and the product; the underlying coordination protocol is the Kinship Agentic Protocol; and *Program* (also called *Magic*) is what earlier drafts called a *skill* (section 5.4).
 
 The **Builder Kit** — the downloadable kit, API, and connector that let someone build on the Kiduna network from outside the product — now has its own document: the [Builder Kit Product Specification](../builder-kit/index.html).
 
@@ -43,29 +43,29 @@ The Actor primitives are:
 
 | Actor | What it is | Standing |
 | --- | --- | --- |
-| **DUNA** | A Decentralized Unincorporated Nonprofit Association registered with the West Virginia Secretary of State. An online organization with legal standing. | Registered |
-| **Alliance** | An informal organization without legal standing. A collection that can contain DUNAs, Members, Offers, Sponsors, and Allies, and even other Alliances. | Not registered |
+| **Duna** | A Decentralized Unincorporated Nonprofit Association registered with the West Virginia Secretary of State. An online organization with legal standing. | Registered |
+| **Alliance** | An informal organization without legal standing. A collection that can contain Dunas, Members, Offers, Sponsors, and Allies, and even other Alliances. | Not registered |
 | **Member / User** | An individual human participant. Subtypes are defined in 3.2. | Varies |
-| **Sponsor** | An outside entity that is not a DUNA but is registered somewhere else (LLC, corporation, non-profit, NGO) and holds a contractual relationship with a DUNA. | External |
+| **Sponsor** | An outside entity that is not a Duna but is registered somewhere else (LLC, corporation, non-profit, NGO) and holds a contractual relationship with a Duna. | External |
 | **Offer** | A good or service, digital or physical, that can be bought, sold, or transferred. Offers carry information and can communicate, so they are treated as Actors. | — |
 
-A DUNA contains things that an Alliance does not. A DUNA can have its own **Coin** and a **Market**; an Alliance cannot. Both can hold Members, Allies, Sponsors, Offers, a shared **Squad's Wallet**, and nested Alliances. A DUNA's offers commonly include a **Membership** offer that defines how someone becomes a Member.
+A Duna contains things that an Alliance does not. A Duna can have its own **Coin** and a **Market**; an Alliance cannot. Both can hold Members, Allies, Sponsors, Offers, a shared **Squad's Wallet**, and nested Alliances. A Duna's offers commonly include a **Membership** offer that defines how someone becomes a Member.
 
 ## 3.2 User subtypes
 
-The Member/User Actor has a progression of states. A person's state is contextual to a given DUNA and to the Offer they have accepted.
+The Member/User Actor has a progression of states. A person's state is contextual to a given Duna and to the Offer they have accepted.
 
 | Subtype | Definition |
 | --- | --- |
 | **Visitor** | Not logged in, or not yet identified. |
-| **Guest** | Logged in, but has not joined any DUNA as a Member. |
-| **Member** | Has met the requirements of membership in a DUNA, defined by an Offer. Requirements may be a one-time payment, a subscription, or holding a threshold amount of a token in a wallet. |
-| **Founder** | A Member who has met the requirements to create a new DUNA, also through an Offer. A Founder is a kind of Member, and is only a Founder in the context of the DUNA they created. |
-| **Designee** | A designated representative of a DUNA who can be contacted by the Registered Agent. |
+| **Guest** | Logged in, but has not joined any Duna as a Member. |
+| **Member** | Has met the requirements of membership in a Duna, defined by an Offer. Requirements may be a one-time payment, a subscription, or holding a threshold amount of a token in a wallet. |
+| **Founder** | A Member who has met the requirements to create a new Duna, also through an Offer. A Founder is a kind of Member, and is only a Founder in the context of the Duna they created. |
+| **Designee** | A designated representative of a Duna who can be contacted by the Registered Agent. |
 | **Registered Agent** | Holds a physical and mailing address in West Virginia. Designated by the Genesis DUNA (the Big Kiduna). |
 | **Wizard** | System administrator with super-user access everywhere. Can fix or change things across the system. |
 
-Membership is tied to an Offer. This matters for the framework system: a DUNA framework will normally ship a Membership Offer, and the requirements on that Offer determine who becomes a Member and on what terms.
+Membership is tied to an Offer. This matters for the framework system: a Duna framework will normally ship a Membership Offer, and the requirements on that Offer determine who becomes a Member and on what terms.
 
 ## 3.3 Agent types
 
@@ -98,10 +98,10 @@ Sections 5.1 through 5.5 specify each phase in detail.
 
 | Object | Definition |
 | --- | --- |
-| **Coin** | A token associated with a DUNA. Used, among other things, to gate membership by holdings. A DUNA may have a Coin; an Alliance may not. |
-| **Market** | A venue associated with a DUNA where offers and positions are exchanged. A DUNA may have a Market; an Alliance may not. |
-| **Squad's Wallet** | A shared wallet held by a DUNA or an Alliance. |
-| **Membership** | A specific kind of Offer that defines how a Guest becomes a Member of a DUNA. |
+| **Coin** | A token associated with a Duna. Used, among other things, to gate membership by holdings. A Duna may have a Coin; an Alliance may not. |
+| **Market** | A venue associated with a Duna where offers and positions are exchanged. A Duna may have a Market; an Alliance may not. |
+| **Squad's Wallet** | A shared wallet held by a Duna or an Alliance. |
+| **Membership** | A specific kind of Offer that defines how a Guest becomes a Member of a Duna. |
 | **Code** | A credential placed on a website, app, or social presence that lets an Ally recognize a counterparty as part of the network and confirm who it is. Codes and the session tokens exchanged between Allies are described in section 9. |
 | **Lineage** | The provenance record of an Offer as it is bought, sold, or transferred. Held in the graph database (section 9.4). |
 
@@ -115,9 +115,9 @@ This distinguishes a framework from building from scratch. Building from scratch
 
 Two ideas are essential to how frameworks behave.
 
-**Frameworks target an Actor primitive.** A framework is for a DUNA, or for an Alliance, or for a Member, or for a Sponsor, or for an Offer. A Travel DUNA framework produces a DUNA with its Coin, Market, Membership Offer, and a host Ally. A traveler (Member) framework produces a personal Ally for someone who wants to travel. The phase structure is the same across all of them; what differs is the Actor the resulting Ally represents and the defaults each phase ships.
+**Frameworks target an Actor primitive.** A framework is for a Duna, or for an Alliance, or for a Member, or for a Sponsor, or for an Offer. A Travel Duna framework produces a Duna with its Coin, Market, Membership Offer, and a host Ally. A traveler (Member) framework produces a personal Ally for someone who wants to travel. The phase structure is the same across all of them; what differs is the Actor the resulting Ally represents and the defaults each phase ships.
 
-**Most specifics are discovered, not entered.** A framework should lean on the network. When a traveler adopts a Travel framework and joins the Travel DUNA, their Ally should be able to search the network for hosts, offers, and destinations rather than requiring the person to type them in. The framework defines what to look for and where; the person supplies only what cannot be discovered. The design goal is that adopting a framework feels like gaining a capable agent, not filling in a long form.
+**Most specifics are discovered, not entered.** A framework should lean on the network. When a traveler adopts a Travel framework and joins the Travel Duna, their Ally should be able to search the network for hosts, offers, and destinations rather than requiring the person to type them in. The framework defines what to look for and where; the person supplies only what cannot be discovered. The design goal is that adopting a framework feels like gaining a capable agent, not filling in a long form.
 
 A framework also has a lifecycle: it is authored, published, adopted, and tailored, and it is versioned so that improvements can be shipped to people who adopted earlier versions. Section 7 specifies the authoring and lifecycle model.
 
@@ -250,13 +250,13 @@ The four agent types and the five phase-outputs are composable. Each is created 
 
 **Composition.** An Ally is the assembly of: its Wisdom (Inform), its Stance (Instruct), its Abilities (Empower), its Programs (Enact), and its Sentinel (Align). Performers are directed by the Ally's Programs; Envoys are attached where the Ally needs to act in governance. Because the parts are independent, a person can swap one without rebuilding the others: change the Stance without touching the Programs, add an Ability that a Program then uses, retune the Sentinel without altering Wisdom.
 
-**Binding to an Actor.** An Ally always represents an Actor. At assembly, the Ally is bound to the Actor it speaks for: this Ally is for this DUNA, this Ally is for this Alliance, this Ally is for this Member, and so on. An Ally takes the name of the Actor it represents — a DUNA Ally, an Alliance Ally, a Member Ally, a Sponsor Ally, an Offer Ally. The Actor type determines what the Ally can contain and do (a DUNA Ally can have a Coin and a Market; a Member Ally cannot).
+**Binding to an Actor.** An Ally always represents an Actor. At assembly, the Ally is bound to the Actor it speaks for: this Ally is for this Duna, this Ally is for this Alliance, this Ally is for this Member, and so on. An Ally takes the name of the Actor it represents — a Duna Ally, an Alliance Ally, a Member Ally, a Sponsor Ally, an Offer Ally. The Actor type determines what the Ally can contain and do (a Duna Ally can have a Coin and a Market; a Member Ally cannot).
 
 **Naming and handle.** When the Ally is assembled, the person names it and the system creates a handle, or **Code**, for it. The Code is the Ally's identity on the network and the thing other Allies use to find and verify it (section 9).
 
 **Instantiation flow — building from scratch.**
 
-1. Choose the Actor the Ally will represent (DUNA, Alliance, Member, Sponsor, Offer).
+1. Choose the Actor the Ally will represent (Duna, Alliance, Member, Sponsor, Offer).
 2. **Inform:** add Wisdom by uploading or connecting documents.
 3. **Instruct:** write the Stance.
 4. **Empower:** connect the accounts the Ally needs, creating its Abilities.
@@ -327,7 +327,7 @@ A well-made framework minimizes fill-in by maximizing fixed and discovered conte
 
 ## 7.5 Composability across frameworks
 
-Frameworks and the Actors they create combine. A West Virginia Travel DUNA and a Southern California Travel DUNA can both exist, and can be joined under a Travel DUNA so that joining the parent makes you part of the family and lets you spin out your own. Alliances are the informal way to group DUNAs, Members, Offers, Sponsors, and Allies that do similar work. The framework system should support this: a framework can target a DUNA that is intended to nest under a parent DUNA or to participate in an Alliance, and the discovery configuration (7.2) is what lets a newly adopted Ally find its siblings.
+Frameworks and the Actors they create combine. A West Virginia Travel Duna and a Southern California Travel Duna can both exist, and can be joined under a Travel Duna so that joining the parent makes you part of the family and lets you spin out your own. Alliances are the informal way to group Dunas, Members, Offers, Sponsors, and Allies that do similar work. The framework system should support this: a framework can target a Duna that is intended to nest under a parent Duna or to participate in an Alliance, and the discovery configuration (7.2) is what lets a newly adopted Ally find its siblings.
 
 ---
 
@@ -339,9 +339,9 @@ A concrete example makes the phase structure legible. The primary example is Tra
 
 The setup: a regional travel organization wants to help visitors discover and book experiences. People need food, transportation, a place to sleep, and things to do. A visitor from far away wants a concierge who can plan a trip and a way to book that keeps them inside a trusted network.
 
-**Actor.** A Travel DUNA. It can have a Coin, a Market, a Membership Offer, hosts as Members, and a host (concierge) Ally. Individual travelers adopt a lighter traveler framework that produces a personal Ally.
+**Actor.** A Travel Duna. It can have a Coin, a Market, a Membership Offer, hosts as Members, and a host (concierge) Ally. Individual travelers adopt a lighter traveler framework that produces a personal Ally.
 
-**Inform → Wisdom.** The DUNA's knowledge base holds destinations, attractions, lodging, partners, and pricing. When the concierge Ally proposes a trip, it presents an itinerary as cards: a sequence of stops with options and links to a booking page, a video, or a map, rather than a paragraph of text.
+**Inform → Wisdom.** The Duna's knowledge base holds destinations, attractions, lodging, partners, and pricing. When the concierge Ally proposes a trip, it presents an itinerary as cards: a sequence of stops with options and links to a booking page, a video, or a map, rather than a paragraph of text.
 
 **Instruct → Stance.** The host Ally's Stance is that of a concierge: it takes care of the visitor, plans the trip, and makes their life easy. A guest who is only a Visitor or Guest may be largely unknown, so the Stance directs the Ally to learn what the person is looking for before recommending.
 
@@ -351,13 +351,13 @@ The setup: a regional travel organization wants to help visitors discover and bo
 
 **Align → Sentinel.** HEARTS defaults suited to hospitality: attentive, low-pressure, protective of the traveler's budget and data.
 
-**Why a framework.** Because this is a framework, the West Virginia version and the Southern California version are the same structure with different Wisdom and hosts. Both can sit under a Travel DUNA. A traveler who joins the Travel DUNA gets an Ally that can search for hosts and offers across the family, so the traveler enters very little by hand.
+**Why a framework.** Because this is a framework, the West Virginia version and the Southern California version are the same structure with different Wisdom and hosts. Both can sit under a Travel Duna. A traveler who joins the Travel Duna gets an Ally that can search for hosts and offers across the family, so the traveler enters very little by hand.
 
 ## 8.2 Service organizations (brief contrast)
 
 The setup: a veterans' service group and a law-enforcement group do similar work — training, history and experience, support, and community — and can use the same framework shape.
 
-**Actor.** Often an Alliance (a Service Alliance) grouping DUNAs and Members, or a DUNA where standing and a treasury are needed.
+**Actor.** Often an Alliance (a Service Alliance) grouping Dunas and Members, or a Duna where standing and a treasury are needed.
 
 **Inform → Wisdom.** Training materials, historical records, support resources, and community information, presented as navigable references rather than text dumps.
 
@@ -375,7 +375,7 @@ The phases, the cardinality rules, and the assembly flow are identical to Travel
 
 ## 8.3 The specified frameworks
 
-The frameworks specified so far, each its own document: [Service Organizations](../framework-service/index.html) and [The Kiduna Factory](../framework-factory/index.html). The Kiduna Factory is the most important, because it is the framework for the Genesis DUNA — the first DUNA, and the one that seeds all the others.
+The frameworks specified so far, each its own document: [Service Organizations](../framework-service/index.html) and [The Kiduna Factory](../framework-factory/index.html). The Kiduna Factory is the most important, because it is the framework for the Genesis Duna — the first Duna, and the one that seeds all the others.
 
 # 9. Discovery, identity, and the Codes
 
@@ -425,7 +425,7 @@ This consolidates the requirements stated above into a checklist engineering can
 - **R6.** Enact: build Programs with exactly one Prompt and zero-or-more Triggers, Database Connections, Polling/Web Hook listeners, and Tools.
 - **R7.** Enact: Programs run long, plan, delegate to Performers, resume after interruption, and pause for human approval at defined points.
 - **R8.** Align: every Ally has a Sentinel with HEARTS dials, pre-set from the build and adjustable, enforced at run time and visible when it intervenes.
-- **R9.** Assemble the five outputs into an Ally, bind it to an Actor (DUNA, Alliance, Member, Sponsor, Offer), name it, and issue its Code.
+- **R9.** Assemble the five outputs into an Ally, bind it to an Actor (Duna, Alliance, Member, Sponsor, Offer), name it, and issue its Code.
 - **R10.** Support both paths: build from scratch, and adopt-and-tailor a framework.
 
 ## 11.2 Frameworks as artifacts
@@ -433,7 +433,7 @@ This consolidates the requirements stated above into a checklist engineering can
 - **R11.** A framework carries pre-filled content for all five phases plus identity, discovery, and slot metadata.
 - **R12.** Each shipped element is marked fixed, fill-in, or discovered; frameworks minimize fill-in.
 - **R13.** Support the framework lifecycle: author, test, publish, adopt, tailor, version, and update without losing personalization.
-- **R14.** Support composition: DUNAs nesting under a parent DUNA, and Alliances grouping DUNAs, Members, Offers, Sponsors, and Allies; discovery config lets a new Ally find its siblings.
+- **R14.** Support composition: Dunas nesting under a parent Duna, and Alliances grouping Dunas, Members, Offers, Sponsors, and Allies; discovery config lets a new Ally find its siblings.
 - **R15.** Make iteration and testing of Programs easy, and set expectations that un-reviewed user-authored Programs are not guaranteed accurate.
 
 ## 11.3 Network and commerce
@@ -474,15 +474,15 @@ The Builder Kit's requirements live in the [Builder Kit Product Specification](.
 
 | Term | Definition |
 | --- | --- |
-| **Actor** | An entity with intelligence on the network, mediated by an Ally: DUNA, Alliance, Member/User, Sponsor, or Offer. |
+| **Actor** | An entity with intelligence on the network, mediated by an Ally: Duna, Alliance, Member/User, Sponsor, or Offer. |
 | **Ally** | The agent you communicate with; represents an Actor and supervises the work. |
 | **Performer** | An agent that executes tasks with tools under an Ally's direction. |
 | **Envoy** | An agent that acts in governance under a human's direction. |
 | **Sentinel** | The agent produced by Align that keeps the human/agentic relationship healthy. |
-| **DUNA** | A registered online organization (West Virginia) with standing; may have a Coin and a Market. |
-| **Alliance** | An informal organization without standing; a collection of DUNAs, Members, Offers, Sponsors, Allies, and Alliances. |
+| **Duna** | A registered online organization (West Virginia) with standing; may have a Coin and a Market. |
+| **Alliance** | An informal organization without standing; a collection of Dunas, Members, Offers, Sponsors, Allies, and Alliances. |
 | **Member / User** | An individual participant; states are Visitor, Guest, Member, Founder, Designee, Registered Agent, Wizard. |
-| **Sponsor** | A registered outside entity (LLC, corporation, non-profit) under contract with a DUNA. |
+| **Sponsor** | A registered outside entity (LLC, corporation, non-profit) under contract with a Duna. |
 | **Offer** | A good or service that can be bought, sold, or transferred; treated as an Actor. |
 | **Inform / Wisdom** | The phase that builds the knowledge base; its output. |
 | **Instruct / Stance** | The phase that writes the system prompt; its output. |

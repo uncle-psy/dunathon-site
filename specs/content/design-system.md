@@ -129,7 +129,7 @@ lime, or violet.
 
 Warm, direct, slightly literary, with a civic/cooperative undertone. We write
 *to* the reader and use "you" freely. We almost never say "users" — we say
-*members*, *organizers*, *stewards*, *the block*, *kin*. A DUNA is a real legal
+*members*, *organizers*, *stewards*, *the block*, *kin*. A Duna is a real legal
 vehicle, so we are precise: associations *register* with the *Secretary of State*,
 adopt *bylaws*, hold a *treasury*, and pass *proposals* by member *vote*.
 

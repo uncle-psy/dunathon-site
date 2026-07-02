@@ -1,17 +1,17 @@
 ---
-title: [DUNA] — DUNA Ally Chat Specification
+title: [Duna] — Duna Ally Chat Specification
 subtitle: Stance · Wisdom · Chips · Mediation · Notifications
 author: [Author], Kinship Systems
 date: [Month DD, YYYY]
 status: Draft for engineering
-footer: [DUNA] — DUNA Ally Chat Specification
+footer: [Duna] — Duna Ally Chat Specification
 ---
 
-# 1. The DUNA Ally
+# 1. The Duna Ally
 [Name, handle, one-line; what it does; its role as Host and contextual help.]
 
 # 2. The two chat surfaces
-[Main Chat (DUNA Ally, Personal Ally, published Allies); the always-on contextual dock on every page.]
+[Main Chat (Duna Ally, Personal Ally, published Allies); the always-on contextual dock on every page.]
 
 # 3. Stance (system prompt)
 [The full draft Stance — voice, chip rules, accountability posture. One per Ally.]

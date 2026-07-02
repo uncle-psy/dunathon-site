@@ -102,4 +102,4 @@ within ranges; interventions are visible to the person.
 - **Slots:** gather every fill-in slot from all phases into one short list — this
   is what the adopt flow presents to the person.
 - **Composition:** note if the resulting Actor is meant to nest under a parent
-  DUNA or join an Alliance, and how discovery helps it find its siblings.
+  Duna or join an Alliance, and how discovery helps it find its siblings.

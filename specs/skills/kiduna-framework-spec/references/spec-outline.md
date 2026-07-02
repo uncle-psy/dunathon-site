@@ -11,7 +11,7 @@ Actor type), author, date, status. The converter uses this for the title page.
 
 ## 1. Identity
 
-Name, version, author, the **Actor type** the resulting Ally represents (DUNA,
+Name, version, author, the **Actor type** the resulting Ally represents (Duna,
 Alliance, Member/User, Sponsor, Offer), the domain, and a one-paragraph
 description of what the resulting Ally does for adopters.
 
@@ -53,7 +53,7 @@ is not established, say so and propose defaults; list it under open questions.
 ## 8. Assembly
 
 The Actor binding, the naming and Code issuance, and how the five outputs compose
-into the Ally. Note any composition with a parent DUNA or an Alliance.
+into the Ally. Note any composition with a parent Duna or an Alliance.
 
 ## 9. Discovery
 

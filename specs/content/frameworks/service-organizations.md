@@ -13,11 +13,11 @@ This document specifies the Service Organizations framework for the Kiduna Club 
 
 The Service Organizations framework serves organizations and individuals built around service: military veterans and those still serving, law enforcement, firefighters and EMS, federal first responders, and public-service professionals such as social workers, dispatchers, and crisis-response staff. These are people in high-stress, high-consequence work, many carrying the weight of it long after the work ends. The framework has to hold what they actually need: connection, recognition, help in a hard moment, a place to keep their history, and an organization that can govern itself and last.
 
-Service Alliance is the test case throughout. Service Alliance operates as a Movement on the Kinship Agentic Protocol, legally wrapped as the Service Alliance DUNA (SADUNA), a West Virginia Decentralized Unincorporated Nonprofit Association filing under HB 5060 on July 1, 2026, sponsored by Service Alliance LLC and running on the substrate Kiduna Club operates. Service Alliance is used here to make the framework concrete. The framework itself is reusable: any service organization should be able to adopt it.
+Service Alliance is the test case throughout. Service Alliance operates as a Movement on the Kinship Agentic Protocol, legally wrapped as the Service Alliance DUNA (SADuna), a West Virginia Decentralized Unincorporated Nonprofit Association filing under HB 5060 on July 1, 2026, sponsored by Service Alliance LLC and running on the substrate Kiduna Club operates. Service Alliance is used here to make the framework concrete. The framework itself is reusable: any service organization should be able to adopt it.
 
 This specification builds on the master document, "Kiduna Frameworks — Product Specification," which defines frameworks, the five phases (Inform, Instruct, Empower, Enact, Align), the actor primitives, and the Builder Kit. This document does not repeat that material; it specializes it for the service vertical and goes deep on the two things that make this vertical different: the wellbeing and crisis architecture, and the range of ways agents act on behalf of people and organizations that carry real authority and real accountability.
 
-A note on the source material. The design here is drawn from the Service Alliance portfolio, white papers, the SADUNA back-brief, and the Service Alliance site. Where those sources disagree on a detail, the more recent source is followed, and the discrepancy is flagged in section 18. A few terms the team has used in conversation map onto documented concepts under different names; those mappings are also noted there.
+A note on the source material. The design here is drawn from the Service Alliance portfolio, white papers, the SADuna back-brief, and the Service Alliance site. Where those sources disagree on a detail, the more recent source is followed, and the discrepancy is flagged in section 18. A few terms the team has used in conversation map onto documented concepts under different names; those mappings are also noted there.
 
 ---
 
@@ -45,7 +45,7 @@ So the document is weighted the way the experience should be weighted. The wellb
 
 # 4. Core concepts for the service vertical
 
-The master specification defines the actor primitives (DUNA, Alliance, Member/User, Sponsor, Offer), the agent types (Ally, Performer, Envoy, Sentinel), and the five phases. This section maps those onto the roles a service organization actually has, and introduces the identity layer that the whole vertical depends on.
+The master specification defines the actor primitives (Duna, Alliance, Member/User, Sponsor, Offer), the agent types (Ally, Performer, Envoy, Sentinel), and the five phases. This section maps those onto the roles a service organization actually has, and introduces the identity layer that the whole vertical depends on.
 
 ## 4.1 Roles in a service organization
 
@@ -57,9 +57,9 @@ The master specification defines the actor primitives (DUNA, Alliance, Member/Us
 | **Sponsor** | The outside entity that stands the organization up and holds issuer authority — for the test case, Service Alliance LLC. | Sponsor |
 | **Curator** | An operator or program leader who runs a cohort or service and earns a defined share for doing so. | (operator role) |
 | **Verifying Authority** | The source that confirms service or eligibility: the VA, DMDC/DPRIS, or DoD for military; a POST board, agency, or licensing body for the other domains; an equivalent authority for family relationship. | (verification role) |
-| **Registered Agent** | The West Virginia agent of record required for a DUNA. | Registered Agent |
+| **Registered Agent** | The West Virginia agent of record required for a Duna. | Registered Agent |
 
-The organization itself is usually a DUNA when it needs legal standing and a treasury, or an Alliance when it is an informal grouping. A federation — a national body with semi-autonomous chapters — is modeled as a DUNA with sub-groups, or as an Alliance of DUNAs, with discovery linking them.
+The organization itself is usually a Duna when it needs legal standing and a treasury, or an Alliance when it is an informal grouping. A federation — a national body with semi-autonomous chapters — is modeled as a Duna with sub-groups, or as an Alliance of Dunas, with discovery linking them.
 
 ## 4.2 The identity layer
 
@@ -303,7 +303,7 @@ The foundational rule is structural and permanent: the recognition economy is cl
 
 ## 14.2 The money economy (the Distribution Waterfall)
 
-Real money — membership fees, sponsorships, computation, trading, offerings — moves through a programmatic split that settles in the same transaction. The first portion pays lineage commissions up to four levels of the chain that brought a member in; the remainder is divided among the organization's treasury, the sponsor, the curator, and the protocol. The worked figures in the source material illustrate the intent: a small membership fee splits into a few cents up the lineage and the rest into the treasury and the operating roles, with nothing extracted to an outside shareholder. A DUNA's surplus must be reinvested in its mutual purpose. The structure has nowhere to extract value to, which is the point: the decay pattern that degraded earlier platforms cannot run here.
+Real money — membership fees, sponsorships, computation, trading, offerings — moves through a programmatic split that settles in the same transaction. The first portion pays lineage commissions up to four levels of the chain that brought a member in; the remainder is divided among the organization's treasury, the sponsor, the curator, and the protocol. The worked figures in the source material illustrate the intent: a small membership fee splits into a few cents up the lineage and the rest into the treasury and the operating roles, with nothing extracted to an outside shareholder. A Duna's surplus must be reinvested in its mutual purpose. The structure has nowhere to extract value to, which is the point: the decay pattern that degraded earlier platforms cannot run here.
 
 Founders sit at the apex of their lineage and earn perpetual, protocol-enforced commissions on what they bring in. Lineage commissions settle in stable value and are withdrawable, so a member's recruiting and program work can become real income over time without turning the recognition layer into a currency.
 
@@ -372,7 +372,7 @@ The example anchors on the flagship prototype and then notes briefly how the sam
 
 The 2nd Cavalry Association is the nation's oldest unit-specific veterans' organization, founded in 1899, tied to a regiment on continuous active duty since 1836. It has on the order of 4,000 members spread across every U.S. state and several countries, charges no dues, and lives today on an aging community platform with thousands of members, tens of thousands of photographs, and dozens of groups. It is the test case's anchor partner and first founder cohort.
 
-**Actor.** The Association joins as an Organizational Member of the service DUNA, with its own chapters as sub-groups and its own minting authority for unit and reunion recognition items.
+**Actor.** The Association joins as an Organizational Member of the service Duna, with its own chapters as sub-groups and its own minting authority for unit and reunion recognition items.
 
 **Inform.** Its Wisdom is its history (a regiment with eighteen Medals of Honor and nearly two centuries of lineage), its roster, its chapters (regional and interest-based groups, including the ones that remember the fallen), and its archives — photographs, videos, and pages accumulated over decades.
 
@@ -451,13 +451,13 @@ Robustness here is mostly about restraint: verifying carefully, isolating contex
 | **Distribution Waterfall** | The programmatic split of real money across lineage, treasury, sponsor, curator, and protocol. |
 | **Service-Made** | The verified veteran-owned-business marketplace. |
 | **Decision Market** | The market-based governance mechanism. |
-| **SADUNA** | The Service Alliance DUNA, the test-case organization. |
+| **SADuna** | The Service Alliance Duna, the test-case organization. |
 
 # Appendix B. Service-organization framework manifest
 
 The framework definition for a service organization carries, in addition to the standard manifest fields from the master specification:
 
-- **identity:** name, version, author, Actor type (usually DUNA or Alliance), the service domains it covers, and a description of the resulting Ally.
+- **identity:** name, version, author, Actor type (usually Duna or Alliance), the service domains it covers, and a description of the resulting Ally.
 - **inform:** starter Wisdom (history, rosters, benefits and resource directories, archives) marked fixed / fill-in / discovered; presentation structures (timelines, maps, rosters, memorial cards).
 - **instruct:** the draft Stance with the service disposition and the wellbeing guardrails built in, and marked fill-in slots for creed and tone.
 - **empower:** required and optional Abilities, with the sensitive ones (health, benefits) marked for protected handling.
