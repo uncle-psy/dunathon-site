@@ -205,6 +205,7 @@
   /* ---- Auth ------------------------------------------------------------ */
   function login() {
     state.loggedIn = true; $("#auth").hidden = true; app.hidden = false;
+    document.body.classList.add("in-app");
     applyDuna(); applyLevel(); applyPlatform();
     setMode("active", { go: false });
     // dock default: open on wide screens
@@ -214,7 +215,7 @@
     if (!state.firstBuyDone) { go("account"); return; }   // post-onboarding -> buy coins
     go("chat"); openChat(state.firstRun ? "host" : "alchemist");
   }
-  function logout() { state.loggedIn = false; app.hidden = true; $("#auth").hidden = false; closeAllSheets(); save(); }
+  function logout() { state.loggedIn = false; app.hidden = true; $("#auth").hidden = false; document.body.classList.remove("in-app"); closeAllSheets(); save(); }
 
   /* ---- Chat (main) ----------------------------------------------------- */
   var CHATS = {

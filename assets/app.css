@@ -20,7 +20,12 @@
    (.app/.auth-wrap/.rail/.install-banner all set display via their class). */
 [hidden] { display: none !important; }
 html, body { height: 100%; }
-body { margin: 0; background: var(--bg-deep); color: var(--fg); overflow: hidden; }
+body { margin: 0; background: var(--bg-deep); color: var(--fg); }
+/* Pre-login (marketing header + prototype banner + auth) scrolls like a normal
+   page. Once inside the app, the shell owns the viewport: lock scrolling and
+   hide the marketing chrome so the app starts at the top of the screen. */
+body.in-app { overflow: hidden; }
+body.in-app .site-header, body.in-app .proto-banner { display: none; }
 button { font-family: var(--font-sans); }
 ::selection { background: var(--wv-gold-soft); }
 

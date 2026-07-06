@@ -21,3 +21,4 @@ specs/vercel.json
 
 # local backup snapshot (not part of the deployed site)
 /kiduna web v1/
+/kiduna web v2/
