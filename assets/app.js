@@ -206,6 +206,7 @@
   function login() {
     state.loggedIn = true; $("#auth").hidden = true; app.hidden = false;
     document.body.classList.add("in-app");
+    window.scrollTo(0, 0);  // clear any residual page scroll (user scrolled to the sign-in form)
     applyDuna(); applyLevel(); applyPlatform();
     setMode("active", { go: false });
     // dock default: open on wide screens
